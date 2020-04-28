@@ -1,10 +1,14 @@
 import React from "react";
+import SpotState from "./context/spot/SpotState";
 import "./App.css";
-import Button from "react-bootstrap/Button";
-import { Navbar, Nav } from "react-bootstrap";
+import Header from "./components/header/Header";
 
 function App() {
-  return <div className="App">Hello world!</div>;
+  return (
+    <SpotState>
+      <Header />
+    </SpotState>
+  );
 }
 
 export default App;
