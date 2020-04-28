@@ -7,7 +7,7 @@ const SpotState = (props) => {
     spots: [
       {
         id: 1,
-        title: "hi gareth",
+        title: "romantic evening in my house",
         description: "a lovely walk down little venice",
       },
       {
@@ -16,23 +16,14 @@ const SpotState = (props) => {
         description: "a lovely time in London shard",
       },
     ],
-    loading: false,
   };
 
   const [state, dispatch] = useReducer(SpotReducer, initialState);
-
-  const something = (data) => {
-    dispatch({
-      type: "ADD_SPOT",
-    });
-  };
 
   return (
     <SpotContext.Provider
       value={{
         spots: state.spots,
-        loading: state.loading,
-        something,
       }}
     >
       {props.children}

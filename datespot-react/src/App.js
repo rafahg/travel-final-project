@@ -6,7 +6,9 @@ import Header from "./components/header/Header";
 function App() {
   return (
     <SpotState>
-      <Header />
+      <div className="container">
+        <Header />
+      </div>
     </SpotState>
   );
 }

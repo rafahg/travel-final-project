@@ -11,7 +11,6 @@ const Header = () => {
       {spots.map((spot) => (
         <h3>{spot.title}</h3>
       ))}
-      <button onClick={something}>this is a button</button>
     </div>
   );
 };
