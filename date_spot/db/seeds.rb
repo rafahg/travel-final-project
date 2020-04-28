@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Spot.create(title: "sunny place",description: "super sunny", location: "london", url: "www.google.com", average_cost: "3")
+Tag.create(tag: "romantic")
