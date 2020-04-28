@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Spot.create(title: "sunny place",description: "super sunny", location: "london", url: "www.google.com", average_cost: "3")
