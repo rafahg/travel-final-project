@@ -1,5 +1,5 @@
 # DateSpot
-So you're in a relationship, or perhaps you matched in an online dating app. That's fantastic but what do you do now? Where do you go for your date? Isn't it stressful to setup and plan the date? Well, stress no more as we have you covered with curated dates based on the location of your choosing!
+So you're in a relationship, or perhaps you matched in an online dating app. That's fantastic but what do you do now? Where do you go for your date? Isn't it stressful to setup and plan the date? Well, stress no more as we have you covered with curated dates based on the location of your choosing!!
 
 ![heart](https://upload.wikimedia.org/wikipedia/commons/5/52/Heart_icon_red_hollow.svg)
 
