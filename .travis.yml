@@ -1,22 +1,23 @@
 language: ruby
 rvm:
-- 2.7.1
+  - 2.7.1
 cache: bundler
 before_install:
-- cd date_spot
+  - cd date_spot
+addons:
+  postgresql: "12.2"
 services:
-- postgresql
+  - postgresql
 before_script:
-- bundle update --bundler
-- bundle exec rake db:create
-- bundle exec rake db:migrate
+  - bundle update --bundler
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
 
 # - psql -c 'create database date_spot_test;' -U postgres
 
-
 dist: trusty
 script:
-- bundle exec rspec
+  - bundle exec rspec
 deploy:
   provider: heroku
   api_key:
@@ -24,6 +25,3 @@ deploy:
   app: date-spot-final
   on:
     repo: rafahg/travel-final-project
-
-
-
