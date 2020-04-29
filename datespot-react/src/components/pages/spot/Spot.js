@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import SpotContext from "../../context/spot/SpotContext";
-import SpotItem from "./SpotItem";
+import SpotContext from "../../../context/spot/SpotContext";
+import SpotItem from "../../spot/SpotItem";
 
 const Spot = () => {
   const spotContext = useContext(SpotContext);
 
-  const { spots, something } = spotContext;
+  const { spots } = spotContext;
 
   return (
     <div>
