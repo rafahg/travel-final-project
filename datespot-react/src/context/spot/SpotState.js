@@ -15,6 +15,16 @@ const SpotState = (props) => {
         title: "a great sight to behold",
         description: "a lovely time in London shard",
       },
+      {
+        id: 3,
+        title: "beauty and brains",
+        description: "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
+      },
+      {
+        id: 4,
+        title: "beauty and brains",
+        description: "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
+      },
     ],
   };
 
