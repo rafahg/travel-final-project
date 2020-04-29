@@ -15,19 +15,91 @@ So you're in a relationship, or perhaps you matched in an online dating app. Tha
 
 ## Installation
 
-Instructions to install dependencies..
+### Backend
+
+Follow these steps to install required dependencies:
+
+1) In the root of the project, cd into date_spot and type the following in your terminal:
+
+```
+$ bundle install
+```
+
+That's it for the backend!
+
+### Frontend
+
+Follow these steps to install required dependencies:
+
+1) In the root of the project, cd into datespot-react and type the following in your terminal:
+
+```
+$ npm install
+```
+
+Great! That's it for the front end!
 
 ## Testing
 
-Instructions for testing
+### Backend
+
+Follow these steps to run tests for the backend:
+
+1) In the root of the project, cd into date_spot and type the following in your terminal:
+
+```
+$ rspec
+```
+
+You should see the tests for the backend in the terminal.
+
+### Frontend
+
+Follow these steps to run tests in the front end:
+
+1) In the root of the project, cd into datespot-react and type the following in your terminal:
+
+```
+$ npm test
+```
+
+You should be able to see the tests performed in React
 
 ## Running the application
 
-Running the application instructions
+Follow these steps to run the server:
+
+1) In the root of the project, cd into date_spot and type the following in your terminal:
+
+```
+$ rails s
+```
+
+Yay! You just turned on the server for this project! This won't do us much good though as you won't be able to see anything. Time to fire up the front end.
+
+Follow these steps to run tests in the front end:
+
+1) In the root of the project, cd into datespot-react and type the following in your terminal:
+
+```
+$ npm start
+```
+
+Great! So now you have both the backend and frontend working! Now feel free to play around with the application on localhost 4000.
 
 ## Planning
 
-Something to add for the planning?
+The planning of this application started out with a brainstorming session where we laid out all of our ideas. The group had many interesting ideas which we discussed in depth:
+
+![ideas](https://upload.wikimedia.org/wikipedia/commons/5/52/Heart_icon_red_hollow.svg)
+
+In the end, we chose to work on an application we felt could challenge us in many areas, called DateSpot. It is an date curator which will get rid of the stress of thinking of a location or what you should do on a date.
+
+![dateSpotBrainStorm](https://upload.wikimedia.org/wikipedia/commons/5/52/Heart_icon_red_hollow.svg)
+
+For our MVP we decided to keep it as simple as possible. Our MVP would be to simple display a list of curated dating spots on the main page.
+
+![mvp](https://upload.wikimedia.org/wikipedia/commons/5/52/Heart_icon_red_hollow.svg)
 
 ## Tech stack
 
