@@ -1,14 +1,12 @@
 language: ruby
 rvm:
-- 2.6.3
+- 2.71
 cache: bundler
 before_install:
 - cd date_spot
-- - rvm use 2.6.3
 services:
 - postgresql
 before_script:
-- rvm use 2.6.3
 - bundle update --bundler
 - psql -c 'create database date_spot_test;' -U postgres
 - bin/rails db:migrate
