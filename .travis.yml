@@ -10,12 +10,10 @@ services:
   - postgresql
 before_script:
   - bundle update --bundler
+  - psql -c 'create database date_spot_test;' -U postgres
   - bundle exec rake db:create
   - bundle exec rake db:migrate
 
-# - psql -c 'create database date_spot_test;' -U postgres
-
-dist: trusty
 script:
   - bundle exec rspec
 deploy:
