@@ -30,3 +30,5 @@ We're two days into the project so far. Our planning sessions have been great we
 Before the project started, I was excited about working with [Nima](https://github.com/nimzyow), [Artemis](https://github/artemis-p), [Neha](https://github.com/sgneha) and [Rafa](https://github.com/rafahg). The last two days have proved that excitment was not misplaced and I'm very much looking forward the days ahead.
 
 **by [Gareth](https://github.com/gdharris1000)**
+
+.
