@@ -3,6 +3,8 @@ rvm:
 - 2.6.3
 before_install:
 - cd date_spot
+- rvm use 2.6.3
+
 services:
 - postgresql
 before_script:
