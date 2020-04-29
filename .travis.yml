@@ -1,18 +1,14 @@
 language: ruby
+dist: trusty
 rvm:
-  - 2.7.1
-cache: bundler
+  - 2.6.3
 before_install:
   - cd date_spot
-addons:
-  postgresql: "12.2"
 services:
   - postgresql
 before_script:
-  - bundle update --bundler
   - bundle exec rake db:create
   - bundle exec rake db:migrate
-
 script:
   - bundle exec rspec
 deploy:
