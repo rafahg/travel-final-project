@@ -91,15 +91,17 @@ Great! So now you have both the backend and frontend working! Now feel free to p
 
 The planning of this application started out with a brainstorming session where we laid out all of our ideas. The group had many interesting ideas which we discussed in depth:
 
-![ideas](https://upload.wikimedia.org/wikipedia/commons/5/52/Heart_icon_red_hollow.svg)
+![ideas](https://raw.githubusercontent.com/rafahg/travel-final-project/master/images/ideas.png)
 
 In the end, we chose to work on an application we felt could challenge us in many areas, called DateSpot. It is an date curator which will get rid of the stress of thinking of a location or what you should do on a date.
 
-![dateSpotBrainStorm](https://upload.wikimedia.org/wikipedia/commons/5/52/Heart_icon_red_hollow.svg)
+![dateSpotBrainStorm](https://raw.githubusercontent.com/rafahg/travel-final-project/master/images/dateSpotBrainStorm.png)
 
 For our MVP we decided to keep it as simple as possible. Our MVP would be to simple display a list of curated dating spots on the main page.
 
-![mvp](https://upload.wikimedia.org/wikipedia/commons/5/52/Heart_icon_red_hollow.svg)
+![mvp](https://raw.githubusercontent.com/rafahg/travel-final-project/master/images/mvp.png)
+
+In the coming days we will flesh out the next stages and create a desired feature list
 
 ## Tech stack
 
