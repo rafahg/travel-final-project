@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import SpotContext from "../../context/spot/SpotContext";
+import SpotItem from "./SpotItem";
 
-const Header = () => {
+const Spot = () => {
   const spotContext = useContext(SpotContext);
 
   const { spots, something } = spotContext;
@@ -9,10 +10,12 @@ const Header = () => {
   return (
     <div>
       {spots.map((spot) => (
-        <h3>{spot.title}</h3>
+        <div>
+          <SpotItem title={spot.title} />
+        </div>
       ))}
     </div>
   );
 };
 
-export default Header;
+export default Spot;
