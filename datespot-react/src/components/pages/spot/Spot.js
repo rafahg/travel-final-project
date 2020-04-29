@@ -3,12 +3,13 @@ import SpotContext from "../../../context/spot/SpotContext";
 import { CardColumns } from "react-bootstrap";
 import SpotItem from "../../spot/SpotItem";
 import SpotItemHeader from "../../spot/SpotItemHeader";
+import SpotFiltered from "../../spot/SpotFiltered";
 import "./Spot.css";
 
 const Spot = () => {
   const spotContext = useContext(SpotContext);
 
-  const { spots } = spotContext;
+  const { spots, filtered } = spotContext;
 
   // const organiseCards = () => {
   //   let cards_in_group = [];
@@ -89,16 +90,28 @@ const Spot = () => {
       >
         <SpotItemHeader />
       </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <SpotFiltered />
+      </div>
 
       <CardColumns style={{ marginTop: "20px" }}>
-        {spots.map((spot) => (
-          <SpotItem
-            key={spot.id}
-            title={spot.title}
-            description={spot.description}
-            image={spot.image}
-          />
-        ))}
+        {filtered !== null
+          ? filtered.map((spot) => (
+              <SpotItem
+                key={spot.id}
+                title={spot.title}
+                description={spot.description}
+                image={spot.image}
+              />
+            ))
+          : spots.map((spot) => (
+              <SpotItem
+                key={spot.id}
+                title={spot.title}
+                description={spot.description}
+                image={spot.image}
+              />
+            ))}
       </CardColumns>
     </Fragment>
   );

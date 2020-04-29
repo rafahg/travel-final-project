@@ -64,11 +64,18 @@ const SpotState = (props) => {
     dispatch({ type: Types.FILTER_SPOTS, payload: text });
   };
 
+  //clear filter
+  const clearFilter = () => {
+    dispatch({ type: Types.CLEAR_FILTER });
+  };
+
   return (
     <SpotContext.Provider
       value={{
         spots: state.spots,
         filtered: state.filtered,
+        filterSpots,
+        clearFilter,
       }}
     >
       {props.children}
