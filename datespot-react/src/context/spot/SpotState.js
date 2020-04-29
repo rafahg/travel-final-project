@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import SpotContext from "./SpotContext";
 import SpotReducer from "./SpotReducer";
+import * as Types from "../Types";
 
 const SpotState = (props) => {
   const initialState = {
@@ -20,19 +21,54 @@ const SpotState = (props) => {
       {
         id: 3,
         title: "beauty and brains",
-        description: "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
+        description:
+          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
         image: "/assets/images/sciencemuseum.jpeg",
       },
-      
+      {
+        id: 4,
+        title: "beauty and brains",
+        description:
+          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
+        image: "/assets/images/sciencemuseum.jpeg",
+      },
+      {
+        id: 5,
+        title: "beauty and brains",
+        description:
+          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
+        image: "/assets/images/sciencemuseum.jpeg",
+      },
+      {
+        id: 6,
+        title: "beauty and brains",
+        description:
+          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
+        image: "/assets/images/sciencemuseum.jpeg",
+      },
+      {
+        id: 7,
+        title: "beauty and brains",
+        description:
+          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
+        image: "/assets/images/sciencemuseum.jpeg",
+      },
     ],
+    filtered: null,
   };
 
   const [state, dispatch] = useReducer(SpotReducer, initialState);
+
+  //filter client
+  const filterSpots = (text) => {
+    dispatch({ type: Types.FILTER_SPOTS, payload: text });
+  };
 
   return (
     <SpotContext.Provider
       value={{
         spots: state.spots,
+        filtered: state.filtered,
       }}
     >
       {props.children}
