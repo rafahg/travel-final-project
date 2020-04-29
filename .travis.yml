@@ -9,6 +9,7 @@ services:
 before_script:
 - bundle update --bundler
 - psql -c 'create database date_spot_test;' -U postgres
+- bin/rails db:create
 - bin/rails db:migrate
 script:
 - bundle exec rspec
