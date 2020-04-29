@@ -15,7 +15,7 @@ So you're in a relationship, or perhaps you matched in an online dating app. Tha
 
 ## Installation
 
-Instructions to install dependencies
+Instructions to install dependencies..
 
 ## Testing
 
