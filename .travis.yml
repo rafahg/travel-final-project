@@ -3,11 +3,10 @@ rvm:
 - 2.6.3
 before_install:
 - cd date_spot
-- rvm use 2.6.3
-
 services:
 - postgresql
 before_script:
+- gem install bundler:2.1.4
 - bundle update --bundler
 - psql -c 'create database pgapp_test;' -U postgres
 - bin/rails db:migrate
