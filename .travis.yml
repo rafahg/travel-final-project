@@ -1,6 +1,8 @@
 language: ruby
 rvm:
 - 2.6.3
+before_install:
+- cd date_spot
 services:
 - postgresql
 before_script:
