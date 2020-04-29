@@ -1,7 +1,7 @@
 language: ruby
 dist: trusty
 rvm:
-  - 2.7.1
+  - 2.6.3
 before_install:
   - cd date_spot
 services:
