@@ -25,4 +25,4 @@ deploy:
   app: date-spot-final
   on:
     repo: rafahg/travel-final-project 
-    all_branches: true
+
