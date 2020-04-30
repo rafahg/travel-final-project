@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @spot.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @spot.description %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @spot.location %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @spot.url %>
+</p>
+
+<p>
+  <strong>Avg cost:</strong>
+  <%= @spot.avg_cost %>
+</p>
+
+<%= link_to 'Edit', edit_spot_path(@spot) %> |
+<%= link_to 'Back', spots_path %>
