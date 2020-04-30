@@ -1,12 +1,12 @@
 language: ruby
-cache: bundler
+
 rvm:
 - 2.6.3
 before_install:
 - cd date_spot-rails
 - export GEM_HOME=$PWD/vendor/bundle/ruby/2.6.3
 - gem install bundler
-
+cache: bundler
 services:
 - postgresql
 before_script:
@@ -23,4 +23,5 @@ deploy:
    - "rake db:seed"
   app: date-spot-final
   on:
+    all_branches: true
     repo: rafahg/travel-final-project
