@@ -1,20 +1,21 @@
 language: ruby
 rvm:
-2.6.3
+- 2.6.3
 before_install:
+- export GEM_HOME=$PWD/vendor/bundle/ruby/2.6.3
+- gem install bundler
 - cd date_spot-rails
 services:
 - postgresql
 before_script:
-- bundle update --bundler
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 script:
 - bundle exec rspec
 deploy:
-provider: heroku
-api_key:
-secure: jSzDAld3Ook1TyBg3nP2geVOSJFsAfeppxRVSUd2rvpgEHi2rx4+DTG4rw1G702NlAHNRmQat4jzhM2Nu5PC8wwT3xQ1jQa/WMqlrdjEfGvPjUcGmAzYuhoGLhbgkBqO8TlyB7KzVKs8yeABPQFbO63pH0BidOAfEx3nPo5jGCZ6p11/D84p16/4I0ZivOO5FBFedD0UJwpQbo9ofdDA0MXyxLJhaykGOBnac/IfTghWIzDn/F18nD721l70vKfRKr3t/2Blm/lqms/WL/38jU08DXRmloqYd8RNCsAU2H1wl9S95YCF5NYsRBqTJ4O70dxlPDCpSSGd2WuWpppodQ40eXnAD8yJnVeHldAA+rvUWuUMAJU5G/PQHK2p0iiA6sq4UHO6qYaYZjmYpQvsHHrnjilyDFL3bwm/iyl09KzecRn6P15K+3Pu1TsK7uJ3qXSQ0JMh9nBw/Uh+FRRC98uPVOscNDnWJIQazFRYKcLLFcta4UuBxap1vuHjXG7ZeifZaMqzR2DgEEhFYsLrPdwvX33Xc8zV+a2LmNGXOo80JP1wQQAw6d2GrdcVK2//WXT8r9m0PKCz0BfJ8EbYB61YZwLwIv2Mu30OsIkE3I1wS6L9xGlCcTi5UdPbCW6uI1gz6urPHQTQYTHWC5NNJtuqqUhGJaiGQ5zZCMyJ/sQ= 
-app: date-spot-final
-on:
-repo: rafahg/travel-final-project
+  provider: heroku
+  api_key:
+    secure: jSzDAld3Ook1TyBg3nP2geVOSJFsAfeppxRVSUd2rvpgEHi2rx4+DTG4rw1G702NlAHNRmQat4jzhM2Nu5PC8wwT3xQ1jQa/WMqlrdjEfGvPjUcGmAzYuhoGLhbgkBqO8TlyB7KzVKs8yeABPQFbO63pH0BidOAfEx3nPo5jGCZ6p11/D84p16/4I0ZivOO5FBFedD0UJwpQbo9ofdDA0MXyxLJhaykGOBnac/IfTghWIzDn/F18nD721l70vKfRKr3t/2Blm/lqms/WL/38jU08DXRmloqYd8RNCsAU2H1wl9S95YCF5NYsRBqTJ4O70dxlPDCpSSGd2WuWpppodQ40eXnAD8yJnVeHldAA+rvUWuUMAJU5G/PQHK2p0iiA6sq4UHO6qYaYZjmYpQvsHHrnjilyDFL3bwm/iyl09KzecRn6P15K+3Pu1TsK7uJ3qXSQ0JMh9nBw/Uh+FRRC98uPVOscNDnWJIQazFRYKcLLFcta4UuBxap1vuHjXG7ZeifZaMqzR2DgEEhFYsLrPdwvX33Xc8zV+a2LmNGXOo80JP1wQQAw6d2GrdcVK2//WXT8r9m0PKCz0BfJ8EbYB61YZwLwIv2Mu30OsIkE3I1wS6L9xGlCcTi5UdPbCW6uI1gz6urPHQTQYTHWC5NNJtuqqUhGJaiGQ5zZCMyJ/sQ= 
+  app: date-spot-final
+  on:
+    repo: rafahg/travel-final-project

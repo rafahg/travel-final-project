@@ -1,4 +1,4 @@
-# DateSpot Blog
+# DateSpot Blog.
 
 
 ## Tuesday 28th April 
