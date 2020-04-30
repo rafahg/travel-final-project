@@ -1,5 +1,4 @@
 language: ruby
-
 rvm:
 - 2.6.3
 before_install:
@@ -17,13 +16,11 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: sI2W7ru3wwz3oCvWva774sQ0c23ZV8MqFN8O98s38oX/FYUGCLOZ54nQmkMN7ILCFA76+At5iPMZAcxOg/OhQA79dl8xvNldVSaoj59jJ8Fm1teOHvhtinWutgH3Liw6P8slkER9kE3T9y+sALAYBQc66rzk5ODm4IaYO8PJ//A7b0lMRLNiEgz0pNc7si08BWfb/AfpnpRwGcerroUVWGgD4FCLiJAKzNaNu56tMEFvaidTWIrEwiW6TPxYLRXu5CjE8SPgQY3J/M8HMdrSLfBOXvzlNNVR4cfziqmp3rMoW/blbWwtPXDRwFXGLzq1Q0Qfd4YihlhwNRRqy7GFoYPbz8xfaVWX3+ooiOg70TRjfwyygXPa1AwTxF7jCDWFowUhdskO0ScAmkpBEK1ZqfDdtYQNvhWDVDTbWBmD0JBakQGSrND+TDK21Z5V8C4Zr6pOiXMO+470vP2SsbC6uuDOq9lRj3UcIN+7YO6tJ/3BalseCMIVQxvu+yTCDHzYD9CwaZem3SshRrcFgxw+Nzffjsyniq7d6VAo8JLDVpXWFoUTTQsS+vzp1DKAoNb3npmQw8hbbaGuMOlNZtvjiVbf/sl5lDa6R9Fa7cBTUgF2N4uw52/MGHu8uhMZwmfisxGgUV9uAxPqf68olhQ8BdSoRHKN7Bk9SC5AAjxvT+8=
-    
-  run: 
-   - "rake db:migrate"
-   - "rake db:seed"
+    secure: wzUvXUUN5cvY8Xp32lN6xCh2lHIeJrz0NtU49ZXG6OapzzharNZC4mwtvr4Pox33qyB/4rxfYkUG7njfVY1XlDCoPoJFJtU9ZGu/HDTA6BAhOIkh3cry+NwZVPCpeu5iGWu3j8F6UQ8Zeer5BhboRAfhl2as92vEJjr8RvtcpXXEMUYWd++JPnYisrS4R4UbqZb6sbE1+kKTuLGblXOsSD3hDslJSRY/1nJr7U5PUkzvCtoeFXgr9ZuYRu2yvDkY4etCXF+k/3EPIxnjz0LE+TYn3W5ExLjlEIo3hvrbbjtgkJHdfBKsGgwhoIS+0XeVkB+dHCwrNp7YCQrr65Sxq5e+Oz5Z6ItcA8BwiU6KEDspF0WV/eprC50ixcEfFLoZxp1lU4SvqSrQuahzrFNR2zNrJlqV64GpmeNfDUFOveuAKXfYX2qlhaDqjuaT5ZMLQIeWmZ3EQSLIQGhCySvoq9d9lHeif8uxyPfdplOk3e9yLxmXt2zsw11uMsP0fIyCc1Ekht3/MPgPA+T46hEPf5vaM45nIw2Ov32xQRbfJSmoZkamdGCXWuCXIkX3z8bBIn6j/Q8JW9SCqY8nVnVR6SPaBI6sNIF9hg5K0F9Z9MByKlV6zh1UiK5Ysbz2niTp0VkAiemNXhISQgia6sHJtyE7HjKglJUtCbPxByWJBZA=
+  run:
+  - rake db:migrate
+  - rake db:seed
   app: date-spot-final
   on:
-    repo: rafahg/travel-final-project 
+    repo: rafahg/travel-final-project
     branch: heroku-rafa
-
