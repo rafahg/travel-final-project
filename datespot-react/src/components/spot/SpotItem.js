@@ -4,7 +4,7 @@ import "./SpotItem.css";
 import littlevenice from "../../assets/images/littlevenice.jpeg";
 import { Link } from "react-router-dom";
 
-const SpotItem = ({ title, description, image }) => {
+const SpotItem = ({ title, description, image, lat, lon }) => {
   return (
     <Card>
       <Card.Img variant="top" src={littlevenice} />
@@ -20,6 +20,8 @@ const SpotItem = ({ title, description, image }) => {
                   title: title,
                   description: description,
                   image: image,
+                  lat: lat,
+                  lon: lon,
                 },
               }}
               className="link"
