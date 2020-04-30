@@ -5,8 +5,10 @@ const SpotDetails = (props) => {
   return (
     <Jumbotron fluid data-test="spot-details-container">
       <Container>
-        <h1>{props.location.aboutProps.title}</h1>
-        <p>{props.location.aboutProps.description}</p>
+        <h1 data-test="text-container">{props.location.aboutProps.title}</h1>
+        <p data-test="description-container">
+          {props.location.aboutProps.description}
+        </p>
       </Container>
     </Jumbotron>
   );

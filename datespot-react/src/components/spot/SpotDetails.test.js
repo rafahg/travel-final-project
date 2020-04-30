@@ -8,7 +8,8 @@ describe("SpotDetails.js", () => {
   let defaultProps = {
     location: {
       aboutProps: {
-        title: "nima",
+        title: "great location",
+        description: "turned on by the sciences",
       },
     },
   };
@@ -25,6 +26,25 @@ describe("SpotDetails.js", () => {
         "spot-details-container"
       );
       expect(spotDetailsContainer.length).toBe(1);
+    });
+  });
+  describe("display", () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = setup();
+    });
+    test("correct title", () => {
+      const titleContainer = findTestByAttr(wrapper, "text-container");
+      expect(titleContainer.text()).toContain("great location");
+    });
+    test("description displays correctly", () => {
+      const descriptionContainer = findTestByAttr(
+        wrapper,
+        "description-container"
+      );
+      expect(descriptionContainer.text()).toContain(
+        "turned on by the sciences"
+      );
     });
   });
 });

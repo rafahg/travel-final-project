@@ -21,7 +21,7 @@ const SpotFiltered = () => {
   };
 
   return (
-    <form>
+    <form data-test="filter-container">
       <input
         ref={text}
         type="text"
