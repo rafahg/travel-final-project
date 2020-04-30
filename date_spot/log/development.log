@@ -1,0 +1,71 @@
+  [1m[35m (646.0ms)[0m  [1m[35mCREATE DATABASE "date_spot_development" ENCODING = 'unicode'[0m
+  [1m[35m (293.8ms)[0m  [1m[35mCREATE DATABASE "date_spot_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7234395099457793820)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSpots (20200428132552)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "spots" ("id" bigserial primary key, "title" character varying, "description" character varying, "location" character varying, "url" character varying, "average_cost" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200428132552"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-28 13:29:10.337742"], ["updated_at", "2020-04-28 13:29:10.337742"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7234395099457793820)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSpot Create (1.5ms)[0m  [1m[32mINSERT INTO "spots" ("title", "description", "location", "url", "average_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "sunny place"], ["description", "super sunny"], ["location", "london"], ["url", "www.google.com"], ["average_cost", "3"], ["created_at", "2020-04-28 13:36:09.152763"], ["updated_at", "2020-04-28 13:36:09.152763"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/spots" for ::1 at 2020-04-28 14:36:25 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/student/Desktop/Makers/Projects/Final_project/travel-final-project/date_spot/app/controllers/api/v1/spots_controller.rb:66: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/v1/spots_controller.rb:66: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/spots_controller.rb:66: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/spots_controller.rb:66: syntax error, unexpected end, expecting end-of-input
+Started GET "/api/v1/spots" for ::1 at 2020-04-28 14:37:17 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (65.1ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:9:in `index'
+Completed 200 OK in 194ms (Views: 33.6ms | ActiveRecord: 155.7ms | Allocations: 6967)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7234395099457793820)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTags (20200428135849)
+  [1m[35m (12.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "tag" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (20.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200428135849"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7234395099457793820)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7234395099457793820)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (23.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7234395099457793820)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7234395099457793820)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddTagsToSpots (20200429100434)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "tags_spots" ("tag_id" bigint, "spot_id" bigint)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE  INDEX  "index_tags_spots_on_tag_id" ON "tags_spots"  ("tag_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_tags_spots_on_spot_id" ON "tags_spots"  ("spot_id")[0m
+  [1m[36mprimary::SchemaMigration Create (4.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200429100434"]]
+  [1m[35m (23.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (22.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7234395099457793820)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-04-30 08:38:10 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.6.3/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/student/.rvm/gems/ruby-2.6.3/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 71.3ms | Allocations: 313)
+Completed 200 OK in 146ms (Views: 91.5ms | ActiveRecord: 0.0ms | Allocations: 1805)
+
+
