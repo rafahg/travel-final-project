@@ -18,10 +18,10 @@ deploy:
   provider: heroku
   api_key:
     secure: sI2W7ru3wwz3oCvWva774sQ0c23ZV8MqFN8O98s38oX/FYUGCLOZ54nQmkMN7ILCFA76+At5iPMZAcxOg/OhQA79dl8xvNldVSaoj59jJ8Fm1teOHvhtinWutgH3Liw6P8slkER9kE3T9y+sALAYBQc66rzk5ODm4IaYO8PJ//A7b0lMRLNiEgz0pNc7si08BWfb/AfpnpRwGcerroUVWGgD4FCLiJAKzNaNu56tMEFvaidTWIrEwiW6TPxYLRXu5CjE8SPgQY3J/M8HMdrSLfBOXvzlNNVR4cfziqmp3rMoW/blbWwtPXDRwFXGLzq1Q0Qfd4YihlhwNRRqy7GFoYPbz8xfaVWX3+ooiOg70TRjfwyygXPa1AwTxF7jCDWFowUhdskO0ScAmkpBEK1ZqfDdtYQNvhWDVDTbWBmD0JBakQGSrND+TDK21Z5V8C4Zr6pOiXMO+470vP2SsbC6uuDOq9lRj3UcIN+7YO6tJ/3BalseCMIVQxvu+yTCDHzYD9CwaZem3SshRrcFgxw+Nzffjsyniq7d6VAo8JLDVpXWFoUTTQsS+vzp1DKAoNb3npmQw8hbbaGuMOlNZtvjiVbf/sl5lDa6R9Fa7cBTUgF2N4uw52/MGHu8uhMZwmfisxGgUV9uAxPqf68olhQ8BdSoRHKN7Bk9SC5AAjxvT+8=
+    
   run: 
    - "rake db:migrate"
    - "rake db:seed"
   app: date-spot-final
   on:
-    all_branches: true
-    repo: rafahg/travel-final-project
+    repo: rafahg/travel-final-project 
