@@ -25,4 +25,5 @@ deploy:
   app: date-spot-final
   on:
     repo: rafahg/travel-final-project 
+    branch: heroku-rafa
 
