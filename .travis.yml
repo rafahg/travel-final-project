@@ -3,7 +3,7 @@ dist: trusty
 rvm:
   - 2.6.3
 before_install:
-  - cd date_spot
+  - cd date_spot-rails
 services:
   - postgresql
 before_script:
