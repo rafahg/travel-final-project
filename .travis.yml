@@ -2,11 +2,13 @@ language: ruby
 
 rvm:
   - 2.6.3
-before_install:
-  - cd date_spot-rails
 services:
   - postgresql
+before_install:
+  - cd date_spot-rails
+
 before_script:
+  - bundle update --bundler
   - bundle exec rake db:create
   - bundle exec rake db:migrate
 script:
