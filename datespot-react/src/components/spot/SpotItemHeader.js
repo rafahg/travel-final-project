@@ -2,7 +2,7 @@ import React from "react";
 
 const SpotItemHeader = () => {
   return (
-    <div>
+    <div data-test="header-container">
       <h2>Date Spots</h2>
     </div>
   );
