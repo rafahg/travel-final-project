@@ -1,59 +1,13 @@
 import React, { useReducer } from "react";
+import axios from 'axios';
 import SpotContext from "./SpotContext";
 import SpotReducer from "./SpotReducer";
 import * as Types from "../Types";
 
 const SpotState = (props) => {
   const initialState = {
-    spots: [
-      {
-        id: 1,
-        title: "romantic evening in my house",
-        description: "a lovely walk down little venice",
-        image: "/src/assets/images/littlevenice.jpeg",
-      },
-      {
-        id: 2,
-        title: "a great sight to behold",
-        description: "a lovely time in London shard",
-        image: "/assets/images/shard.jpeg",
-      },
-      {
-        id: 3,
-        title: "beauty and brains",
-        description:
-          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
-        image: "/assets/images/sciencemuseum.jpeg",
-      },
-      {
-        id: 4,
-        title: "beauty and brains",
-        description:
-          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
-        image: "/assets/images/sciencemuseum.jpeg",
-      },
-      {
-        id: 5,
-        title: "beauty and brains",
-        description:
-          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
-        image: "/assets/images/sciencemuseum.jpeg",
-      },
-      {
-        id: 6,
-        title: "beauty and brains",
-        description:
-          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
-        image: "/assets/images/sciencemuseum.jpeg",
-      },
-      {
-        id: 7,
-        title: "beauty and brains",
-        description:
-          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
-        image: "/assets/images/sciencemuseum.jpeg",
-      },
-    ],
+    spots: null,
+    error: null,
     filtered: null,
   };
 
@@ -69,6 +23,21 @@ const SpotState = (props) => {
     dispatch({ type: Types.CLEAR_FILTER });
   };
 
+  const getSpots = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/api/v1/spots");
+      dispatch({
+        type: Types.GET_SPOTS,
+        payload: res.data
+      });
+    } catch (err) {
+      dispatch({
+        type: Types.SPOTS_ERROR,
+        payload: err
+      });
+    }
+  };
+
   return (
     <SpotContext.Provider
       value={{
@@ -76,6 +45,7 @@ const SpotState = (props) => {
         filtered: state.filtered,
         filterSpots,
         clearFilter,
+        getSpots,
       }}
     >
       {props.children}
