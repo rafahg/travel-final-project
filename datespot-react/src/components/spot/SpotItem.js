@@ -1,27 +1,35 @@
 import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import "./SpotItem.css";
+import littlevenice from "../../assets/images/littlevenice.jpeg";
+import { Link } from "react-router-dom";
 
-const SpotItem = ({ title }) => {
+const SpotItem = ({ title, description, image }) => {
   return (
-    <Container>
-      <Row>
-        <Col sm={5} className="spotContainer">
-          <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-            <div
-              style={{
-                border: "1px solid black",
-                width: "200px",
-                height: "162px",
+    <Card>
+      <Card.Img variant="top" src={littlevenice} />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{description}</Card.Text>
+        <div className="spotButton">
+          <Button variant="primary">
+            <Link
+              to={{
+                pathname: "/spotdetails",
+                aboutProps: {
+                  title: title,
+                  description: description,
+                  image: image,
+                },
               }}
+              className="link"
             >
-              something else
-            </div>
-            <div>{title}</div>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+              More information
+            </Link>
+          </Button>
+        </div>
+      </Card.Body>
+    </Card>
   );
 };
 
