@@ -4,6 +4,7 @@ import { CardColumns } from "react-bootstrap";
 import SpotItem from "../../spot/SpotItem";
 import SpotItemHeader from "../../spot/SpotItemHeader";
 import SpotFiltered from "../../spot/SpotFiltered";
+import { Spinner } from "react-bootstrap";
 import "./Spot.css";
 
 const Spot = () => {
@@ -55,7 +56,9 @@ const Spot = () => {
                 ))}
           </CardColumns>
         ) : (
-          <h3>Loading...</h3>
+          <div className="text-center" style={{ marginTop: "300px" }}>
+            <Spinner animation="border" variant="danger" />
+          </div>
         )}
       </div>
     </Fragment>
