@@ -853,3 +853,63 @@ Processing by CommentsController#index as HTML
 Completed 200 OK in 41ms (Views: 32.7ms | ActiveRecord: 5.8ms | Allocations: 4918)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1615105162097765100)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLikes (20200501101046)
+  [1m[35m (16.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "spot_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0e0ffc1af2"
+FOREIGN KEY ("spot_id")
+  REFERENCES "spots" ("id")
+)[0m
+  [1m[35m (27.4ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_spot_id" ON "likes"  ("spot_id")[0m
+  [1m[36mprimary::SchemaMigration Create (10.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200501101046"]]
+  [1m[35m (25.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1615105162097765100)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/likes" for ::1 at 2020-05-01 11:13:07 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LikesController#index as HTML
+  Rendering likes/index.html.erb within layouts/application
+  [1m[36mLike Load (18.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes"[0m
+  ↳ app/views/likes/index.html.erb:14
+  Rendered likes/index.html.erb within layouts/application (Duration: 32.9ms | Allocations: 1369)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 565ms (Views: 498.8ms | ActiveRecord: 19.8ms | Allocations: 27654)
+
+
+Started GET "/likes/new" for ::1 at 2020-05-01 11:13:11 +0100
+Processing by LikesController#new as HTML
+  Rendering likes/new.html.erb within layouts/application
+  Rendered likes/_form.html.erb (Duration: 38.3ms | Allocations: 2397)
+  Rendered likes/new.html.erb within layouts/application (Duration: 44.6ms | Allocations: 2755)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 174ms (Views: 103.7ms | ActiveRecord: 56.6ms | Allocations: 9496)
+
+
+Started POST "/likes" for ::1 at 2020-05-01 11:13:15 +0100
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"/VsbJo4QDk64+jmZrv/5mZAd3dDqJ9IuMO+MhfVVos9Sgp71UhcsIn7ohQrx1BFMXIi1yKEHIl/U/Wu2nx2Yiw==", "like"=>{"spot_id"=>"1"}, "commit"=>"Create Like"}
+  [1m[35m (17.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/likes_controller.rb:30:in `block in create'
+  [1m[36mSpot Load (1.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:30:in `block in create'
+  [1m[36mLike Create (7.1ms)[0m  [1m[32mINSERT INTO "likes" ("spot_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["spot_id", 1], ["created_at", "2020-05-01 10:13:15.460660"], ["updated_at", "2020-05-01 10:13:15.460660"]]
+  ↳ app/controllers/likes_controller.rb:30:in `block in create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/likes_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/likes/1
+Completed 302 Found in 195ms (ActiveRecord: 72.3ms | Allocations: 15798)
+
+
+Started GET "/likes/1" for ::1 at 2020-05-01 11:13:15 +0100
+Processing by LikesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:67:in `set_like'
+  Rendering likes/show.html.erb within layouts/application
+  Rendered likes/show.html.erb within layouts/application (Duration: 5.5ms | Allocations: 242)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 32.7ms | ActiveRecord: 0.5ms | Allocations: 5274)
+
+
