@@ -1113,3 +1113,210 @@ Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 1.8ms | Allocations: 957
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1615105162097765100)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-05-01 15:04:44 +0100
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.2.2) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.2.2) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1615105162097765100)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20200501094934)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (108.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "body" text, "spot_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_b51af0ab9a"
+FOREIGN KEY ("spot_id")
+  REFERENCES "spots" ("id")
+)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_spot_id" ON "comments"  ("spot_id")[0m
+  [1m[36mprimary::SchemaMigration Create (31.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200501094934"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLikes (20200501101046)
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "spot_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0e0ffc1af2"
+FOREIGN KEY ("spot_id")
+  REFERENCES "spots" ("id")
+)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_spot_id" ON "likes"  ("spot_id")[0m
+  [1m[36mprimary::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200501101046"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (25.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1615105162097765100)[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-05-01 15:06:02 +0100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Student/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Student/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 27.2ms | Allocations: 313)
+Completed 200 OK in 73ms (Views: 60.2ms | ActiveRecord: 0.0ms | Allocations: 1727)
+
+
+Started GET "/comments" for ::1 at 2020-05-01 15:06:09 +0100
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (11.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/comments/index.html.erb:15
+  Rendered comments/index.html.erb within layouts/application (Duration: 58.3ms | Allocations: 1350)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/Student/Documents/workspace/final_project/travel-final-project/date_spot-rails/public/packs
+[Webpacker] Hash: 32e57f147dbdcbbf0c82
+Version: webpack 4.43.0
+Time: 3484ms
+Built at: 05/01/2020 15:06:16
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-bbe9c4a129ab949e0636.js    124 KiB  application  [emitted] [immutable]  application
+js/application-bbe9c4a129ab949e0636.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-bbe9c4a129ab949e0636.js js/application-bbe9c4a129ab949e0636.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 7678ms (Views: 7575.5ms | ActiveRecord: 42.4ms | Allocations: 35720)
+
+
+Started GET "/comments/new" for ::1 at 2020-05-01 15:06:18 +0100
+Processing by CommentsController#new as HTML
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/_form.html.erb (Duration: 62.4ms | Allocations: 5148)
+  Rendered comments/new.html.erb within layouts/application (Duration: 65.9ms | Allocations: 5501)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 130ms (Views: 101.5ms | ActiveRecord: 12.1ms | Allocations: 12724)
+
+
+Started POST "/comments" for ::1 at 2020-05-01 15:06:23 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"fq4j6aHnPTEZBiCa+BNuih+9AJUbwh6JGbzkgGJr58wl25agnpZFFzJXwEYXeVcN8cJJe0ZsReOkWsYZoBc1WQ==", "comment"=>{"body"=>"hi", "spot_id"=>"1"}, "commit"=>"Create Comment"}
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:30:in `block in create'
+  [1m[36mSpot Load (2.7ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:30:in `block in create'
+  [1m[35m (3.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:30:in `block in create'
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/_form.html.erb (Duration: 7.1ms | Allocations: 867)
+  Rendered comments/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 953)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 279ms (Views: 73.1ms | ActiveRecord: 86.8ms | Allocations: 16158)
+
+
+Started GET "/comments" for ::1 at 2020-05-01 15:06:27 +0100
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/comments/index.html.erb:15
+  Rendered comments/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 644)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 55ms (Views: 49.0ms | ActiveRecord: 2.1ms | Allocations: 4752)
+
+
+Started GET "/likes" for ::1 at 2020-05-01 15:06:34 +0100
+Processing by LikesController#index as HTML
+  Rendering likes/index.html.erb within layouts/application
+  [1m[36mLike Load (49.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes"[0m
+  ↳ app/views/likes/index.html.erb:14
+  Rendered likes/index.html.erb within layouts/application (Duration: 101.4ms | Allocations: 1131)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 158ms (Views: 60.6ms | ActiveRecord: 90.6ms | Allocations: 6292)
+
+
+Started GET "/likes/new" for ::1 at 2020-05-01 15:06:35 +0100
+Processing by LikesController#new as HTML
+  Rendering likes/new.html.erb within layouts/application
+  Rendered likes/_form.html.erb (Duration: 5.9ms | Allocations: 909)
+  Rendered likes/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1254)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 138ms (Views: 51.2ms | ActiveRecord: 40.6ms | Allocations: 7599)
+
+
+Started POST "/likes" for ::1 at 2020-05-01 15:06:38 +0100
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"PlFm0sVUUh1QjbSmOBrw3ZZ0T9OMJdv30XCv+6vMhRD79wcDpQ+wX4mMVMCcJnXNz7ipEibbq/VTQuZ9z+7xHg==", "like"=>{"spot_id"=>"1"}, "commit"=>"Create Like"}
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/likes_controller.rb:30:in `block in create'
+  [1m[36mSpot Load (1.6ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:30:in `block in create'
+  [1m[35m (24.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/likes_controller.rb:30:in `block in create'
+  Rendering likes/new.html.erb within layouts/application
+  Rendered likes/_form.html.erb (Duration: 4.6ms | Allocations: 661)
+  Rendered likes/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 92ms (Views: 42.2ms | ActiveRecord: 30.2ms | Allocations: 8690)
+
+
+Started GET "/likes" for ::1 at 2020-05-01 15:06:40 +0100
+Processing by LikesController#index as HTML
+  Rendering likes/index.html.erb within layouts/application
+  [1m[36mLike Load (8.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes"[0m
+  ↳ app/views/likes/index.html.erb:14
+  Rendered likes/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 632)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 23.7ms | ActiveRecord: 8.2ms | Allocations: 4728)
+
+
+Started GET "/" for ::1 at 2020-05-01 15:06:43 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Student/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Student/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 25.2ms | Allocations: 190)
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 898)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 15:06:49 +0100
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mTag Load (4.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 64ms (Views: 5.9ms | ActiveRecord: 43.0ms | Allocations: 3014)
+
+
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 15:06:53 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (1.9ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 1.9ms | Allocations: 1070)
+
+
