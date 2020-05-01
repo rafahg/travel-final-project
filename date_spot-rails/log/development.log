@@ -1,0 +1,156 @@
+  [1m[35m (416.1ms)[0m  [1m[35mCREATE DATABASE "date_spot_rails_development" ENCODING = 'unicode'[0m
+  [1m[35m (354.9ms)[0m  [1m[35mCREATE DATABASE "date_spot_rails_test" ENCODING = 'unicode'[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (42.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1615105162097765100)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSpots (20200430093258)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (44.8ms)[0m  [1m[35mCREATE TABLE "spots" ("id" bigserial primary key, "title" character varying, "description" text, "location" character varying, "url" character varying, "avg_cost" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200430093258"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTags (20200430094629)
+  [1m[35m (39.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "tag" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200430094629"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTagsToSpots (20200430100405)
+  [1m[35m (39.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "tags_spots" ("tag_id" bigint, "spot_id" bigint)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_tags_spots_on_tag_id" ON "tags_spots"  ("tag_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_tags_spots_on_spot_id" ON "tags_spots"  ("spot_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200430100405"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDetailsToSpots (20200430124424)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (82.9ms)[0m  [1m[35mALTER TABLE "spots" ADD "latitude" character varying[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "spots" ADD "longitude" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200430124424"]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-30 14:21:40.721310"], ["updated_at", "2020-04-30 14:21:40.721310"]]
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1615105162097765100)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:23:06 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (0.6ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 34ms (Views: 3.2ms | ActiveRecord: 3.2ms | Allocations: 5466)
+
+
+Started GET "/api/v1/tags" for 127.0.0.1 at 2020-04-30 15:24:22 +0100
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mTag Load (6.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 26ms (Views: 5.6ms | ActiveRecord: 8.0ms | Allocations: 2995)
+
+
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSpot Create (0.9ms)[0m  [1m[32mINSERT INTO "spots" ("title", "description", "location", "url", "avg_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "sunny place"], ["description", "super sunny"], ["location", "london"], ["url", "www.google.com"], ["avg_cost", "3"], ["created_at", "2020-04-30 14:26:28.838594"], ["updated_at", "2020-04-30 14:26:28.838594"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Create (0.6ms)[0m  [1m[32mINSERT INTO "tags" ("tag", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tag", "romantic"], ["created_at", "2020-04-30 14:26:28.852512"], ["updated_at", "2020-04-30 14:26:28.852512"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/tags" for 127.0.0.1 at 2020-04-30 15:26:35 +0100
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mTag Load (40.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 58ms (Views: 12.7ms | ActiveRecord: 44.1ms | Allocations: 3401)
+
+
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:26:43 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (0.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 2.3ms | Allocations: 6796)
+
+
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:29:56 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 1077)
+
+
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:30:03 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (0.5ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 1077)
+
+
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:30:08 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (1.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.3ms | Allocations: 1080)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSpot Create (0.9ms)[0m  [1m[32mINSERT INTO "spots" ("title", "description", "location", "url", "avg_cost", "created_at", "updated_at", "latitude", "longitude") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "romantic evening in my house"], ["description", "a lovely walk down little venice"], ["location", "little venice, london"], ["url", "https://cdn.londonandpartners.com/asset/819f66aac606c1ef23220825a910f63c.jpg"], ["avg_cost", "3"], ["created_at", "2020-04-30 14:30:08.888126"], ["updated_at", "2020-04-30 14:30:08.888126"], ["latitude", "51.5245129"], ["longitude", "-0.1866869"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("tag", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tag", "romantic"], ["created_at", "2020-04-30 14:30:08.910946"], ["updated_at", "2020-04-30 14:30:08.910946"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:30:30 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (4.1ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 4.1ms | Allocations: 1252)
+
+
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mSpot Load (0.5ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY "spots"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSpot Update (3.1ms)[0m  [1m[33mUPDATE "spots" SET "updated_at" = $1, "latitude" = $2, "longitude" = $3 WHERE "spots"."id" = $4[0m  [["updated_at", "2020-04-30 14:33:34.306282"], ["latitude", "51.530021"], ["longitude", "-0.1596534"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:33:41 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (0.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1264)
+
+
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:49:32 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (2.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 2.4ms | Allocations: 1316)
+
+
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:49:35 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (0.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 1260)
+
+
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:49:44 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (1.9ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 1.9ms | Allocations: 1243)
+
+
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:50:54 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (0.5ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 1243)
+
+
+Started GET "/api/v1/spots" for 127.0.0.1 at 2020-04-30 15:50:58 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (0.5ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.5ms | Allocations: 1243)
+
+
