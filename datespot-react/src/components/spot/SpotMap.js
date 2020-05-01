@@ -14,9 +14,9 @@ const SpotMap = (props) => {
           google={props.google}
           zoom={15}
           style={mapStyles}
-          initialCenter={{ lat: props.lat, lng: props.lon}}
+          initialCenter={{ lat: props.latitude, lng: props.longitude}}
         >
-        <Marker position={{ lat: props.lat, lng: props.lon}} />
+        <Marker position={{ lat: props.latitude, lng: props.longitude}} />
         </Map>
     );
 }

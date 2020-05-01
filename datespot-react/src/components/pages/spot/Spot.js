@@ -36,6 +36,8 @@ const Spot = () => {
                     title={spot.title}
                     description={spot.description}
                     image={spot.image}
+                    latitude={spot.latitude}
+                    longitude={spot.longitude}
                   />
                 ))
               : spots.map((spot) => (
@@ -44,6 +46,8 @@ const Spot = () => {
                     title={spot.title}
                     description={spot.description}
                     image={spot.image}
+                    latitude={spot.latitude}
+                    longitude={spot.longitude}
                   />
                 ))}
           </CardColumns>
