@@ -34,8 +34,10 @@ const Spot = () => {
                   <SpotItem
                     key={spot.id}
                     title={spot.title}
+                    location={spot.location}
                     description={spot.description}
-                    image={spot.image}
+                    ave_cost={spot.ave_cost}
+                    url={spot.url}
                     latitude={spot.latitude}
                     longitude={spot.longitude}
                   />
@@ -44,8 +46,10 @@ const Spot = () => {
                   <SpotItem
                     key={spot.id}
                     title={spot.title}
+                    location={spot.location}
                     description={spot.description}
-                    image={spot.image}
+                    ave_cost={spot.ave_cost}
+                    url={spot.url}
                     latitude={spot.latitude}
                     longitude={spot.longitude}
                   />
