@@ -1,14 +1,14 @@
-require 'rails_helper'
+# require 'spec_helper'
 
-RSpec.describe "likes/show", type: :view do
-  before(:each) do
-    @like = assign(:like, Like.create!(
-      :spot => nil
-    ))
-  end
+# RSpec.describe "likes/show", type: :view do
+#   before(:each) do
+#     @like = assign(:like, Like.create!(
+#       :spot => nil
+#     ))
+#   end
 
-  it "renders attributes in <p>" do
-    render
-    expect(rendered).to match(//)
-  end
-end
+#   it "renders attributes in <p>" do
+#     render
+#     expect(rendered).to match(//)
+#   end
+# end
