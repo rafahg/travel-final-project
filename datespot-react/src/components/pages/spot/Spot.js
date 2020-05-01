@@ -4,11 +4,11 @@ import { CardColumns } from "react-bootstrap";
 import SpotItem from "../../spot/SpotItem";
 import SpotItemHeader from "../../spot/SpotItemHeader";
 import SpotFiltered from "../../spot/SpotFiltered";
+import { Spinner } from "react-bootstrap";
 import "./Spot.css";
 
 const Spot = () => {
   const spotContext = useContext(SpotContext);
-
   const { spots, filtered, getSpots } = spotContext;
 
   useEffect(() => {
@@ -34,8 +34,10 @@ const Spot = () => {
                   <SpotItem
                     key={spot.id}
                     title={spot.title}
+                    location={spot.location}
                     description={spot.description}
-                    image={spot.image}
+                    ave_cost={spot.ave_cost}
+                    url={spot.url}
                     latitude={spot.latitude}
                     longitude={spot.longitude}
                   />
@@ -44,16 +46,21 @@ const Spot = () => {
                   <SpotItem
                     key={spot.id}
                     title={spot.title}
+                    location={spot.location}
                     description={spot.description}
-                    image={spot.image}
+                    ave_cost={spot.ave_cost}
+                    url={spot.url}
                     latitude={spot.latitude}
                     longitude={spot.longitude}
                   />
                 ))}
           </CardColumns>
-        ): <h3>Loading...</h3>}
+        ) : (
+          <div className="text-center" style={{ marginTop: "300px" }}>
+            <Spinner animation="border" variant="danger" />
+          </div>
+        )}
       </div>
-
     </Fragment>
   );
 };

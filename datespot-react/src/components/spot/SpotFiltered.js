@@ -1,5 +1,6 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext, useRef, useEffect, Fragment } from "react";
 import SpotContext from "../../context/spot/SpotContext";
+import SpotTags from "./SpotTags";
 
 const SpotFiltered = () => {
   const spotContext = useContext(SpotContext);
@@ -21,15 +22,18 @@ const SpotFiltered = () => {
   };
 
   return (
-    <form data-test="filter-container">
-      <input
-        ref={text}
-        type="text"
-        placeholder="Filter spots..."
-        onChange={onChange}
-        style={{ width: "400px" }}
-      />
-    </form>
+    <div>
+      <form data-test="filter-container">
+        <input
+          ref={text}
+          type="text"
+          placeholder="Filter spots..."
+          onChange={onChange}
+          style={{ width: "400px" }}
+        />
+      </form>
+      <SpotTags />
+    </div>
   );
 };
 
