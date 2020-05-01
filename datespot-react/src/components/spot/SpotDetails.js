@@ -17,8 +17,8 @@ const SpotDetails = (props) => {
                     </p>
                 </Container>
             </Jumbotron>
-            <SpotMap lon = {props.location.aboutProps.lon} 
-            lat ={props.location.aboutProps.lat} ></SpotMap>
+            <SpotMap longitude = {props.location.aboutProps.longitude} 
+            latitude ={props.location.aboutProps.latitude} ></SpotMap>
         </Container>
     );
 };

@@ -9,6 +9,7 @@ export default (state, action) => {
       };
     case Types.ADD_SPOT:
       console.log("im in add spot");
+      break;
     case Types.FILTER_SPOTS:
       return {
         ...state,

@@ -31,4 +31,11 @@ Before the project started, I was excited about working with [Nima](https://gith
 
 **by [Gareth](https://github.com/gdharris1000)**
 
-.
+## Friday 1tst May 
+### I am thankful
+
+I’m thankful for the team for being as good spirited as they are, even in the most troubling of times. The backend team tried their absolute hardest over the course of the first few days to implement Travis and successfully deploy to Heroku. It was an unbelievable mission and I really appreciate them for putting in the effort for doing that. It’s not easy for sure but their hard work enabled me to inspire myself to setup the front end to properly talk to the amazing backend that will eventually come to fruition. I had a lot of help from Gareth lately with the frontend and having him take over a few things like the google maps thing was really great! I would have wasted a lot of time consumed with that so I’m glad it all worked out.
+
+I’m thankful that we all want to create something we’re proud of. We really do care about this project and I believe we do want to create something we love. One thing to really take into consideration though is time. Just over 1 week is really not any time at all to produce something that you can even come close to calling the “finished product”. There will be a lot of features that we will have to forget about and implement after the presentation. This is a project I think is well worth exploring and creating further after presentation day and I hope we do come together afterwards to add and implement more features. I believe a lot of time in the presentation will be spent talking about future features that will really be exciting to implement. I believe a project like this needs at least a month to produce something that can even slightly resemble the vision for the final product.
+
+I am thankful for me…I don’t think I’ve ever said this. I had a meeting with Dana yesterday about my confidence issues and we talked in depth about many things. We developed some actions I can take and one is to appreciate myself a bit more. To put my hand on my chest and to forgive myself, to be kind to myself. No matter where I go, what I do, what I want to learn, what I want to accomplish, I am always there. I am there and present for me. I’m there in my darkest days and I’m there in my happiest of days. I have my own back so I need to be much kinder to myself. So here is to many more days of being thankful for everything.
