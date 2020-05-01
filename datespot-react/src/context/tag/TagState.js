@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useContext } from "react";
 import axios from "axios";
 import TagContext from "./TagContext";
 import TagReducer from "./TagReducer";
@@ -9,6 +9,14 @@ const TagState = (props) => {
     tags: null,
     error: null,
     filteredTags: null,
+    tags_spots: [
+      { id: 1, tag_id: 1, spot_id: 1 },
+      // { id: 2, tag_id: 1, spot_id: 2 },
+      // { id: 3, tag_id: 2, spot_id: 2 },
+      // { id: 4, tag_id: 1, spot_id: 3 },
+      // { id: 5, tag_id: 3, spot_id: 4 },
+      // { id: 6, tag_id: 2, spot_id: 3 },
+    ],
     filteredTagsToSearch: [],
   };
 
@@ -49,6 +57,7 @@ const TagState = (props) => {
         tags: state.tags,
         filteredTags: state.filteredTags,
         filteredTagsToSearch: state.filteredTagsToSearch,
+        tags_spots: state.tags_spots,
         addToFilteredTagSearch,
         clearFilteredTagSearch,
         getTags,

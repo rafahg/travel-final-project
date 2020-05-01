@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import TagContext from "../../context/tag/TagContext";
+import SpotContext from "../../context/spot/SpotContext";
 import TagItem from "../tag/TagItem";
 import { Spinner } from "react-bootstrap";
 
@@ -7,6 +8,10 @@ const SpotTags = () => {
   const tagContext = useContext(TagContext);
 
   const { getTags, tags } = tagContext;
+
+  const spotContext = useContext(SpotContext);
+
+  const { filteredTagsToSearch } = spotContext;
 
   useEffect(() => {
     getTags();

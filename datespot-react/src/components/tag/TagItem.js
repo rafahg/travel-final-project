@@ -4,7 +4,7 @@ import TagContext from "../../context/tag/TagContext";
 
 import "./TagItem.css";
 
-const TagItem = ({ tag }) => {
+const TagItem = ({ tag, key }) => {
   const tagContext = useContext(TagContext);
 
   const {

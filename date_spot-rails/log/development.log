@@ -450,3 +450,365 @@ Completed 200 OK in 53ms (Views: 1.8ms | ActiveRecord: 50.6ms | Allocations: 208
 Completed 200 OK in 52ms (Views: 3.2ms | ActiveRecord: 48.8ms | Allocations: 3176)
 
 
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 19:40:18 +0100
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 19:40:18 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TagsController#index as HTML
+  [1m[35m (31.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mTag Load (11.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+  [1m[36mSpot Load (1.6ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 67ms (Views: 28.3ms | ActiveRecord: 20.5ms | Allocations: 14185)
+
+
+Completed 200 OK in 70ms (Views: 42.5ms | ActiveRecord: 15.7ms | Allocations: 14824)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 19:41:13 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 19:41:13 +0100
+Processing by Api::V1::TagsController#index as HTML
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (1.5ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  [1m[36mTag Load (2.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.5ms | Allocations: 2416)
+
+
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 2.5ms | Allocations: 3197)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 19:41:51 +0100
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1369)
+
+
+Started GET "/api/v1/tags_spots" for ::1 at 2020-05-01 19:42:45 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/tags_spots"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/tags_spots" for ::1 at 2020-05-01 19:42:54 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/tags_spots"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 20:01:21 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 20:01:21 +0100
+Processing by Api::V1::SpotsController#index as HTML
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mSpot Load (2.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 2.2ms | Allocations: 2623)
+
+
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 1.5ms | Allocations: 3120)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 20:04:18 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 20:04:18 +0100
+Processing by Api::V1::TagsController#index as HTML
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.0ms | Allocations: 1546)
+
+
+  [1m[36mSpot Load (6.0ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 6.0ms | Allocations: 3176)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 20:09:49 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 20:09:49 +0100
+Processing by Api::V1::SpotsController#index as HTML
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mSpot Load (4.1ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 4.1ms | Allocations: 2718)
+
+
+  [1m[36mTag Load (35.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 38ms (Views: 2.7ms | ActiveRecord: 35.1ms | Allocations: 3287)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 20:11:21 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 20:11:21 +0100
+Processing by Api::V1::TagsController#index as HTML
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mTag Load (2.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 2.0ms | Allocations: 2080)
+
+
+  [1m[36mSpot Load (2.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 2.3ms | Allocations: 3176)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 20:24:21 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 20:24:21 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (7.0ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 12ms (Views: 4.2ms | ActiveRecord: 7.0ms | Allocations: 1994)
+
+
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mTag Load (1.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 1.6ms | Allocations: 1408)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 20:28:56 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 20:28:56 +0100
+Processing by Api::V1::TagsController#index as HTML
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.8ms | Allocations: 1546)
+
+
+  [1m[36mSpot Load (2.5ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 2.5ms | Allocations: 3176)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 20:29:03 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 20:29:03 +0100
+Processing by Api::V1::TagsController#index as HTML
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 1.2ms | Allocations: 2079)
+
+
+  [1m[36mSpot Load (3.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 32ms (Views: 27.6ms | ActiveRecord: 3.4ms | Allocations: 3175)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 20:42:35 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 20:42:35 +0100
+Processing by Api::V1::SpotsController#index as HTML
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mSpot Load (2.7ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+  [1m[36mTag Load (2.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 2.7ms | Allocations: 2589)
+
+
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 2.0ms | Allocations: 3304)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 20:47:18 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 20:47:18 +0100
+Processing by Api::V1::TagsController#index as HTML
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 1.4ms | Allocations: 3690)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 21:29:28 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 21:29:28 +0100
+Processing by Api::V1::SpotsController#index as HTML
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mTag Load (21.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 25ms (Views: 2.8ms | ActiveRecord: 21.9ms | Allocations: 1408)
+
+
+  [1m[36mSpot Load (34.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 38ms (Views: 3.5ms | ActiveRecord: 34.2ms | Allocations: 4156)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 21:31:25 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 21:31:25 +0100
+Processing by Api::V1::TagsController#index as HTML
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mTag Load (6.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 8ms (Views: 1.7ms | ActiveRecord: 6.0ms | Allocations: 2071)
+
+
+  [1m[36mSpot Load (9.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 12ms (Views: 2.7ms | ActiveRecord: 9.4ms | Allocations: 3191)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 21:35:23 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 21:35:23 +0100
+Processing by Api::V1::TagsController#index as HTML
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mTag Load (4.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 4.9ms | Allocations: 2094)
+
+
+  [1m[36mSpot Load (7.7ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 12ms (Views: 3.5ms | ActiveRecord: 7.7ms | Allocations: 3176)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 21:47:46 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 21:47:46 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (2.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 2.2ms | Allocations: 1844)
+
+
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mTag Load (3.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 3.5ms | Allocations: 1408)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 22:23:58 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 22:23:58 +0100
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (5.8ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+Processing by Api::V1::TagsController#index as HTML
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 5.8ms | Allocations: 3847)
+
+
+  [1m[36mTag Load (4.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 4.3ms | Allocations: 2674)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 22:24:02 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 22:24:02 +0100
+Processing by Api::V1::TagsController#index as HTML
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 1546)
+
+
+  [1m[36mSpot Load (2.0ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 2.0ms | Allocations: 3176)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 22:24:19 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 22:24:19 +0100
+Processing by Api::V1::SpotsController#index as HTML
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mSpot Load (41.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 45ms (Views: 2.8ms | ActiveRecord: 41.4ms | Allocations: 2516)
+
+
+  [1m[36mTag Load (91.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 95ms (Views: 2.6ms | ActiveRecord: 91.9ms | Allocations: 3191)
+
+
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mSpot Load (0.5ms)[0m  [1m[34mSELECT "spots".* FROM "spots" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 23:12:26 +0100
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 23:12:26 +0100
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mTag Load (2.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 2.5ms | Allocations: 2537)
+
+
+Processing by Api::V1::SpotsController#index as HTML
+  [1m[36mSpot Load (4.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+Completed 200 OK in 8ms (Views: 3.2ms | ActiveRecord: 4.2ms | Allocations: 1844)
+
+
+Started GET "/api/v1/spots" for ::1 at 2020-05-01 23:14:47 +0100
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 23:14:47 +0100
+Processing by Api::V1::SpotsController#index as HTML
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mSpot Load (1.1ms)[0m  [1m[34mSELECT "spots".* FROM "spots"[0m
+  ↳ app/controllers/api/v1/spots_controller.rb:10:in `index'
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.1ms | Allocations: 1999)
+
+
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.2ms | Allocations: 3191)
+
+

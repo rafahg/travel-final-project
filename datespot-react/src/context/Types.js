@@ -2,6 +2,7 @@
 export const FILTER_SPOTS = "FILTER_SPOTS";
 export const ADD_SPOT = "ADD_SPOT";
 export const CLEAR_FILTER = "CLEAR_FILTER";
+export const FILTER_SPOTS_TAGS = "FILTER_SPOTS_TAGS";
 
 //Types for Tag state
 export const ADD_TAG = "ADD_TAG";
@@ -29,3 +30,6 @@ export const TAGS_ERROR = "TAGS_ERROR";
 //Types for Tag state
 export const ADD_TAG_FILTER = "ADD_TAG_FILTER";
 export const REMOVE_FILTER = "REMOVE_FILTER";
+export const POPULATE_TAG_FILTER = "POPULATE_TAG_FILTER";
+
+//
