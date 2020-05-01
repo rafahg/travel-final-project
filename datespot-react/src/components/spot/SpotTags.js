@@ -12,7 +12,7 @@ const SpotTags = () => {
   }, []);
 
   return (
-    <div>
+    <div className="text-center">
       {tags !== null ? (
         tags.map((tag) => <TagItem key={tag.id} tag={tag.tag} />)
       ) : (

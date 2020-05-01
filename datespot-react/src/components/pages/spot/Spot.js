@@ -8,7 +8,6 @@ import "./Spot.css";
 
 const Spot = () => {
   const spotContext = useContext(SpotContext);
-
   const { spots, filtered, getSpots } = spotContext;
 
   useEffect(() => {
@@ -55,9 +54,10 @@ const Spot = () => {
                   />
                 ))}
           </CardColumns>
-        ): <h3>Loading...</h3>}
+        ) : (
+          <h3>Loading...</h3>
+        )}
       </div>
-
     </Fragment>
   );
 };

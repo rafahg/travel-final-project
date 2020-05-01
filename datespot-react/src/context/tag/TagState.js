@@ -5,40 +5,42 @@ import TagReducer from "./TagReducer";
 import * as Types from "../Types";
 
 const TagState = (props) => {
-    const initialState = {
-        tags: null,
-        error: null,
-        // filtered: null,
+  const initialState = {
+    tags: null,
+    error: null,
+    filteredTags: null,
+    filteredTagsToSearch: [],
+  };
+
+  const [state, dispatch] = useReducer(TagReducer, initialState);
+
+  const getTags = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/api/v1/tags");
+      dispatch({
+        type: Types.GET_TAGS,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: Types.TAGS_ERROR,
+        payload: err,
+      });
     }
+  };
 
-    const [state, dispatch] = useReducer(TagReducer, initialState);
-
-    const getTags = async () => {
-        try {
-            const res = await axios.get("http://localhost:3000/api/v1/tags");
-            dispatch({
-                type: Types.GET_TAGS,
-                payload: res.data
-            });
-
-        } catch (err){
-            dispatch({
-                type: Types.TAGS_ERROR,
-                payload: err
-            });
-        }
-    };
-
-    return (
-        <TagContext.Provider
-        value={{
-            tags: state.tags,
-            getTags,
-        }}
-        >
-            {props.children}
-        </TagContext.Provider>
-    );
+  return (
+    <TagContext.Provider
+      value={{
+        tags: state.tags,
+        filteredTags: state.filteredTags,
+        filteredTagsToSearch: state.filteredTagsToSearch,
+        getTags,
+      }}
+    >
+      {props.children}
+    </TagContext.Provider>
+  );
 };
 
 export default TagState;
