@@ -5,6 +5,7 @@ import { Jumbotron, Container } from "react-bootstrap";
 
 
 const SpotDetails = (props) => {
+
     console.log(1, props.location.aboutProps);
     return(
        <Container>

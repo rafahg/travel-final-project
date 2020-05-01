@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 const SpotItem = ({ title, description, image, lat, lon }) => {
   return (
-    <Card>
+    <Card data-test="card-container">
       <Card.Img variant="top" src={littlevenice} />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>{description}</Card.Text>
+        <Card.Title data-test="text-container">{title}</Card.Title>
+        <Card.Text data-test="description-container">{description}</Card.Text>
         <div className="spotButton">
           <Button variant="primary">
             <Link
