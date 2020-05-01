@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/AuthContext";
-import AlertContext from "../../context/auth/AuthContext";
+import AlertContext from "../../context/alert/AlertContext";
 import { Spinner, Form, Button } from "react-bootstrap";
 
 const Register = (props) => {
