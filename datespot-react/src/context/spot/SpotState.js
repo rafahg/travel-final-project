@@ -6,8 +6,10 @@ import * as Types from "../Types";
 
 const SpotState = (props) => {
   const initialState = {
+
     spots: null,
     error: null,
+
     filtered: null,
   };
 

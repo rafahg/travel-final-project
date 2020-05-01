@@ -25,6 +25,7 @@ const Spot = () => {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <SpotFiltered />
       </div>
+
       <div>
         {spots !== null ? (
           <CardColumns style={{ marginTop: "20px" }}>
@@ -48,6 +49,7 @@ const Spot = () => {
           </CardColumns>
         ): <h3>Loading...</h3>}
       </div>
+
     </Fragment>
   );
 };
