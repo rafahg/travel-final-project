@@ -29,12 +29,28 @@ const TagState = (props) => {
     }
   };
 
+  const addToFilteredTagSearch = (tag) => {
+    dispatch({
+      type: Types.ADD_TAG_FILTER,
+      payload: tag,
+    });
+  };
+
+  const clearFilteredTagSearch = (tag) => {
+    dispatch({
+      type: Types.REMOVE_FILTER,
+      payload: tag,
+    });
+  };
+
   return (
     <TagContext.Provider
       value={{
         tags: state.tags,
         filteredTags: state.filteredTags,
         filteredTagsToSearch: state.filteredTagsToSearch,
+        addToFilteredTagSearch,
+        clearFilteredTagSearch,
         getTags,
       }}
     >

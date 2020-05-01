@@ -7,17 +7,19 @@ import "./TagItem.css";
 const TagItem = ({ tag }) => {
   const tagContext = useContext(TagContext);
 
-  const { filteredTagsToSearch } = tagContext;
+  const {
+    filteredTagsToSearch,
+    addToFilteredTagSearch,
+    clearFilteredTagSearch,
+  } = tagContext;
 
   const onClick = () => {
     if (filteredTagsToSearch.includes(tag)) {
       //remove tag from array
-      filteredTagsToSearch = filteredTagsToSearch.filter(
-        (word) => word !== tag
-      );
+      clearFilteredTagSearch(tag);
     } else {
       //add tag to array
-      filteredTagsToSearch.push(tag);
+      addToFilteredTagSearch(tag);
     }
   };
 
