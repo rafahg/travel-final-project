@@ -12,6 +12,9 @@ before_script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
 
+script:
+- bundle exec rspec
+
 deploy:
   provider: heroku
   api_key:
