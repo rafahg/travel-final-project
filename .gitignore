@@ -1,2 +1,3 @@
 .vscode/
 date_spot-rails/tmp/cache/bootsnap-load-path-cache
+date_spot-rails/log/development.log
