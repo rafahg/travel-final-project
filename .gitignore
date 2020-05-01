@@ -1,3 +1,9 @@
 .vscode/
 date_spot-rails/tmp/cache/bootsnap-load-path-cache
 date_spot-rails/log/development.log
+date_spot-rails/public/packs
+date_spot-rails/public/packs-test
+date_spot-rails/node_modules
+date_spot-rails/yarn-error.log
+date_spot-rails/yarn-debug.log*
+date_spot-rails/.yarn-integrity

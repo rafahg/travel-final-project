@@ -1113,3 +1113,82 @@ Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 1.8ms | Allocations: 957
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1615105162097765100)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-05-01 15:12:40 +0200
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/rafa/.rvm/gems/ruby-2.6.3/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/rafa/.rvm/gems/ruby-2.6.3/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.0ms | Allocations: 313)
+Completed 200 OK in 19ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 1828)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 15:12:42 +0200
+Processing by Api::V1::TagsController#index as HTML
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 46ms (Views: 6.0ms | ActiveRecord: 9.3ms | Allocations: 6760)
+
+
+Started GET "/api/v1/tags" for ::1 at 2020-05-01 15:12:42 +0200
+Processing by Api::V1::TagsController#index as */*
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:10:in `index'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 1304)
+
+
+Started GET "/comments" for ::1 at 2020-05-01 15:12:50 +0200
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/comments/index.html.erb:15
+  Rendered comments/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 1245)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 106ms (Views: 101.2ms | ActiveRecord: 2.0ms | Allocations: 10086)
+
+
+Started GET "/comments" for ::1 at 2020-05-01 15:12:51 +0200
+Processing by CommentsController#index as */*
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (8.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/comments/index.html.erb:15
+  Rendered comments/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 639)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 11.5ms | ActiveRecord: 8.5ms | Allocations: 4919)
+
+
+Started GET "/comments/new" for ::1 at 2020-05-01 15:13:06 +0200
+Started GET "/comments" for ::1 at 2020-05-01 15:13:06 +0200
+Processing by CommentsController#new as HTML
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/_form.html.erb (Duration: 15.3ms | Allocations: 2733)
+  Rendered comments/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 3090)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 33.6ms | ActiveRecord: 2.3ms | Allocations: 10077)
+
+
+Processing by CommentsController#index as */*
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (21.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/views/comments/index.html.erb:15
+  Rendered comments/index.html.erb within layouts/application (Duration: 22.8ms | Allocations: 688)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 9.5ms | ActiveRecord: 21.5ms | Allocations: 4770)
+
+
+Started GET "/likes/new" for ::1 at 2020-05-01 15:22:56 +0200
+Processing by LikesController#new as HTML
+  Rendering likes/new.html.erb within layouts/application
+  Rendered likes/_form.html.erb (Duration: 6.4ms | Allocations: 910)
+  Rendered likes/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1250)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 46.8ms | ActiveRecord: 7.0ms | Allocations: 8742)
+
+
+Started GET "/likes/new" for ::1 at 2020-05-01 15:22:57 +0200
+Processing by LikesController#new as */*
+  Rendering likes/new.html.erb within layouts/application
+  Rendered likes/_form.html.erb (Duration: 3.1ms | Allocations: 520)
+  Rendered likes/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 752)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 4981)
+
+
