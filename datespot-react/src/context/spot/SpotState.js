@@ -1,73 +1,15 @@
 import React, { useReducer } from "react";
+import axios from 'axios';
 import SpotContext from "./SpotContext";
 import SpotReducer from "./SpotReducer";
 import * as Types from "../Types";
 
 const SpotState = (props) => {
   const initialState = {
-    spots: [
-      {
-        id: 1,
-        title: "romantic evening in my house",
-        description: "a lovely walk down little venice",
-        image: "/src/assets/images/littlevenice.jpeg",
-        lat: "51.5245063",
-        lon: "-0.1866762",
-      },
-      {
-        id: 2,
-        title: "a great sight to behold",
-        description: "a lovely time in London shard",
-        image: "/assets/images/shard.jpeg",
-        lat: "51.5045",
-        lon: "-0.0886887",
-      },
-      {
-        id: 3,
-        title: "beauty and brains",
-        description:
-          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
-        image: "/assets/images/sciencemuseum.jpeg",
-        lat: "51.4978095",
-        lon: "-0.1767122",
-      },
-      {
-        id: 4,
-        title: "high class dining",
-        description:
-          "ideal for foodies with a person with a discerning palate",
-        image: "/assets/images/sciencemuseum.jpeg",
-        lat: "51.509333",
-        lon: "-0.1806639",
-      },
-      {
-        id: 5,
-        title: "beauty and brains",
-        description:
-          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
-        image: "/assets/images/sciencemuseum.jpeg",
-        lat: "51.4978095",
-        lon: "-0.1767122",
-      },
-      {
-        id: 6,
-        title: "beauty and brains",
-        description:
-          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
-        image: "/assets/images/sciencemuseum.jpeg",
-        lat: "51.4978095",
-        lon: "-0.1767122",
-      },
-      {
-        id: 7,
-        title: "beauty and brains",
-        description:
-          "take a trip to the science museum if you're both turned on by the sciences!!!!!!!!!!",
-        image: "/assets/images/sciencemuseum.jpeg",
-        lat: "51.4978095",
-        lon: "-0.1767122",
-      },
-    ],
+
+    spots: null,
+    error: null,
+
     filtered: null,
   };
 
@@ -83,6 +25,21 @@ const SpotState = (props) => {
     dispatch({ type: Types.CLEAR_FILTER });
   };
 
+  const getSpots = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/api/v1/spots");
+      dispatch({
+        type: Types.GET_SPOTS,
+        payload: res.data
+      });
+    } catch (err) {
+      dispatch({
+        type: Types.SPOTS_ERROR,
+        payload: err
+      });
+    }
+  };
+
   return (
     <SpotContext.Provider
       value={{
@@ -90,6 +47,7 @@ const SpotState = (props) => {
         filtered: state.filtered,
         filterSpots,
         clearFilter,
+        getSpots,
       }}
     >
       {props.children}
