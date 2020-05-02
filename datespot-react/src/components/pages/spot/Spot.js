@@ -1,6 +1,6 @@
 import React, { useContext, Fragment, useEffect } from "react";
 import SpotContext from "../../../context/spot/SpotContext";
-import { CardColumns } from "react-bootstrap";
+import { CardDeck, CardColumns } from "react-bootstrap";
 import SpotItem from "../../spot/SpotItem";
 import SpotItemHeader from "../../spot/SpotItemHeader";
 import SpotFiltered from "../../spot/SpotFiltered";
@@ -27,6 +27,7 @@ const Spot = () => {
           url={spot.url}
           latitude={spot.latitude}
           longitude={spot.longitude}
+          avg_cost={spot.avg_cost}
         />
       ));
     } else if (filtered !== null) {
@@ -40,6 +41,7 @@ const Spot = () => {
           url={spot.url}
           latitude={spot.latitude}
           longitude={spot.longitude}
+          avg_cost={spot.avg_cost}
         />
       ));
     } else {
@@ -53,6 +55,7 @@ const Spot = () => {
           url={spot.url}
           latitude={spot.latitude}
           longitude={spot.longitude}
+          avg_cost={spot.avg_cost}
         />
       ));
     }
@@ -71,9 +74,11 @@ const Spot = () => {
 
       <div>
         {spots !== null ? (
+
           <CardColumns style={{ marginTop: "20px" }}>
             {spotItemToDisplay()}
           </CardColumns>
+
         ) : (
           <div className="text-center" style={{ marginTop: "300px" }}>
             <Spinner animation="border" variant="danger" />
