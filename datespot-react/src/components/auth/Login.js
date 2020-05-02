@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, Fragment } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/AuthContext";
 import AlertContext from "../../context/alert/AlertContext";
 import { Spinner, Form, Button, Container, Row } from "react-bootstrap";
@@ -59,7 +59,6 @@ const Login = (props) => {
             <Form.Control
               type="email"
               placeholder="Enter email"
-              type="email"
               name="email"
               value={email}
               onChange={onChange}

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import TagContext from "../../context/tag/TagContext";
+import SpotContext from "../../context/spot/SpotContext";
 import TagItem from "../tag/TagItem";
 import { Spinner } from "react-bootstrap";
 
@@ -8,6 +9,10 @@ const SpotTags = () => {
 
   const { getTags, tags } = tagContext;
 
+  const spotContext = useContext(SpotContext);
+
+  const { filteredTagsToSearch } = spotContext;
+
   useEffect(() => {
     getTags();
   }, []);
@@ -15,7 +20,7 @@ const SpotTags = () => {
   return (
     <div className="text-center">
       {tags !== null ? (
-        tags.map((tag) => <TagItem key={tag.id} tag={tag.tag} />)
+        tags.map((tag) => <TagItem key={tag.id} tag={tag.tag} tagId={tag.id} />)
       ) : (
         <Spinner animation="border" variant="danger" />
       )}

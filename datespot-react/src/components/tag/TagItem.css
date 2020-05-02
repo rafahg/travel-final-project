@@ -1,3 +1,7 @@
 .tag{
   margin: 10px;
 }
+
+.tag:hover{
+  cursor: pointer;
+}

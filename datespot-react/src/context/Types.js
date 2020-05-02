@@ -1,11 +1,12 @@
 //Types for Spot state
 export const FILTER_SPOTS = "FILTER_SPOTS";
-export const ADD_SPOT = "ADD_SPOT";
+export const ADD_FILTER_TAG = "ADD_FILTER_TAG";
+export const CLEAR_FILTER_TAG = "CLEAR_FILTER_TAG";
 export const CLEAR_FILTER = "CLEAR_FILTER";
-
+export const FILTER_BY_SPOT_TAGS = "FILTER_BY_SPOT_TAGS";
+export const CLEAR_FILTER_BY_SPOT_TAGS = "CLEAR_FILTER_BY_SPOT_TAGS";
 //Types for Tag state
 export const ADD_TAG = "ADD_TAG";
-
 
 //Types for Auth state
 export const USER_LOADED = "USER_LOADED";
@@ -23,7 +24,13 @@ export const SPINNER_NOSHOW = "SPINNER_NOSHOW";
 export const SET_ALERT = "SET_ALERT";
 export const REMOVE_ALERT = "REMOVE_ALERT";
 export const GET_SPOTS = "GET_SPOTS";
-export const GET_TAGS = "GET_TAGS"
+export const GET_TAGS = "GET_TAGS";
 export const SPOTS_ERROR = "SPOTS_ERROR";
 export const TAGS_ERROR = "TAGS_ERROR";
 
+//Types for Tag state
+export const ADD_TAG_FILTER = "ADD_TAG_FILTER";
+export const REMOVE_FILTER = "REMOVE_FILTER";
+export const POPULATE_TAG_FILTER = "POPULATE_TAG_FILTER";
+
+//
