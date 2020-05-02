@@ -3,8 +3,8 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 
 const mapStyles = {
-    width: '500px',
-    height: '500px',
+    maxWidth: '94%',
+    height: '300px',
   };
 
 const SpotMap = (props) => {

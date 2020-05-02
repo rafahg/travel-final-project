@@ -1,6 +1,6 @@
 import React, { useContext, Fragment, useEffect } from "react";
 import SpotContext from "../../../context/spot/SpotContext";
-import { CardColumns } from "react-bootstrap";
+import { CardDeck } from "react-bootstrap";
 import SpotItem from "../../spot/SpotItem";
 import SpotItemHeader from "../../spot/SpotItemHeader";
 import SpotFiltered from "../../spot/SpotFiltered";
@@ -28,7 +28,7 @@ const Spot = () => {
 
       <div>
         {spots !== null ? (
-          <CardColumns style={{ marginTop: "20px" }}>
+          <CardDeck style={{ marginTop: "20px" }}>
             {filtered !== null
               ? filtered.map((spot) => (
                   <SpotItem
@@ -40,6 +40,7 @@ const Spot = () => {
                     url={spot.url}
                     latitude={spot.latitude}
                     longitude={spot.longitude}
+                    avg_cost={spot.avg_cost}
                   />
                 ))
               : spots.map((spot) => (
@@ -52,9 +53,10 @@ const Spot = () => {
                     url={spot.url}
                     latitude={spot.latitude}
                     longitude={spot.longitude}
+                    avg_cost={spot.avg_cost}
                   />
                 ))}
-          </CardColumns>
+          </CardDeck>
         ) : (
           <div className="text-center" style={{ marginTop: "300px" }}>
             <Spinner animation="border" variant="danger" />
