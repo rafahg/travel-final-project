@@ -68,17 +68,22 @@ const Spot = () => {
       >
         <SpotItemHeader />
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <SpotFiltered />
       </div>
 
       <div>
         {spots !== null ? (
-
           <CardColumns style={{ marginTop: "20px" }}>
             {spotItemToDisplay()}
           </CardColumns>
-
         ) : (
           <div className="text-center" style={{ marginTop: "300px" }}>
             <Spinner animation="border" variant="danger" />

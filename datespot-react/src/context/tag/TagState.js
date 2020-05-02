@@ -28,14 +28,6 @@ const TagState = (props) => {
     }
   };
 
-  const addToFilteredTagSearch = (tag) => {
-    clearFilteredTagSearch();
-    dispatch({
-      type: Types.ADD_TAG_FILTER,
-      payload: tag,
-    });
-  };
-
   const clearFilteredTagSearch = (tag) => {
     dispatch({
       type: Types.REMOVE_FILTER,
@@ -47,7 +39,6 @@ const TagState = (props) => {
       value={{
         tags: state.tags,
         filteredTagsToSearch: state.filteredTagsToSearch,
-        addToFilteredTagSearch,
         getTags,
       }}
     >

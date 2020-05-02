@@ -22,8 +22,12 @@ const SpotFiltered = () => {
   };
 
   return (
-    <div>
-      <form data-test="filter-container">
+    <Fragment>
+      <form
+        data-test="filter-container"
+        style={{ width: "400px" }}
+        className="text-center"
+      >
         <input
           ref={text}
           type="text"
@@ -33,7 +37,7 @@ const SpotFiltered = () => {
         />
       </form>
       <SpotTags />
-    </div>
+    </Fragment>
   );
 };
 
