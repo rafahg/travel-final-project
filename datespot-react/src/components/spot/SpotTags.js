@@ -20,7 +20,7 @@ const SpotTags = () => {
   return (
     <div className="text-center">
       {tags !== null ? (
-        tags.map((tag) => <TagItem key={tag.id} tag={tag.tag} />)
+        tags.map((tag) => <TagItem key={tag.id} tag={tag.tag} tagId={tag.id} />)
       ) : (
         <Spinner animation="border" variant="danger" />
       )}

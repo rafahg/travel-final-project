@@ -9,11 +9,54 @@ import "./Spot.css";
 
 const Spot = () => {
   const spotContext = useContext(SpotContext);
-  const { spots, filtered, getSpots } = spotContext;
+  const { spots, filtered, getSpots, filteredByTag, filterId } = spotContext;
 
   useEffect(() => {
     getSpots();
   }, []);
+
+  const spotItemToDisplay = () => {
+    if (filteredByTag !== null) {
+      return filteredByTag.map((spot) => (
+        <SpotItem
+          key={spot.id}
+          title={spot.title}
+          location={spot.location}
+          description={spot.description}
+          ave_cost={spot.ave_cost}
+          url={spot.url}
+          latitude={spot.latitude}
+          longitude={spot.longitude}
+        />
+      ));
+    } else if (filtered !== null) {
+      return filtered.map((spot) => (
+        <SpotItem
+          key={spot.id}
+          title={spot.title}
+          location={spot.location}
+          description={spot.description}
+          ave_cost={spot.ave_cost}
+          url={spot.url}
+          latitude={spot.latitude}
+          longitude={spot.longitude}
+        />
+      ));
+    } else {
+      return spots.map((spot) => (
+        <SpotItem
+          key={spot.id}
+          title={spot.title}
+          location={spot.location}
+          description={spot.description}
+          ave_cost={spot.ave_cost}
+          url={spot.url}
+          latitude={spot.latitude}
+          longitude={spot.longitude}
+        />
+      ));
+    }
+  };
 
   return (
     <Fragment>
@@ -29,31 +72,7 @@ const Spot = () => {
       <div>
         {spots !== null ? (
           <CardColumns style={{ marginTop: "20px" }}>
-            {filtered !== null
-              ? filtered.map((spot) => (
-                  <SpotItem
-                    key={spot.id}
-                    title={spot.title}
-                    location={spot.location}
-                    description={spot.description}
-                    ave_cost={spot.ave_cost}
-                    url={spot.url}
-                    latitude={spot.latitude}
-                    longitude={spot.longitude}
-                  />
-                ))
-              : spots.map((spot) => (
-                  <SpotItem
-                    key={spot.id}
-                    title={spot.title}
-                    location={spot.location}
-                    description={spot.description}
-                    ave_cost={spot.ave_cost}
-                    url={spot.url}
-                    latitude={spot.latitude}
-                    longitude={spot.longitude}
-                  />
-                ))}
+            {spotItemToDisplay()}
           </CardColumns>
         ) : (
           <div className="text-center" style={{ marginTop: "300px" }}>

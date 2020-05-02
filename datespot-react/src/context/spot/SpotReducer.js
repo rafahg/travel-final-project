@@ -7,9 +7,11 @@ export default (state, action) => {
         ...state,
         spots: action.payload,
       };
-    case Types.ADD_SPOT:
-      console.log("im in add spot");
-      break;
+    case Types.ADD_FILTER_TAG:
+      return {
+        ...state,
+        filterId: action.payload,
+      };
     case Types.FILTER_SPOTS:
       return {
         ...state,
@@ -18,10 +20,25 @@ export default (state, action) => {
           return spot.title.match(regex) || spot.description.match(regex);
         }),
       };
+    case Types.FILTER_BY_SPOT_TAGS:
+      return {
+        ...state,
+        filteredByTag: action.payload,
+      };
+    case Types.CLEAR_FILTER_BY_SPOT_TAGS:
+      return {
+        ...state,
+        filteredByTag: null,
+      };
     case Types.CLEAR_FILTER:
       return {
         ...state,
         filtered: null,
+      };
+    case Types.CLEAR_FILTER_TAG:
+      return {
+        ...state,
+        filterId: null,
       };
     default:
       return state;

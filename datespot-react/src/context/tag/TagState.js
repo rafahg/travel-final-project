@@ -8,16 +8,7 @@ const TagState = (props) => {
   const initialState = {
     tags: null,
     error: null,
-    filteredTags: null,
-    tags_spots: [
-      { id: 1, tag_id: 1, spot_id: 1 },
-      // { id: 2, tag_id: 1, spot_id: 2 },
-      // { id: 3, tag_id: 2, spot_id: 2 },
-      // { id: 4, tag_id: 1, spot_id: 3 },
-      // { id: 5, tag_id: 3, spot_id: 4 },
-      // { id: 6, tag_id: 2, spot_id: 3 },
-    ],
-    filteredTagsToSearch: [],
+    filteredTagsToSearch: null,
   };
 
   const [state, dispatch] = useReducer(TagReducer, initialState);
@@ -38,6 +29,7 @@ const TagState = (props) => {
   };
 
   const addToFilteredTagSearch = (tag) => {
+    clearFilteredTagSearch();
     dispatch({
       type: Types.ADD_TAG_FILTER,
       payload: tag,
@@ -47,7 +39,6 @@ const TagState = (props) => {
   const clearFilteredTagSearch = (tag) => {
     dispatch({
       type: Types.REMOVE_FILTER,
-      payload: tag,
     });
   };
 
@@ -55,11 +46,8 @@ const TagState = (props) => {
     <TagContext.Provider
       value={{
         tags: state.tags,
-        filteredTags: state.filteredTags,
         filteredTagsToSearch: state.filteredTagsToSearch,
-        tags_spots: state.tags_spots,
         addToFilteredTagSearch,
-        clearFilteredTagSearch,
         getTags,
       }}
     >

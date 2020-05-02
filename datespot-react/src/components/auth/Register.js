@@ -79,7 +79,6 @@ const Register = (props) => {
             <Form.Control
               type="email"
               placeholder="Enter email"
-              type="email"
               name="email"
               value={email}
               onChange={onChange}
