@@ -9,7 +9,11 @@ const SpotDetails = (props) => {
     console.log(1, props.location.aboutProps);
     return(
        <Container>
-            <Jumbotron fluid>
+            <Jumbotron fluid style={{
+                backgroundImage: `url(${props.location.aboutProps.url})`, 
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'}}>
                 <Container>
                     <h1>{props.location.aboutProps.title}</h1>
                     <p>
