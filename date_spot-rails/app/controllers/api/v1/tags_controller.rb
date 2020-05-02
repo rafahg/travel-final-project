@@ -62,5 +62,6 @@ class Api::V1::TagsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def tag_params
     params.require(:tag).permit(:tag)
+    params.require(:tag).permit(spot_ids: [])
   end
 end

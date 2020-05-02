@@ -1,5 +1,4 @@
 class Spot < ApplicationRecord
-    has_and_belongs_to_many :tags
-    has_many :comments
-    has_many :likes
+    has_many :tags_associations
+    has_many :tags, through: :tags_associations
 end

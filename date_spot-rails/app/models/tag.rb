@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 class Tag < ApplicationRecord
-  has_and_belongs_to_many :spots
+  has_many :tags_associations
+  has_many :spots, through: :tags_associations
 end
