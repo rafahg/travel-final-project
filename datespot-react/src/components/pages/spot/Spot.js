@@ -40,6 +40,7 @@ const Spot = () => {
                     url={spot.url}
                     latitude={spot.latitude}
                     longitude={spot.longitude}
+                    avg_cost={spot.avg_cost}
                   />
                 ))
               : spots.map((spot) => (
@@ -52,6 +53,7 @@ const Spot = () => {
                     url={spot.url}
                     latitude={spot.latitude}
                     longitude={spot.longitude}
+                    avg_cost={spot.avg_cost}
                   />
                 ))}
           </CardDeck>
