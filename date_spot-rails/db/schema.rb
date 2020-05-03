@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_071921) do
   add_foreign_key "comments", "spots"
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "spots"
+  add_foreign_key "likes", "users"
   add_foreign_key "tag_associations", "spots"
   add_foreign_key "tag_associations", "tags"
-  add_foreign_key "likes", "users"
 end
