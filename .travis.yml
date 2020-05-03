@@ -5,23 +5,20 @@ before_install:
 - cd date_spot-rails
 - export GEM_HOME=$PWD/vendor/bundle/ruby/2.6.3
 - gem install bundler
-cache: 
-  directories: 
+cache:
+  directories:
   - date_spot-rails
- 
 services:
 - postgresql
 before_script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
-
 script:
 - bundle exec rspec
-
 deploy:
   provider: heroku
   api_key:
-    secure: H388rQDdLpKpvMgoQ7O02wviBhDTZeBiXwlP1uSh80VipS0gLDmjWV8pc/Yr0KbBgmNuUU4WwWcWkjq+SKCvixVLoZCh037Eqs1XAYrD0PnnRtX4qEgffqWOOHJxL851okgyj+zKwHMcVBDd6kkZa5Cxxu87mwKMF9nyBSMg/wJW+BthxkvgXI8K5uc0FbULVlrDYy2rL2/agFF9z9Kcf7DVTuLRmxB2T3DyMcdL4dMJ0di8eKSY+SObGWkhienu4PxI9Jk+2wJCO2cJSVPvbNBtA89QItBmrQTG4DJ2WxfMx/6+/i/z8KvZLTXHSfO0QdqJgP0u4uQVCgWmkz157q6AIXhIz1jLHpp7a7tHD4xEqN7fkSVzcaQmrRHeyYH5IqrRa2MPd9ZBXqq84Dk9yKt7ktAeWdDEaNYfPrigQqaOb2swY7hcGUID4ccjopuC/cobGWZiyZD8WHBNmeM/V/Jjorvfv4bK0+RYVROHjhpI64ivMg6qYj91Xo7qyyac9u24AoTVbwsgkPr7QoPPOiWOS0oJAjsuqudt5PskPv+Sw/c2f+O51cMqF1iVB+KUIjlnkDi0USU4E7Qgs09UQBVUfWn1JHFimIVKuH//muOFVzjQME/0VXjZqc2UnOImsZq0N/hSuJ9k3hRX+wgyAER1Qe3TeI7lOYYjQjDi2rE=
+    secure: R5szqrafuD9lE+DlW0MLqQHnD/qz7ISDcFGu/uPbDjs6StHlCHEp1e8Rx5WAem2SSEeX1xj1OztUVw8+1RstgFv+Co2T1FrScjzDdhlvdL8gG3b4zf1Uf3KXWgGcwbarMiVA6xpfrSYnCHFZSCHgcge9ffpbIgs6l5TzUMQ6gyUeGkT6Un4eRixn+GVqDfA0qHz0XcQ5A3dnkbQbwOWE9NFX2qfE9t6923h1+U0osZ08B8wLD8sOJUEhVX+6i7QO0EjrhYys9wDxSsnp8IWwqziYz3i5F3d8ahvoZQJy6h/9NuVeUakqa0WovrIEdgTF0M7ZiOuZbw3yMqN7t0GYiSX+HPjrVYeX+gSpkzGEnFVEUKWsvxj1NFOb6uup8KV6yqhWpsmXQ+yc0K9r3eS8ICTVUVFrZfaC5FooazEEhcUtIMbMcXQrtaF1agxsGF2B9TkhGkrvvPdQSleBpoZgLE3rDZoO25Ijm1FivLPLRQY1XJiiL/a1LjGgoIjlGMgi7Hzvhp2LqillGLY1DX1I4KslkkZ5SlHazrzulACuM7koQlRE5hDvvK4Mn/eUxMuPUCeh9ie/5ULHDMQ4QHhi5NWGSqeoksXYi3xzM+bzGWhmmDi0uX4Z0CAr00V3Jrf9Tf5DbgQUH5Ir09uBB04zCSfkXBqXDbPav26FSVElRYQ=
   run:
   - rake pg:reset
   - rake db:migrate

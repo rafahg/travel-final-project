@@ -1,1 +1,23 @@
 .vscode
+# Ignore all logfiles and tempfiles.
+date_spot-rails/log/*
+date_spot-rails/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore uploaded files in development.
+date_spot-rails/storage/*
+!/storage/.keep
+
+date_spot-rails/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+date_spot-rails/config/master.key
+
+date_spot-rails/public/packs
+date_spot-rails/public/packs-test
+date_spot-rails/node_modules
+date_spot-rails/yarn-error.log
+date_spot-rails/yarn-debug.log*
+date_spot-rails/.yarn-integrity
