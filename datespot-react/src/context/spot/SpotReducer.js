@@ -30,6 +30,11 @@ export default (state, action) => {
         ...state,
         filteredByLiked: action.payload,
       };
+    case Types.ADD_TO_LIKE_TABLE:
+      return {
+        ...state,
+        likes: [...state.likes, action.payload],
+      };
     case Types.CLEAR_FILTER_BY_SPOT_TAGS:
       return {
         ...state,

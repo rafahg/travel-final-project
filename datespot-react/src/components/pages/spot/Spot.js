@@ -37,6 +37,7 @@ const Spot = () => {
           latitude={spot.latitude}
           longitude={spot.longitude}
           avg_cost={spot.avg_cost}
+          id={spot.id}
         />
       ));
     } else if (filtered !== null) {
@@ -51,6 +52,7 @@ const Spot = () => {
           latitude={spot.latitude}
           longitude={spot.longitude}
           avg_cost={spot.avg_cost}
+          id={spot.id}
         />
       ));
     } else {
@@ -65,6 +67,7 @@ const Spot = () => {
           latitude={spot.latitude}
           longitude={spot.longitude}
           avg_cost={spot.avg_cost}
+          id={spot.id}
         />
       ));
     }
