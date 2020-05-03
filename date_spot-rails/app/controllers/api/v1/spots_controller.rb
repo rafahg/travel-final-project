@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::SpotsController < ApplicationController
+  before_action :authenticate_user
   before_action :set_spot, only: %i[show update destroy]
 
   # GET /spots
@@ -61,7 +62,7 @@ class Api::V1::SpotsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def spot_params
-    params.require(:spot).permit(:title, :description, :location, :url, :avg_cost )
+    params.require(:spot).permit(:title, :description, :location, :url, :avg_cost)
     params.require(:spot).permit(tags_ids: [])
   end
 end
