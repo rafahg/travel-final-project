@@ -1,6 +1,6 @@
 import React, { useContext, Fragment, useEffect } from "react";
 import SpotContext from "../../../context/spot/SpotContext";
-import { CardColumns } from "react-bootstrap";
+import { CardDeck, CardColumns } from "react-bootstrap";
 import SpotItem from "../../spot/SpotItem";
 import SpotItemHeader from "../../spot/SpotItemHeader";
 import SpotFiltered from "../../spot/SpotFiltered";
@@ -9,11 +9,57 @@ import "./Spot.css";
 
 const Spot = () => {
   const spotContext = useContext(SpotContext);
-  const { spots, filtered, getSpots } = spotContext;
+  const { spots, filtered, getSpots, filteredByTag, filterId } = spotContext;
 
   useEffect(() => {
     getSpots();
   }, []);
+
+  const spotItemToDisplay = () => {
+    if (filteredByTag !== null) {
+      return filteredByTag.map((spot) => (
+        <SpotItem
+          key={spot.id}
+          title={spot.title}
+          location={spot.location}
+          description={spot.description}
+          ave_cost={spot.ave_cost}
+          url={spot.url}
+          latitude={spot.latitude}
+          longitude={spot.longitude}
+          avg_cost={spot.avg_cost}
+        />
+      ));
+    } else if (filtered !== null) {
+      return filtered.map((spot) => (
+        <SpotItem
+          key={spot.id}
+          title={spot.title}
+          location={spot.location}
+          description={spot.description}
+          ave_cost={spot.ave_cost}
+          url={spot.url}
+          latitude={spot.latitude}
+          longitude={spot.longitude}
+          avg_cost={spot.avg_cost}
+        />
+      ));
+    } else {
+      return spots.map((spot) => (
+        <SpotItem
+          key={spot.id}
+          title={spot.title}
+          location={spot.location}
+          description={spot.description}
+          ave_cost={spot.ave_cost}
+          url={spot.url}
+          latitude={spot.latitude}
+          longitude={spot.longitude}
+          avg_cost={spot.avg_cost}
+        />
+      ));
+    }
+  };
 
   return (
     <Fragment>
@@ -22,38 +68,21 @@ const Spot = () => {
       >
         <SpotItemHeader />
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <SpotFiltered />
       </div>
 
       <div>
         {spots !== null ? (
           <CardColumns style={{ marginTop: "20px" }}>
-            {filtered !== null
-              ? filtered.map((spot) => (
-                  <SpotItem
-                    key={spot.id}
-                    title={spot.title}
-                    location={spot.location}
-                    description={spot.description}
-                    ave_cost={spot.ave_cost}
-                    url={spot.url}
-                    latitude={spot.latitude}
-                    longitude={spot.longitude}
-                  />
-                ))
-              : spots.map((spot) => (
-                  <SpotItem
-                    key={spot.id}
-                    title={spot.title}
-                    location={spot.location}
-                    description={spot.description}
-                    ave_cost={spot.ave_cost}
-                    url={spot.url}
-                    latitude={spot.latitude}
-                    longitude={spot.longitude}
-                  />
-                ))}
+            {spotItemToDisplay()}
           </CardColumns>
         ) : (
           <div className="text-center" style={{ marginTop: "300px" }}>

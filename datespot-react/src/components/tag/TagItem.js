@@ -1,28 +1,25 @@
 import React, { useContext } from "react";
 import { Badge } from "react-bootstrap";
-import TagContext from "../../context/tag/TagContext";
+import SpotContext from "../../context/spot/SpotContext";
 
 import "./TagItem.css";
 
-const TagItem = ({ tag }) => {
-  const tagContext = useContext(TagContext);
+const TagItem = ({ tag, tagId }) => {
+  const spotContext = useContext(SpotContext);
 
-  const { filteredTagsToSearch } = tagContext;
+  const { filterSpotsByTags, filterId } = spotContext;
 
   const onClick = () => {
-    if (filteredTagsToSearch.includes(tag)) {
-      //remove tag from array
-      filteredTagsToSearch = filteredTagsToSearch.filter(
-        (word) => word !== tag
-      );
-    } else {
-      //add tag to array
-      filteredTagsToSearch.push(tag);
-    }
+    filterSpotsByTags(tagId);
   };
 
   return (
-    <Badge variant="secondary" className="tag" onClick={onClick}>
+    <Badge
+      variant="light"
+      className="tag"
+      onClick={onClick}
+      style={{ border: `2px solid ${filterId === tagId ? "red" : "black"}` }}
+    >
       {tag}
     </Badge>
   );

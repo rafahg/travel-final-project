@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useContext } from "react";
 import axios from "axios";
 import TagContext from "./TagContext";
 import TagReducer from "./TagReducer";
@@ -8,8 +8,7 @@ const TagState = (props) => {
   const initialState = {
     tags: null,
     error: null,
-    filteredTags: null,
-    filteredTagsToSearch: [],
+    filteredTagsToSearch: null,
   };
 
   const [state, dispatch] = useReducer(TagReducer, initialState);
@@ -29,11 +28,16 @@ const TagState = (props) => {
     }
   };
 
+  const clearFilteredTagSearch = (tag) => {
+    dispatch({
+      type: Types.REMOVE_FILTER,
+    });
+  };
+
   return (
     <TagContext.Provider
       value={{
         tags: state.tags,
-        filteredTags: state.filteredTags,
         filteredTagsToSearch: state.filteredTagsToSearch,
         getTags,
       }}

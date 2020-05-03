@@ -1,3 +1,18 @@
 .tag{
   margin: 10px;
+  
+}
+
+.badge{
+  padding: 10px !important;
+  border-radius: 22px !important;
+  border-style: solid;
+}
+
+
+.badge:hover{
+  cursor: pointer;
+  color: #6c757d;
+  background-color: white;
+  border-color:  #6c757d;
 }
