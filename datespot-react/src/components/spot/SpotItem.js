@@ -48,7 +48,7 @@ const SpotItem = ({
     if (color === "black") {
       addToLikeCount({ spot_id: id, user_id: user.id });
     } else {
-      removeFromLikeCount();
+      removeFromLikeCount({ spot_id: id, user_id: user.id });
     }
   };
 

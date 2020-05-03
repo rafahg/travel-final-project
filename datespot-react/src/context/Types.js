@@ -7,6 +7,7 @@ export const FILTER_BY_SPOT_TAGS = "FILTER_BY_SPOT_TAGS";
 export const CLEAR_FILTER_BY_SPOT_TAGS = "CLEAR_FILTER_BY_SPOT_TAGS";
 export const FILTER_BY_USER_LIKES = "FILTER_BY_USER_LIKES";
 export const ADD_TO_LIKE_TABLE = "ADD_TO_LIKE_TABLE";
+export const REMOVE_FROM_LIKE_TABLE = "REMOVE_FROM_LIKE_TABLE";
 
 //Types for Tag state
 export const ADD_TAG = "ADD_TAG";

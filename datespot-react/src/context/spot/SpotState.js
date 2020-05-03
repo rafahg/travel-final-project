@@ -133,7 +133,12 @@ const SpotState = (props) => {
     });
   };
 
-  const removeFromLikeCount = () => {};
+  const removeFromLikeCount = (toRemove) => {
+    dispatch({
+      type: Types.REMOVE_FROM_LIKE_TABLE,
+      payload: toRemove,
+    });
+  };
 
   return (
     <SpotContext.Provider
