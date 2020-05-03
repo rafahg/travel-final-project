@@ -1,6 +1,6 @@
 .vscode
 # Ignore all logfiles and tempfiles.
-date_spot-rails/log/*
+date_spot-rails/log/development.log
 date_spot-rails/tmp/*
 !/log/.keep
 !/tmp/.keep
@@ -20,4 +20,4 @@ date_spot-rails/public/packs-test
 date_spot-rails/node_modules
 date_spot-rails/yarn-error.log
 date_spot-rails/yarn-debug.log*
-date_spot-rails/.yarn-integrity
+date_spot-rails/node_modules/.yarn-integrity
