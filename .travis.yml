@@ -7,7 +7,7 @@ before_install:
 - gem install bundler
 cache: 
   directories: 
-    - date_spot-rails
+  - date_spot-rails
 - bundler
  
 services:
