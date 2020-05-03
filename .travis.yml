@@ -5,6 +5,7 @@ before_install:
 - cd date_spot-rails
 - export GEM_HOME=$PWD/vendor/bundle/ruby/2.6.3
 - gem install bundler
+gemfile: date_spot-rails/
 cache: bundler
 services:
 - postgresql
