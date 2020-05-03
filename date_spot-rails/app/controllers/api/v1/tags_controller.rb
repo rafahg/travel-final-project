@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Api::V1::TagsController < ApplicationController
+  before_action :authenticate_user
   before_action :set_tag, only: %i[show update destroy]
-
   # GET /tags
   # GET /tags.json
   def index

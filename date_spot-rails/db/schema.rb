@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_05_03_071921) do
-=======
-ActiveRecord::Schema.define(version: 2020_05_02_115347) do
->>>>>>> 315107116e5aa85b0e6d461c0fb092a2fa56c783
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +78,7 @@ ActiveRecord::Schema.define(version: 2020_05_02_115347) do
   add_foreign_key "comments", "spots"
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "spots"
+  add_foreign_key "likes", "users"
   add_foreign_key "tag_associations", "spots"
   add_foreign_key "tag_associations", "tags"
-  add_foreign_key "likes", "users"
 end
