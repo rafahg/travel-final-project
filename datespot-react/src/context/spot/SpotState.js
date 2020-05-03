@@ -121,6 +121,25 @@ const SpotState = (props) => {
     }
   };
 
+  const getLikes = async () => {
+    try {
+    } catch (err) {}
+  };
+
+  const addToLikeCount = (toAdd) => {
+    dispatch({
+      type: Types.ADD_TO_LIKE_TABLE,
+      payload: toAdd,
+    });
+  };
+
+  const removeFromLikeCount = (toRemove) => {
+    dispatch({
+      type: Types.REMOVE_FROM_LIKE_TABLE,
+      payload: toRemove,
+    });
+  };
+
   return (
     <SpotContext.Provider
       value={{
@@ -129,11 +148,14 @@ const SpotState = (props) => {
         filteredByTag: state.filteredByTag,
         filterId: state.filterId,
         filteredByLiked: state.filteredByLiked,
+        likes: state.likes,
         filterSpotsByTags,
         filterSpots,
         clearFilter,
         getSpots,
         filterSpotsBasedOnLike,
+        addToLikeCount,
+        removeFromLikeCount,
       }}
     >
       {props.children}

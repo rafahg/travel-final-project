@@ -30,6 +30,22 @@ export default (state, action) => {
         ...state,
         filteredByLiked: action.payload,
       };
+    case Types.ADD_TO_LIKE_TABLE:
+      return {
+        ...state,
+        likes: [...state.likes, action.payload],
+      };
+    case Types.REMOVE_FROM_LIKE_TABLE:
+      return {
+        ...state,
+        likes: state.likes.filter(
+          (like) =>
+            !(
+              like.spot_id === action.payload.spot_id &&
+              like.user_id === action.payload.user_id
+            )
+        ),
+      };
     case Types.CLEAR_FILTER_BY_SPOT_TAGS:
       return {
         ...state,
