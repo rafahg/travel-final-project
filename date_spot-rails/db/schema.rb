@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_101046) do
+ActiveRecord::Schema.define(version: 2020_05_03_071921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,19 +42,23 @@ ActiveRecord::Schema.define(version: 2020_05_01_101046) do
     t.string "longitude"
   end
 
+  create_table "tag_associations", force: :cascade do |t|
+    t.bigint "spot_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["spot_id"], name: "index_tag_associations_on_spot_id"
+    t.index ["tag_id"], name: "index_tag_associations_on_tag_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "tag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tags_spots", id: false, force: :cascade do |t|
-    t.bigint "tag_id"
-    t.bigint "spot_id"
-    t.index ["spot_id"], name: "index_tags_spots_on_spot_id"
-    t.index ["tag_id"], name: "index_tags_spots_on_tag_id"
-  end
-
   add_foreign_key "comments", "spots"
   add_foreign_key "likes", "spots"
+  add_foreign_key "tag_associations", "spots"
+  add_foreign_key "tag_associations", "tags"
 end

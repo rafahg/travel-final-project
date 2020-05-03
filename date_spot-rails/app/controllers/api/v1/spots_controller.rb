@@ -39,10 +39,10 @@ class Api::V1::SpotsController < ApplicationController
   # PATCH/PUT /spots/1
   # PATCH/PUT /spots/1.json
   def update
-    if @aspot.update(aspot_params)
-      render json: @aspot
+    if @spot.update(spot_params)
+      render json: @spot
     else
-      render json: @aspot.errors, status: :unprocessable_entity
+      render json: @spot.errors, status: :unprocessable_entity
      end
   end
 
@@ -61,6 +61,7 @@ class Api::V1::SpotsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def spot_params
-    params.require(:spot).permit(:title, :description, :location, :url, :avg_cost)
+    params.require(:spot).permit(:title, :description, :location, :url, :avg_cost )
+    params.require(:spot).permit(tags_ids: [])
   end
 end
