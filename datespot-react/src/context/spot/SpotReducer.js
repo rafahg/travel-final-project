@@ -25,6 +25,11 @@ export default (state, action) => {
         ...state,
         filteredByTag: action.payload,
       };
+    case Types.FILTER_BY_USER_LIKES:
+      return {
+        ...state,
+        filteredByLiked: action.payload,
+      };
     case Types.CLEAR_FILTER_BY_SPOT_TAGS:
       return {
         ...state,

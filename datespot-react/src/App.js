@@ -7,6 +7,7 @@ import "./App.css";
 import Spot from "./components/pages/spot/Spot";
 import SpotDetails from "./components/spot/SpotDetails";
 import About from "./components/pages/about/About";
+import Profile from "./components/pages/profile/Profile";
 import Login from "./components/auth/Login";
 import Alerts from "./components/layout/Alerts";
 import Register from "./components/auth/Register";
@@ -23,12 +24,14 @@ function App() {
               <Fragment>
                 <NavigationBar />
                 <div className="container">
+                  <Alerts />
                   <Switch>
                     <Route exact path="/" component={Spot} />
                     <Route exact path="/about" component={About} />
                     <Route exact path="/spotdetails" component={SpotDetails} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
+                    <Route exact path="/profile" component={Profile} />
                   </Switch>
                 </div>
               </Fragment>

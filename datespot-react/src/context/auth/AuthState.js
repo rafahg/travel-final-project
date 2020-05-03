@@ -10,7 +10,7 @@ const AuthState = (props) => {
     token: localStorage.getItem("token"),
     isAuthenticated: null,
     loading: true,
-    user: null,
+    user: { id: 1, name: "Nima Soufiani", email: "n_soufiani@hotmail.com" },
     error: null,
     spinner: false,
     spinnerComment: "",

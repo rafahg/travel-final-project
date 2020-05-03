@@ -5,6 +5,8 @@ export const CLEAR_FILTER_TAG = "CLEAR_FILTER_TAG";
 export const CLEAR_FILTER = "CLEAR_FILTER";
 export const FILTER_BY_SPOT_TAGS = "FILTER_BY_SPOT_TAGS";
 export const CLEAR_FILTER_BY_SPOT_TAGS = "CLEAR_FILTER_BY_SPOT_TAGS";
+export const FILTER_BY_USER_LIKES = "FILTER_BY_USER_LIKES";
+
 //Types for Tag state
 export const ADD_TAG = "ADD_TAG";
 
