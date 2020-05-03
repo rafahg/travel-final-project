@@ -8,7 +8,6 @@ before_install:
 cache: 
   directories: 
   - date_spot-rails
-- bundler
  
 services:
 - postgresql
