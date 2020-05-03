@@ -24,7 +24,11 @@ export const NavigationBar = () => {
           </Nav>
           <Nav>
             <NavDropdown title="Settings" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#">Profile</NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/profile" className="link">
+                  Profile
+                </Link>
+              </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#">Logout</NavDropdown.Item>
             </NavDropdown>

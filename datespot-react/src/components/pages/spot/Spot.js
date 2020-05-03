@@ -4,13 +4,22 @@ import { CardDeck, CardColumns } from "react-bootstrap";
 import SpotItem from "../../spot/SpotItem";
 import SpotItemHeader from "../../spot/SpotItemHeader";
 import SpotFiltered from "../../spot/SpotFiltered";
+import AuthContext from "../../../context/auth/AuthContext";
 import { Spinner } from "react-bootstrap";
 import "./Spot.css";
 
 const Spot = () => {
+  const authContext = useContext(AuthContext);
   const spotContext = useContext(SpotContext);
-  const { spots, filtered, getSpots, filteredByTag, filterId } = spotContext;
-
+  const {
+    spots,
+    filtered,
+    getSpots,
+    filteredByTag,
+    filterId,
+    filterSpotsBasedOnLike,
+  } = spotContext;
+  const { user } = authContext;
   useEffect(() => {
     getSpots();
   }, []);
@@ -28,6 +37,7 @@ const Spot = () => {
           latitude={spot.latitude}
           longitude={spot.longitude}
           avg_cost={spot.avg_cost}
+          id={spot.id}
         />
       ));
     } else if (filtered !== null) {
@@ -42,6 +52,7 @@ const Spot = () => {
           latitude={spot.latitude}
           longitude={spot.longitude}
           avg_cost={spot.avg_cost}
+          id={spot.id}
         />
       ));
     } else {
@@ -56,6 +67,7 @@ const Spot = () => {
           latitude={spot.latitude}
           longitude={spot.longitude}
           avg_cost={spot.avg_cost}
+          id={spot.id}
         />
       ));
     }
