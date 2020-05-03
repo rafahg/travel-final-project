@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::SpotsController < ApplicationController
-  before_action :authenticate_user
+  #before_action :authenticate_user
   before_action :set_spot, only: %i[show update destroy]
 
   # GET /spots

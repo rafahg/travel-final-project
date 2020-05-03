@@ -10,7 +10,7 @@ const AuthState = (props) => {
     token: localStorage.getItem("token"),
     isAuthenticated: null,
     loading: true,
-    user: { id: 1, name: "Nima Soufiani", email: "n_soufiani@hotmail.com" },
+    user: null,
     error: null,
     spinner: false,
     spinnerComment: "",
@@ -21,15 +21,15 @@ const AuthState = (props) => {
   // Load User
   const loadUser = async () => {
     setAuthToken(localStorage.token);
-
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/auth");
+      const res = await axios.get("http://localhost:3000/api/user");
 
       dispatch({
         type: Types.USER_LOADED,
         payload: res.data,
       });
     } catch (err) {
+      console.error(err);
       dispatch({ type: Types.AUTH_ERROR });
     }
   };
@@ -44,7 +44,7 @@ const AuthState = (props) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/v1/users",
+        "http://localhost:3000/api/users",
         formData,
         config
       );
@@ -54,7 +54,21 @@ const AuthState = (props) => {
         payload: res.data,
       });
 
-      loadUser();
+      setAuthToken(localStorage.token);
+
+      dispatch({
+        type: Types.USER_LOADED,
+        payload: res.data,
+      });
+
+      setAuthToken(localStorage.token);
+
+      dispatch({
+        type: Types.USER_LOADED,
+        payload: res.data,
+      });
+
+      //loadUser();
     } catch (err) {
       dispatch({
         type: Types.REGISTER_FAIL,
@@ -74,10 +88,12 @@ const AuthState = (props) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/v1/auth",
+        "http://localhost:3000/api/users/login",
         formData,
         config
       );
+
+      console.log(res.data);
 
       dispatch({
         type: Types.LOGIN_SUCCESS,
@@ -85,7 +101,14 @@ const AuthState = (props) => {
       });
       noShowSpinner();
 
-      loadUser();
+      setAuthToken(localStorage.token);
+
+      dispatch({
+        type: Types.USER_LOADED,
+        payload: res.data,
+      });
+
+      //loadUser();
     } catch (err) {
       dispatch({
         type: Types.LOGIN_FAIL,
