@@ -29,7 +29,7 @@ function App() {
                   <Alerts />
                   <Switch>
                     <PrivateRoute exact path="/" component={Spot} />
-                    <PrivateRoute exact path="/home" component={Home} />
+                    <Route exact path="/home" component={Home} />
                     <PrivateRoute exact path="/about" component={About} />
                     <PrivateRoute
                       exact
