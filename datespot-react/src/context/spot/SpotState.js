@@ -20,14 +20,7 @@ const SpotState = (props) => {
       { id: 5, tag_id: 3, spot_id: 4 },
       { id: 6, tag_id: 2, spot_id: 3 },
     ],
-    likes: [
-      { spot_id: 1, user_id: 1 },
-      { spot_id: 1, user_id: 2 },
-      { spot_id: 2, user_id: 1 },
-      { spot_id: 4, user_id: 2 },
-      { spot_id: 3, user_id: 1 },
-      { spot_id: 6, user_id: 1 },
-    ],
+    likes: [{ id: 1, user_id: 1, spot_id: 1 }],
   };
 
   const [state, dispatch] = useReducer(SpotReducer, initialState);
@@ -138,18 +131,48 @@ const SpotState = (props) => {
     }
   };
 
-  const addToLikeCount = (toAdd) => {
-    dispatch({
-      type: Types.ADD_TO_LIKE_TABLE,
-      payload: toAdd,
-    });
+  const addToLikeCount = async (toAdd) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    try {
+      const res = await axios.post(
+        "http://localhost:3000/api/v1/likes",
+        toAdd,
+        config
+      );
+      dispatch({
+        type: Types.ADD_TO_LIKE_TABLE,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: Types.LIKES_ERROR,
+        payload: err,
+      });
+    }
   };
 
-  const removeFromLikeCount = (toRemove) => {
-    dispatch({
-      type: Types.REMOVE_FROM_LIKE_TABLE,
-      payload: toRemove,
-    });
+  const removeFromLikeCount = async (toRemove) => {
+    let toDelete = state.likes.filter(
+      (spot) =>
+        spot.spot_id === toRemove.spot_id && spot.user_id === toRemove.user_id
+    );
+    let idToDelete = toDelete[0].id;
+    try {
+      await axios.delete(`http://localhost:3000/api/v1/likes/${idToDelete}`);
+      dispatch({
+        type: Types.REMOVE_FROM_LIKE_TABLE,
+        payload: toRemove,
+      });
+    } catch (err) {
+      dispatch({
+        type: Types.LIKES_ERROR,
+        payload: err,
+      });
+    }
   };
 
   return (
