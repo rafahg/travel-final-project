@@ -21,24 +21,36 @@ export const NavigationBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link>
-              <Link to="/about" className="link">
-                About
-              </Link>
+              {user ? (
+                <Link to="/about" className="link">
+                  About
+                </Link>
+              ) : (
+                ""
+              )}
             </Nav.Link>
           </Nav>
           <Nav className="mr-auto" style={{ color: "white" }}>
             {user ? `Hello ${user.username} :)` : ""}
           </Nav>
           <Nav>
-            <NavDropdown title="Settings" id="basic-nav-dropdown">
-              <NavDropdown.Item>
-                <Link to="/profile" className="link">
-                  Profile
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
-            </NavDropdown>
+            {user ? (
+              <NavDropdown title="Settings" id="basic-nav-dropdown">
+                <NavDropdown.Item>
+                  <Link
+                    to="/profile"
+                    className="link"
+                    style={{ color: "black" }}
+                  >
+                    Profile
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              ""
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
