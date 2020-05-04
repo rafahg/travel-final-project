@@ -38,6 +38,11 @@ const Spot = () => {
           longitude={spot.longitude}
           avg_cost={spot.avg_cost}
           id={spot.id}
+          summary={spot.summary}
+          address={spot.address}
+          dress={spot.dress}
+          best_times={spot.best_times}
+          advice={spot.advice}
         />
       ));
     } else if (filtered !== null) {
@@ -53,6 +58,11 @@ const Spot = () => {
           longitude={spot.longitude}
           avg_cost={spot.avg_cost}
           id={spot.id}
+          summary={spot.summary}
+          address={spot.address}
+          dress={spot.dress}
+          best_times={spot.best_times}
+          advice={spot.advice}
         />
       ));
     } else {
@@ -68,6 +78,11 @@ const Spot = () => {
           longitude={spot.longitude}
           avg_cost={spot.avg_cost}
           id={spot.id}
+          summary={spot.summary}
+          address={spot.address}
+          dress={spot.dress}
+          best_times={spot.best_times}
+          advice={spot.advice}
         />
       ));
     }
