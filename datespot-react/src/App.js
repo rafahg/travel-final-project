@@ -6,6 +6,7 @@ import TagState from "./context/tag/TagState";
 import "./App.css";
 import Spot from "./components/pages/spot/Spot";
 import SpotDetails from "./components/spot/SpotDetails";
+import Home from "./components/pages/home/Home";
 import About from "./components/pages/about/About";
 import Profile from "./components/pages/profile/Profile";
 import Login from "./components/auth/Login";
@@ -28,6 +29,7 @@ function App() {
                   <Alerts />
                   <Switch>
                     <PrivateRoute exact path="/" component={Spot} />
+                    <PrivateRoute exact path="/home" component={Home} />
                     <PrivateRoute exact path="/about" component={About} />
                     <PrivateRoute
                       exact
