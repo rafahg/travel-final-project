@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/AuthContext";
 import AlertContext from "../../context/alert/AlertContext";
-import { Spinner, Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 const Register = (props) => {
   const alertContext = useContext(AlertContext);
@@ -43,9 +43,11 @@ const Register = (props) => {
       setAlert("Passwords do not match", "danger");
     } else {
       register({
-        username,
-        email,
-        password,
+        user: {
+          username,
+          email,
+          password,
+        },
       });
     }
   };

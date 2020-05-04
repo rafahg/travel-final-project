@@ -13,6 +13,7 @@ import Alerts from "./components/layout/Alerts";
 import Register from "./components/auth/Register";
 import NavigationBar from "./components/layout/navbar/NavigationBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PrivateRoute from "../src/components/Routing/PrivateRoute";
 
 function App() {
   return (
@@ -26,12 +27,16 @@ function App() {
                 <div className="container">
                   <Alerts />
                   <Switch>
-                    <Route exact path="/" component={Spot} />
-                    <Route exact path="/about" component={About} />
-                    <Route exact path="/spotdetails" component={SpotDetails} />
+                    <PrivateRoute exact path="/" component={Spot} />
+                    <PrivateRoute exact path="/about" component={About} />
+                    <PrivateRoute
+                      exact
+                      path="/spotdetails"
+                      component={SpotDetails}
+                    />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
-                    <Route exact path="/profile" component={Profile} />
+                    <PrivateRoute exact path="/profile" component={Profile} />
                   </Switch>
                 </div>
               </Fragment>
