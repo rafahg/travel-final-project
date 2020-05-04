@@ -28,7 +28,9 @@ class Api::V1::LikesController < ApplicationController
   # POST /likes
   # POST /likes.json
   def create
-    @like = Like.new(like_params)
+    #the change is in the line below. 
+    # it was @like = Like.new(like_params) but changed to below
+    @like = Like.new(spot_id: params[:spot_id], user_id: params[:user_id])
 
     if @like.save
       render json: @like, status: :created, location: api_v1_like_url(@like)
