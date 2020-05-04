@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useEffect, Fragment } from "react";
 import SpotContext from "../../context/spot/SpotContext";
 import SpotTags from "./SpotTags";
+import "./css/SpotFiltered.css";
 
 const SpotFiltered = () => {
   const spotContext = useContext(SpotContext);
@@ -29,6 +30,7 @@ const SpotFiltered = () => {
         className="text-center"
       >
         <input
+          id="search-bar"
           ref={text}
           type="text"
           placeholder="Filter spots..."

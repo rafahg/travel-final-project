@@ -18,7 +18,7 @@ const SpotTags = () => {
   }, []);
 
   return (
-    <div style={{ fontSize: "25px" }}>
+    <div style={{ fontSize: "17px" }}>
       {tags !== null ? (
         tags.map((tag) => <TagItem key={tag.id} tag={tag.tag} tagId={tag.id} />)
       ) : (
