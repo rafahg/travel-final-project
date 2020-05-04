@@ -19,6 +19,7 @@ const Profile = () => {
       <Header />
       <Container>
         <Row style={{ marginTop: "30px" }}>
+          <Col xs={6} md={6} style={{ border: "1px solid black" }}></Col>
           <Col xs={6} md={6} style={{ border: "1px solid black" }}>
             {/**this is where we display the cards which the user liked */}
             {filteredByLiked !== null ? (
@@ -38,10 +39,6 @@ const Profile = () => {
             ) : (
               <Spinner animation="border" variant="danger" />
             )}
-          </Col>
-          <Col xs={6} md={6} style={{ border: "1px solid black" }}>
-            {/* this is where we display the comments which the user commented on */}
-            xs=6 md=4
           </Col>
         </Row>
       </Container>
