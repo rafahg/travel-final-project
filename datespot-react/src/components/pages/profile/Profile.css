@@ -1,0 +1,9 @@
+#likedContainer{
+  width: 50%;
+  background-color: floralwhite;
+  padding: 10px;
+  overflow-y: scroll;
+  height: 700px;
+  border: 1px solid #DFDFDF;
+  margin: 5px
+}
