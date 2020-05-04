@@ -2,6 +2,11 @@ import * as Types from "../Types";
 
 export default (state, action) => {
   switch (action.type) {
+    case Types.GET_LIKES:
+      return {
+        ...state,
+        likes: action.payload,
+      };
     case Types.GET_SPOTS:
       return {
         ...state,
@@ -60,6 +65,11 @@ export default (state, action) => {
       return {
         ...state,
         filterId: null,
+      };
+    case Types.SPOTS_ERROR:
+      return {
+        ...state,
+        error: action.payload,
       };
     default:
       return state;

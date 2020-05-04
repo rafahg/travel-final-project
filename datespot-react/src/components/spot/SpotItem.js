@@ -20,7 +20,7 @@ const SpotItem = ({
   address,
   dress,
   best_times,
-  advice
+  advice,
 }) => {
   const spotContext = useContext(SpotContext);
   const authContext = useContext(AuthContext);
@@ -87,7 +87,7 @@ const SpotItem = ({
                   address: address,
                   dress: dress,
                   best_times: best_times,
-                  advice: advice
+                  advice: advice,
                 },
               }}
               className="link"

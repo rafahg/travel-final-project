@@ -109,6 +109,7 @@ const SpotState = (props) => {
   const getSpots = async () => {
     try {
       const res = await axios.get("http://localhost:3000/api/v1/spots");
+      getLikes();
       dispatch({
         type: Types.GET_SPOTS,
         payload: res.data,
@@ -121,9 +122,20 @@ const SpotState = (props) => {
     }
   };
 
+  //get likes
   const getLikes = async () => {
     try {
-    } catch (err) {}
+      const res = await axios.get("http://localhost:3000/api/v1/likes");
+      dispatch({
+        type: Types.GET_LIKES,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: Types.LIKES_ERROR,
+        payload: err,
+      });
+    }
   };
 
   const addToLikeCount = (toAdd) => {
@@ -156,6 +168,7 @@ const SpotState = (props) => {
         filterSpotsBasedOnLike,
         addToLikeCount,
         removeFromLikeCount,
+        getLikes,
       }}
     >
       {props.children}

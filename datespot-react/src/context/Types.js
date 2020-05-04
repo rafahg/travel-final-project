@@ -8,6 +8,10 @@ export const CLEAR_FILTER_BY_SPOT_TAGS = "CLEAR_FILTER_BY_SPOT_TAGS";
 export const FILTER_BY_USER_LIKES = "FILTER_BY_USER_LIKES";
 export const ADD_TO_LIKE_TABLE = "ADD_TO_LIKE_TABLE";
 export const REMOVE_FROM_LIKE_TABLE = "REMOVE_FROM_LIKE_TABLE";
+export const GET_LIKES = "GET_LIKES";
+export const GET_SPOTS = "GET_SPOTS";
+export const LIKES_ERROR = "LIKES_ERROR";
+export const SPOTS_ERROR = "SPOTS_ERROR";
 
 //Types for Tag state
 export const ADD_TAG = "ADD_TAG";
@@ -27,9 +31,9 @@ export const SPINNER_NOSHOW = "SPINNER_NOSHOW";
 //Types for Alert state
 export const SET_ALERT = "SET_ALERT";
 export const REMOVE_ALERT = "REMOVE_ALERT";
-export const GET_SPOTS = "GET_SPOTS";
+
 export const GET_TAGS = "GET_TAGS";
-export const SPOTS_ERROR = "SPOTS_ERROR";
+
 export const TAGS_ERROR = "TAGS_ERROR";
 
 //Types for Tag state
