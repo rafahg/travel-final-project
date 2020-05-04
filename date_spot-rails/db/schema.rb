@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_05_04_151926) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +54,11 @@ ActiveRecord::Schema.define(version: 2020_05_04_151926) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "latitude"
     t.string "longitude"
+    t.string "summary"
+    t.string "address"
+    t.string "dress"
+    t.string "best_times"
+    t.string "advice"
   end
 
   create_table "tag_associations", force: :cascade do |t|

@@ -18,7 +18,10 @@ const TagItem = ({ tag, tagId }) => {
       variant="light"
       className="tag"
       onClick={onClick}
-      style={{ border: `2px solid ${filterId === tagId ? "red" : "black"}` }}
+      style={{
+        border: `2px solid ${filterId === tagId ? "red" : "black"}`,
+        color: `${filterId === tagId ? "red" : "black"}`,
+      }}
     >
       {tag}
     </Badge>

@@ -17,6 +17,11 @@ const SpotItem = ({
   location,
   avg_cost,
   id,
+  summary,
+  address,
+  dress,
+  best_times,
+  advice
 }) => {
   const spotContext = useContext(SpotContext);
   const authContext = useContext(AuthContext);
@@ -57,7 +62,7 @@ const SpotItem = ({
       <Card.Img variant="top" src={url} />
       <Card.Body>
         <Card.Title data-test="text-container">{title}</Card.Title>
-        <Card.Text data-test="description-container">{description}</Card.Text>
+        <Card.Text data-test="description-container">{summary}</Card.Text>
         <FontAwesomeIcon
           icon={faHeart}
           style={{ color: `${color}` }}
@@ -79,6 +84,11 @@ const SpotItem = ({
                   longitude: longitude,
                   location: location,
                   avg_cost: avg_cost,
+                  summary: summary,
+                  address: address,
+                  dress: dress,
+                  best_times: best_times,
+                  advice: advice
                 },
               }}
               className="link"
