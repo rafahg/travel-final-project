@@ -4,6 +4,10 @@ import { Jumbotron, Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTie } from '@fortawesome/free-solid-svg-icons';
 import { faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import "./css/SpotDetails.css";
 
 
@@ -25,21 +29,35 @@ const SpotDetails = (props) => {
                 <Container>
                     <h1><span>{props.location.aboutProps.title}</span></h1>
                     <h3><span>
-                    {props.location.aboutProps.location}
+                    {props.location.aboutProps.summary}
                     </span></h3>
+                    <h4><span>
+                    {props.location.aboutProps.location}
+                    </span></h4>
                 </Container>
             </Jumbotron>
         
         <Container>
             <Row>
                 <Col>
-                <p><FontAwesomeIcon icon={faUserTie} /> : Smart</p>
-                <p><FontAwesomeIcon icon={faMoneyBillWave} />: £{props.location.aboutProps.avg_cost}</p>
-                <p>{props.location.aboutProps.description}</p>
+                <p><FontAwesomeIcon icon={faUserTie} /> : {props.location.aboutProps.dress}</p>
+                <p><FontAwesomeIcon icon={faMoneyBillWave} /> : £{props.location.aboutProps.avg_cost}</p>
+                <p><FontAwesomeIcon icon={faClock} /> : {props.location.aboutProps.best_times}</p>
+                <p><FontAwesomeIcon icon={faInfoCircle} /> : {props.location.aboutProps.description}</p>
+                <p><FontAwesomeIcon icon={faGraduationCap} /> : {props.location.aboutProps.advice}</p>
                 </Col>
                 <Col>
-                    <SpotMap longitude = {props.location.aboutProps.longitude} 
+                    <div className="map">
+                        <SpotMap longitude = {props.location.aboutProps.longitude} 
             latitude ={props.location.aboutProps.latitude} ></SpotMap>
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                </Col>
+                <Col>
+                    <p><FontAwesomeIcon icon={faLocationArrow} /> : {props.location.aboutProps.address} </p>
                 </Col>
             </Row>
         </Container>
