@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/AuthContext";
 import AlertContext from "../../context/alert/AlertContext";
 import { Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Register = (props) => {
   const alertContext = useContext(AlertContext);
@@ -115,12 +116,14 @@ const Register = (props) => {
               required
             />
           </Form.Group>
-          <Form.Group controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
+          <div>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </div>
+          <p className="text-center">
+            Already Signed up? Go for a cheeky <Link to="/login">Sign in!</Link>
+          </p>
         </Form>
       </div>
     </div>
