@@ -12,7 +12,7 @@ export default (state, action) => {
         ...state,
         spots: action.payload,
       };
-    case Types.ADD_FILTER_TAG:
+    case Types.ADD_FILTER_ID:
       return {
         ...state,
         filterId: action.payload,
@@ -51,6 +51,11 @@ export default (state, action) => {
             )
         ),
       };
+    case Types.CLEAR_LIKED_ARRAY:
+      return {
+        ...state,
+        filteredByLiked: null,
+      };
     case Types.CLEAR_FILTER_BY_SPOT_TAGS:
       return {
         ...state,
@@ -61,7 +66,7 @@ export default (state, action) => {
         ...state,
         filtered: null,
       };
-    case Types.CLEAR_FILTER_TAG:
+    case Types.CLEAR_FILTER_ID:
       return {
         ...state,
         filterId: null,
