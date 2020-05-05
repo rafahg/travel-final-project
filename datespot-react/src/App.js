@@ -13,6 +13,7 @@ import Login from "./components/auth/Login";
 import Alerts from "./components/layout/Alerts";
 import Register from "./components/auth/Register";
 import NavigationBar from "./components/layout/navbar/NavigationBar";
+import Footer from "./components/layout/footer/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from "../src/components/Routing/PrivateRoute";
 
@@ -25,7 +26,6 @@ function App() {
             <Router>
               <Fragment>
                 <NavigationBar />
-                
                   <Alerts />
                   <Switch>
                     <PrivateRoute exact path="/" component={Spot} />
@@ -40,7 +40,7 @@ function App() {
                     <Route exact path="/register" component={Register} />
                     <PrivateRoute exact path="/profile" component={Profile} />
                   </Switch>
-              
+                <Footer />
               </Fragment>
             </Router>
           </AlertState>

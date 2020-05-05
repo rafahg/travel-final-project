@@ -44,7 +44,8 @@ const Login = (props) => {
   };
 
   return (
-    <div className="container" style={{ paddingTop: "30px" }}>
+
+    <div className="container cont" style={{paddingTop: '30px'}}>
       <Row>
         <Col>
           <img src={fireworks} style={{ maxWidth: "100%" }}></img>

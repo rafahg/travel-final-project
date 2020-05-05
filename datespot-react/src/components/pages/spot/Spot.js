@@ -93,49 +93,47 @@ const Spot = () => {
     }
   };
 
-  return (
-    <div>
-      <Jumbotron
-        fluid
+  return (<div>
+    <Jumbotron fluid className="shadow" style={{
+                backgroundImage: `url(${table})`, 
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat', 
+                height: '300px'
+                
+                }}>
+      <Container>
+        <div className="spotHeader">
+          <SpotItemHeader />
+        </div>
+        <div
         style={{
-          backgroundImage: `url(${table})`,
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          height: "300px",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <Container>
-          <div className="spotHeader">
-            <SpotItemHeader />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <SpotFiltered className="text-center" />
-          </div>
-        </Container>
-      </Jumbotron>
-
-      <Container>
-        <div>
-          {spots !== null ? (
-            <CardColumns style={{ marginTop: "20px" }}>
-              {spotItemToDisplay()}
-            </CardColumns>
-          ) : (
-            <div className="text-center" style={{ marginTop: "300px" }}>
-              <Spinner animation="border" variant="danger" />
-            </div>
-          )}
-        </div>
+        <SpotFiltered className="text-center"/>
+         </div>
       </Container>
+    </Jumbotron>
+   
+<Container className="cont">
+      <div>
+        {spots !== null ? (
+          <CardColumns style={{ marginTop: "20px" }}>
+            {spotItemToDisplay()}
+          </CardColumns>
+        ) : (
+          <div className="text-center" style={{ marginTop: "300px" }}>
+            <Spinner animation="border" variant="danger" />
+          </div>
+        )}
+      </div>
+    
+    </Container>
     </div>
   );
 };

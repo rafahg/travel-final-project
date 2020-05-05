@@ -55,7 +55,7 @@ const Register = (props) => {
   };
 
   return (
-    <div className="container" style={{paddingTop: '30px'}}>
+    <div className="container cont" style={{paddingTop: '30px'}}>
 
 <Row>
   <Col>

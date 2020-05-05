@@ -57,7 +57,7 @@ const SpotItem = ({
   };
 
   return (
-    <Card data-test="card-container">
+    <Card data-test="card-container" className="shadow">
       <Card.Img variant="top" src={url} />
 
       <Card.Body>
