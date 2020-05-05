@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/AuthContext";
 import AlertContext from "../../context/alert/AlertContext";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import champagne from "../../assets/images/champagne.jpg";
 
 const Register = (props) => {
   const alertContext = useContext(AlertContext);
@@ -54,19 +55,14 @@ const Register = (props) => {
   };
 
   return (
-    <div className="container">
-    <div style={{ padding: "30px" }}>
-      <div style={{ display: "flex" }}>
-        <div
-          style={{
-            flexGrow: "2",
-            border: "1px solid black",
-            marginRight: "20px",
-          }}
-        >
-          Place an image here?
-        </div>
-        <Form onSubmit={onSubmit} style={{ flexGrow: "1" }}>
+    <div className="container" style={{paddingTop: '30px'}}>
+
+<Row>
+  <Col>
+    <img src={champagne} style={{maxWidth: '100%'}}></img>
+  </Col>
+  <Col>
+      <Form onSubmit={onSubmit} style={{ flexGrow: "1" }}>
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username</Form.Label>
             <Form.Control
@@ -126,8 +122,10 @@ const Register = (props) => {
             Already Signed up? Go for a cheeky <Link to="/login">Sign in!</Link>
           </p>
         </Form>
-      </div>
-    </div>
+  </Col>
+</Row>
+
+
     </div>
   );
 };
