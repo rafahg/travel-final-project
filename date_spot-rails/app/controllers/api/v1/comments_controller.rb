@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 class Api::V1::CommentsController < ApplicationController
-  #before_action :authenticate_user
+  # before_action :authenticate_user
   before_action :set_comment, only: %i[show update destroy]
 
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+  
+    @comments = Comment.where(spot_id: params[:spot_id])
     render json: @comments
   end
 
