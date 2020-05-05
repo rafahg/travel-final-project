@@ -47,25 +47,29 @@ const Spot = () => {
         />
       ));
     } else if (filtered !== null) {
-      return filtered.map((spot) => (
-        <SpotItem
-          key={spot.id}
-          title={spot.title}
-          location={spot.location}
-          description={spot.description}
-          ave_cost={spot.ave_cost}
-          url={spot.url}
-          latitude={spot.latitude}
-          longitude={spot.longitude}
-          avg_cost={spot.avg_cost}
-          id={spot.id}
-          summary={spot.summary}
-          address={spot.address}
-          dress={spot.dress}
-          best_times={spot.best_times}
-          advice={spot.advice}
-        />
-      ));
+      if (filtered.length !== 0) {
+        return filtered.map((spot) => (
+          <SpotItem
+            key={spot.id}
+            title={spot.title}
+            location={spot.location}
+            description={spot.description}
+            ave_cost={spot.ave_cost}
+            url={spot.url}
+            latitude={spot.latitude}
+            longitude={spot.longitude}
+            avg_cost={spot.avg_cost}
+            id={spot.id}
+            summary={spot.summary}
+            address={spot.address}
+            dress={spot.dress}
+            best_times={spot.best_times}
+            advice={spot.advice}
+          />
+        ));
+      } else {
+        return <div>No Spots found. please try another search</div>;
+      }
     } else {
       return spots.map((spot) => (
         <SpotItem
@@ -90,49 +94,48 @@ const Spot = () => {
   };
 
   return (
-   
-
-<div>
-    <Jumbotron fluid style={{
-                backgroundImage: `url(${table})`, 
-                backgroundPosition: 'center',
-                backgroundAttachment: 'fixed',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat', 
-                height: '300px'
-                
-                }}>
-      <Container>
-        <div className="spotHeader">
-          <SpotItemHeader />
-        </div>
-        <div
+    <div>
+      <Jumbotron
+        fluid
         style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
+          backgroundImage: `url(${table})`,
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          height: "300px",
         }}
       >
-        <SpotFiltered className="text-center"/>
-         </div>
-      </Container>
-    </Jumbotron>
-   
-<Container>
-      <div>
-        {spots !== null ? (
-          <CardColumns style={{ marginTop: "20px" }}>
-            {spotItemToDisplay()}
-          </CardColumns>
-        ) : (
-          <div className="text-center" style={{ marginTop: "300px" }}>
-            <Spinner animation="border" variant="danger" />
+        <Container>
+          <div className="spotHeader">
+            <SpotItemHeader />
           </div>
-        )}
-      </div>
-    
-    </Container>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <SpotFiltered className="text-center" />
+          </div>
+        </Container>
+      </Jumbotron>
+
+      <Container>
+        <div>
+          {spots !== null ? (
+            <CardColumns style={{ marginTop: "20px" }}>
+              {spotItemToDisplay()}
+            </CardColumns>
+          ) : (
+            <div className="text-center" style={{ marginTop: "300px" }}>
+              <Spinner animation="border" variant="danger" />
+            </div>
+          )}
+        </div>
+      </Container>
     </div>
   );
 };
