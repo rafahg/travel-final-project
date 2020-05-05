@@ -2,7 +2,7 @@
 
 So you're in a relationship, or perhaps you matched in an online dating app. That's fantastic but what do you do now? Where do you go for your date? Isn't it stressful to setup and plan the date? Well, stress no more as we have you covered with curated dates based on the location of your choosing!:) :)
 
-![heart](https://upload.wikimedia.org/wikipedia/commons/5/52/Heart_icon_red_hollow.svg)
+![heart](https://raw.githubusercontent.com/rafahg/travel-final-project/master/images/eda0d484-1a4c-469f-a078-be18330f633b_200x200.png)
 
 ## Table of content
 
@@ -19,7 +19,7 @@ So you're in a relationship, or perhaps you matched in an online dating app. Tha
 
 Follow these steps to install required dependencies:
 
-1) In the root of the project, cd into date_spot and type the following in your terminal:
+1. In the root of the project, cd into date_spot and type the following in your terminal:
 
 ```
 $ bundle install
@@ -31,7 +31,7 @@ That's it for the backend!
 
 Follow these steps to install required dependencies:
 
-1) In the root of the project, cd into datespot-react and type the following in your terminal:
+1. In the root of the project, cd into datespot-react and type the following in your terminal:
 
 ```
 $ npm install
@@ -45,7 +45,7 @@ Great! That's it for the front end!
 
 Follow these steps to run tests for the backend:
 
-1) In the root of the project, cd into date_spot and type the following in your terminal:
+1. In the root of the project, cd into date_spot and type the following in your terminal:
 
 ```
 $ rspec
@@ -57,7 +57,7 @@ You should see the tests for the backend in the terminal.
 
 Follow these steps to run tests in the front end:
 
-1) In the root of the project, cd into datespot-react and type the following in your terminal:
+1. In the root of the project, cd into datespot-react and type the following in your terminal:
 
 ```
 $ npm test
@@ -69,7 +69,7 @@ You should be able to see the tests performed in React
 
 Follow these steps to run the server:
 
-1) In the root of the project, cd into date_spot and type the following in your terminal:
+1. In the root of the project, cd into date_spot and type the following in your terminal:
 
 ```
 $ rails s
@@ -79,7 +79,7 @@ Yay! You just turned on the server for this project! This won't do us much good 
 
 Follow these steps to run tests in the front end:
 
-1) In the root of the project, cd into datespot-react and type the following in your terminal:
+1. In the root of the project, cd into datespot-react and type the following in your terminal:
 
 ```
 $ npm start
