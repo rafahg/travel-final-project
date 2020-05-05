@@ -7,7 +7,6 @@ class Api::V1::CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-  
     @comments = Comment.where(spot_id: params[:spot_id])
     render json: @comments
   end
@@ -29,10 +28,10 @@ class Api::V1::CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @comment = Comment.new(body: params[:body], user_id: params[:user_id], spot_id: params[:spot_id])
 
     if @comment.save
-      render json: @comment, status: :created, location: api_v1_comment_url(@comment)
+      render json: @comment, status: :created, location: api_v1_spot_comments_url(@comment)
     else
       render json: @comment.errors, status: :unprocessable_entity
      end
