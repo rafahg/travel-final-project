@@ -12,14 +12,7 @@ const SpotState = (props) => {
     filteredByLiked: null,
     filteredByTag: null,
     filterId: null,
-    tags_spots: [
-      { id: 1, tag_id: 1, spot_id: 1 },
-      { id: 2, tag_id: 1, spot_id: 2 },
-      { id: 3, tag_id: 2, spot_id: 2 },
-      { id: 4, tag_id: 1, spot_id: 3 },
-      { id: 5, tag_id: 3, spot_id: 4 },
-      { id: 6, tag_id: 2, spot_id: 3 },
-    ],
+    tags_spots: [{ id: 1, tag_id: 1, spot_id: 1 }],
     likes: [{ id: 1, user_id: 1, spot_id: 1 }],
   };
 
@@ -27,50 +20,31 @@ const SpotState = (props) => {
 
   //filter spot based on tags
 
-  const filterSpotsByTags = (filteredTagsToSearch) => {
-    if (state.filterId === filteredTagsToSearch) {
-      dispatch({
-        type: Types.CLEAR_FILTER_TAG,
-      });
-      dispatch({
-        type: Types.CLEAR_FILTER_BY_SPOT_TAGS,
-      });
-    } else {
-      dispatch({
-        type: Types.ADD_FILTER_TAG,
-        payload: filteredTagsToSearch,
-      });
-      let filtered_tag_spots = state.tags_spots.filter(
-        (tag_spot) => tag_spot.tag_id === filteredTagsToSearch
+  const filterSpotsByTags = async (tagId) => {
+    try {
+      const res = await axios.get(
+        `http://localhost:3000/api/v1/tagged_spot?tagid=${tagId}`
       );
-      if (state.filtered !== null) {
-        //populate filteredByTag based on filtered state
-        let filtered_spots = filtered_tag_spots.map((tag_spot) => {
-          for (let i = 0; i < state.filtered.length; i++) {
-            if (state.filtered[i].id === tag_spot.spot_id) {
-              return state.filtered[i];
-            }
-          }
-        });
-        dispatch({
-          type: Types.FILTER_BY_SPOT_TAGS,
-          payload: filtered_spots,
-        });
-      } else {
-        //populate filteredByTag based on spots state.
-        let filtered_spots = filtered_tag_spots.map((tag_spot) => {
-          for (let i = 0; i < state.spots.length; i++) {
-            if (state.spots[i].id === tag_spot.spot_id) {
-              return state.spots[i];
-            }
-          }
-        });
-        dispatch({
-          type: Types.FILTER_BY_SPOT_TAGS,
-          payload: filtered_spots,
-        });
-      }
+      dispatch({
+        type: Types.FILTER_BY_SPOT_TAGS,
+        payload: res.data,
+      });
+      dispatch({
+        type: Types.ADD_FILTER_ID,
+        payload: tagId,
+      });
+    } catch (err) {
+      console.error(err);
     }
+  };
+
+  const clearFilterSpotsByTags = () => {
+    dispatch({
+      type: Types.CLEAR_FILTER_ID,
+    });
+    dispatch({
+      type: Types.CLEAR_FILTER_BY_SPOT_TAGS,
+    });
   };
 
   const filterSpotsBasedOnLike = (user) => {
@@ -82,7 +56,11 @@ const SpotState = (props) => {
         }
       }
     });
-    console.log(filterBasedOnUserLike);
+    
+    if (filterBasedOnUserLike.length === 0) {
+      filterBasedOnUserLike = null
+    }
+    
     dispatch({
       type: Types.FILTER_BY_USER_LIKES,
       payload: filterBasedOnUserLike,
@@ -167,6 +145,11 @@ const SpotState = (props) => {
         type: Types.REMOVE_FROM_LIKE_TABLE,
         payload: toRemove,
       });
+      if (state.filteredByLiked.length === 0) {
+        dispatch({
+          type: Types.CLEAR_LIKED_ARRAY,
+        });
+      }
     } catch (err) {
       dispatch({
         type: Types.LIKES_ERROR,
@@ -185,6 +168,7 @@ const SpotState = (props) => {
         filteredByLiked: state.filteredByLiked,
         likes: state.likes,
         filterSpotsByTags,
+        clearFilterSpotsByTags,
         filterSpots,
         clearFilter,
         getSpots,

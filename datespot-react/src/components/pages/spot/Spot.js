@@ -12,14 +12,7 @@ import table from "../../../assets/images/table.jpg";
 const Spot = () => {
   const authContext = useContext(AuthContext);
   const spotContext = useContext(SpotContext);
-  const {
-    spots,
-    filtered,
-    getSpots,
-    filteredByTag,
-    filterId,
-    filterSpotsBasedOnLike,
-  } = spotContext;
+  const { spots, filtered, getSpots, filteredByTag } = spotContext;
   const { user } = authContext;
   useEffect(() => {
     getSpots();
@@ -93,47 +86,50 @@ const Spot = () => {
     }
   };
 
-  return (<div>
-    <Jumbotron fluid className="shadow" style={{
-                backgroundImage: `url(${table})`, 
-                backgroundPosition: 'center',
-                backgroundAttachment: 'fixed',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat', 
-                height: '300px'
-                
-                }}>
-      <Container>
-        <div className="spotHeader">
-          <SpotItemHeader />
-        </div>
-        <div
+  return (
+    <div>
+      <Jumbotron
+        fluid
+        className="shadow"
         style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
+          backgroundImage: `url(${table})`,
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          height: "300px",
         }}
       >
-        <SpotFiltered className="text-center"/>
-         </div>
-      </Container>
-    </Jumbotron>
-   
-<Container className="cont">
-      <div>
-        {spots !== null ? (
-          <CardColumns style={{ marginTop: "20px" }}>
-            {spotItemToDisplay()}
-          </CardColumns>
-        ) : (
-          <div className="text-center" style={{ marginTop: "300px" }}>
-            <Spinner animation="border" variant="danger" />
+        <Container>
+          <div className="spotHeader">
+            <SpotItemHeader />
           </div>
-        )}
-      </div>
-    
-    </Container>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <SpotFiltered className="text-center" />
+          </div>
+        </Container>
+      </Jumbotron>
+
+      <Container className="cont">
+        <div>
+          {spots !== null ? (
+            <CardColumns style={{ marginTop: "20px" }}>
+              {spotItemToDisplay()}
+            </CardColumns>
+          ) : (
+            <div className="text-center" style={{ marginTop: "300px" }}>
+              <Spinner animation="border" variant="danger" />
+            </div>
+          )}
+        </div>
+      </Container>
     </div>
   );
 };

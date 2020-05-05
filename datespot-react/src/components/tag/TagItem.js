@@ -7,10 +7,14 @@ import "./TagItem.css";
 const TagItem = ({ tag, tagId }) => {
   const spotContext = useContext(SpotContext);
 
-  const { filterSpotsByTags, filterId } = spotContext;
+  const { filterSpotsByTags, filterId, clearFilterSpotsByTags } = spotContext;
 
   const onClick = () => {
-    filterSpotsByTags(tagId);
+    if (filterId !== tagId) {
+      filterSpotsByTags(tagId);
+    } else {
+      clearFilterSpotsByTags();
+    }
   };
 
   return (

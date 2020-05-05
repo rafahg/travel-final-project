@@ -1,14 +1,11 @@
 import React from "react";
 import "./Header.css";
+import table from "../../assets/images/table.jpg";
 
 const Header = () => {
   return (
     <div className="headline">
-      <img
-        style={{ width: "-webkit-fill-available" }}
-        src="https://raw.githubusercontent.com/rafahg/travel-final-project/media/datespotmedia/4.Hill%20Garden%20and%20Pergola/1.hillgarden.jpg"
-        id="im"
-      />
+      <img style={{ width: "-webkit-fill-available" }} src={table} id="im" />
     </div>
   );
 };
