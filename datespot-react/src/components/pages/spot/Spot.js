@@ -47,25 +47,29 @@ const Spot = () => {
         />
       ));
     } else if (filtered !== null) {
-      return filtered.map((spot) => (
-        <SpotItem
-          key={spot.id}
-          title={spot.title}
-          location={spot.location}
-          description={spot.description}
-          ave_cost={spot.ave_cost}
-          url={spot.url}
-          latitude={spot.latitude}
-          longitude={spot.longitude}
-          avg_cost={spot.avg_cost}
-          id={spot.id}
-          summary={spot.summary}
-          address={spot.address}
-          dress={spot.dress}
-          best_times={spot.best_times}
-          advice={spot.advice}
-        />
-      ));
+      if (filtered.length !== 0) {
+        return filtered.map((spot) => (
+          <SpotItem
+            key={spot.id}
+            title={spot.title}
+            location={spot.location}
+            description={spot.description}
+            ave_cost={spot.ave_cost}
+            url={spot.url}
+            latitude={spot.latitude}
+            longitude={spot.longitude}
+            avg_cost={spot.avg_cost}
+            id={spot.id}
+            summary={spot.summary}
+            address={spot.address}
+            dress={spot.dress}
+            best_times={spot.best_times}
+            advice={spot.advice}
+          />
+        ));
+      } else {
+        return <div>No Spots found. please try another search</div>;
+      }
     } else {
       return spots.map((spot) => (
         <SpotItem
@@ -89,10 +93,7 @@ const Spot = () => {
     }
   };
 
-  return (
-   
-
-<div>
+  return (<div>
     <Jumbotron fluid className="shadow" style={{
                 backgroundImage: `url(${table})`, 
                 backgroundPosition: 'center',

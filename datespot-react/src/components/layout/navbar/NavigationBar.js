@@ -45,7 +45,23 @@ export const NavigationBar = () => {
                 <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
               </NavDropdown>
             ) : (
-              ""
+              <NavDropdown title="Settings" id="basic-nav-dropdown">
+                <NavDropdown.Item>
+                  <Link to="/login" className="link" style={{ color: "black" }}>
+                    Login
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item>
+                  <Link
+                    to="/register"
+                    className="link"
+                    style={{ color: "black" }}
+                  >
+                    Register
+                  </Link>
+                </NavDropdown.Item>
+              </NavDropdown>
             )}
           </Nav>
         </Navbar.Collapse>
