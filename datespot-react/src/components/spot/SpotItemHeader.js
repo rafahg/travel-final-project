@@ -1,9 +1,10 @@
 import React from "react";
+import "../pages/spot/Spot.css";
 
 const SpotItemHeader = () => {
   return (
-    <div data-test="header-container">
-      <h2>Date Spots</h2>
+    <div data-test="header-container" className="spotHeader">
+      <h2><span>Date Spots</span></h2>
     </div>
   );
 };

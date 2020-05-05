@@ -59,15 +59,17 @@ const SpotItem = ({
   return (
     <Card data-test="card-container">
       <Card.Img variant="top" src={url} />
+      
       <Card.Body>
-        <Card.Title data-test="text-container">{title}</Card.Title>
-        <Card.Text data-test="description-container">{summary}</Card.Text>
-        <FontAwesomeIcon
+        <Card.Title data-test="text-container" className="spotText"><span>{title}</span></Card.Title>
+        <Card.Text data-test="description-container" className="spotText"><span>{summary}</span></Card.Text>
+       <div className="spotText"><span><FontAwesomeIcon
           icon={faHeart}
           style={{ color: `${color}` }}
           onClick={setLikeState}
         />{" "}
-        {likeCount()}
+        {likeCount()}</span> 
+        </div>
       </Card.Body>
       <Card.Footer class="spotFooter">
         <div className="spotButton">
@@ -97,6 +99,7 @@ const SpotItem = ({
           </Button>
         </div>
       </Card.Footer>
+     
     </Card>
   );
 };
