@@ -24,7 +24,12 @@ const SpotItem = ({
 }) => {
   const spotContext = useContext(SpotContext);
   const authContext = useContext(AuthContext);
-  const { likes, addToLikeCount, removeFromLikeCount } = spotContext;
+  const {
+    likes,
+    addToLikeCount,
+    removeFromLikeCount,
+    clearFilter,
+  } = spotContext;
   const { user } = authContext;
 
   useEffect(() => {
@@ -103,6 +108,7 @@ const SpotItem = ({
                   advice: advice,
                 },
               }}
+              onClick={clearFilter}
               className="link"
             >
               More information
