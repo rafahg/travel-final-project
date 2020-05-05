@@ -106,6 +106,7 @@ const SpotItem = ({
                   dress: dress,
                   best_times: best_times,
                   advice: advice,
+                  id: id,
                 },
               }}
               onClick={clearFilter}
