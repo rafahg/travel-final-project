@@ -72,7 +72,7 @@ const SpotItem = ({
             <span>
               <FontAwesomeIcon
                 icon={faHeart}
-                style={{ color: `${color}` }}
+                style={{ color: `${color}`, cursor: "pointer" }}
                 onClick={setLikeState}
               />{" "}
               {likeCount()}
