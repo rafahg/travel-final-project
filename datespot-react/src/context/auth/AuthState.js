@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useContext } from "react";
 import axios from "axios";
 import AuthContext from "./AuthContext";
 import authReducer from "./AuthReducer";
@@ -17,7 +17,6 @@ const AuthState = (props) => {
   };
 
   const [state, dispatch] = useReducer(authReducer, initialState);
-
   // Load User
   const loadUser = async () => {
     setAuthToken(localStorage.token);
@@ -112,7 +111,7 @@ const AuthState = (props) => {
     } catch (err) {
       dispatch({
         type: Types.LOGIN_FAIL,
-        payload: err.response.data.msg,
+        payload: "Invalid Credentials",
       });
       noShowSpinner();
     }

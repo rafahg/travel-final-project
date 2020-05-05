@@ -44,10 +44,10 @@ const Login = (props) => {
   };
 
   return (
-    <div className="container" style={{paddingTop: '30px'}}>
+    <div className="container" style={{ paddingTop: "30px" }}>
       <Row>
         <Col>
-          <img src={fireworks} style={{maxWidth: '100%'}}></img>
+          <img src={fireworks} style={{ maxWidth: "100%" }}></img>
         </Col>
         <Col>
           <Form onSubmit={onSubmit} style={{ flexGrow: "1" }}>
@@ -82,17 +82,12 @@ const Login = (props) => {
             </Button>
             <p className="text-center">
               Never Signed up? Let's
-              <Link to="/login"> Sign you up!</Link>
+              <Link to="/register"> Sign you up!</Link>
             </p>
           </Form>
         </Col>
       </Row>
 
-
-
-
-
- 
       <div
         style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}
       >
