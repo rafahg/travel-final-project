@@ -89,6 +89,7 @@ const Spot = () => {
   };
 
   return (
+    <div className="container">
     <Fragment>
       <div
         style={{ display: "flex", justifyContent: "center", padding: "10px" }}
@@ -118,6 +119,7 @@ const Spot = () => {
         )}
       </div>
     </Fragment>
+    </div>
   );
 };
 

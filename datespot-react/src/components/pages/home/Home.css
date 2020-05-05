@@ -2,13 +2,13 @@ body, html{
     height: 100% !important;
     margin: 0 !important;
 }
-.container{
+/* .container{
     height: 100%;
     width: 100%;
     margin: 0 !important;
     padding: 0px !important;
     max-width: 100% !important;
-}
+} */
 
 .bg{
     background: url('../../../assets/images/coffee.jpg') no-repeat center center fixed;

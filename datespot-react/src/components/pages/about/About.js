@@ -11,6 +11,7 @@ import * as DESCRIPTION from "./Description";
 
 const About = () => {
   return (
+    <div className="container">
     <div data-test="about-container">
       <div
         style={{
@@ -67,6 +68,7 @@ const About = () => {
           />
         </Tab>
       </Tabs>
+    </div>
     </div>
   );
 };

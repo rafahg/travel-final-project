@@ -17,6 +17,7 @@ const SpotDetails = (props) => {
     const [show, setShow] = useState(false);
     console.log(1, props.location.aboutProps);
     return(
+        <div class="container">
        <Fragment class="spotJumbo">
             <Jumbotron fluid style={{
                 backgroundImage: `url(${props.location.aboutProps.url})`, 
@@ -78,6 +79,7 @@ const SpotDetails = (props) => {
             </Row>
         </Container>
         </Fragment>
+        </div>
     );
 };
 

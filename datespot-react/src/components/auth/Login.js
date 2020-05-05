@@ -43,6 +43,7 @@ const Login = (props) => {
   };
 
   return (
+    <div className="container">
     <div style={{ padding: "30px" }}>
       <div style={{ display: "flex" }}>
         <div
@@ -95,6 +96,7 @@ const Login = (props) => {
       >
         {spinner && <Spinner animation="border" variant="danger" />}
       </div>
+    </div>
     </div>
   );
 };

@@ -54,6 +54,7 @@ const Register = (props) => {
   };
 
   return (
+    <div className="container">
     <div style={{ padding: "30px" }}>
       <div style={{ display: "flex" }}>
         <div
@@ -126,6 +127,7 @@ const Register = (props) => {
           </p>
         </Form>
       </div>
+    </div>
     </div>
   );
 };
