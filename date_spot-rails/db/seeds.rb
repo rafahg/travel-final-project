@@ -1,14 +1,182 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# # This file should contain all the record creation needed to seed the database with its default values.
+# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# #
+# # Examples:
+# #
+# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# #   Character.create(name: 'Luke', movie: movies.first)
 
-# Spot.create(title: "romantic evening in my house",description: "a lovely walk down little venice", location: "little venice, london", url: "https://cdn.londonandpartners.com/asset/819f66aac606c1ef23220825a910f63c.jpg", avg_cost: "3", latitude: "51.5245129", longitude: "-0.1866869")
-# Tag.create(tag: "romantic")
-# Spot.create(title: "Lovely pizzeria",description: "a lovely walk down little venice", location: "Barbican, london", url: "https://cdn.londonandpartners.com/asset/819f66aac606c1ef23220825a910f63c.jpg", avg_cost: "3", latitude: "51.5245129", longitude: "-0.1866869")
-# Tag.create(tag: "Excellent food")
+# # Spot.create(title: "romantic evening in my house",description: "a lovely walk down little venice", location: "little venice, london", url: "https://cdn.londonandpartners.com/asset/819f66aac606c1ef23220825a910f63c.jpg", summary: "", address: "", avg_cost: "3", dress: "", best_times: "", advice:"", latitude: "51.5245129", longitude: "-0.1866869")
 
-# TagAssociation.create(spot_id: 3, tag_id: 3)
+# # Tag.create(tag: "romantic")
+# # Tag.create(tag: "Excellent food")
+
+# # TagAssociation.create(spot_id: 3, tag_id: 3)
+
+# 1.Lock scape rooms
+Spot.create(title: "Lock'd Escape Rooms",description: "In most circumstances, paying someone to lock you and your significant other in a confined space is not the most sensible of decisions. Lock’d in London (or perhaps escaping from a ravenous hoard of zombies) is a notable exception. 
+The concept in simple; you and your partner will be locked in a room and tasked with solving a series of clues in order to secure your freedom. Don’t worry though, if you can’t escape within 60 minutes, they’ll let you out. The shame of failure, however, is something you may never escape from.  
+You can choose one of four rooms of varying difficulty. If it’s your first time, we recommend choosing the easiest – you don’t want to look like an incompetent fool, or make your date feel like an idiot if you both can’t figure out the clues.
+If you enjoy solving puzzles, can keep cool under pressure and don’t suffer from extreme claustrophobia, Lock’d is supremely fun. It’s also a great way to get to know someone. 
+", location: "London", url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/6.Escape-room/2.escape.jpg", summary: "Lock’d is a boutique escape room game, like no other in London", address: "46 Lexington St, Soho, London W1F 0LP", avg_cost: "40£", dress: "Casual", best_times: "Avoid Wednesdays and Saturday afternoon/evening", advice:"", latitude: "51.493348", longitude: "-0.061344")
+
+# 2.Tower of london ice rink.
+Spot.create(title: "Tower of London Ice Rink",description: "There is nothing funnier than seeing someone fall over. And there is nowhere better to see people fall over (and perhaps have a go at falling over yourself) than the Tower of London Ice Rink. 
+It’s not just about falling over, of course, there is ice skating too! Impress your date with your majestic gliding across the frozen ground. Or, if it’s your first time, there are still plenty of merriment to be had trying to keep your balance and avoiding ending the day with any serious life-changing injuries.
+We recommend going in the evening as the Christmas lights and surrounding views make for a truly magical atmosphere and an unforgettable evening. 
+", url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/5.Ice-skating/2.ice-skating.jpg", summary: "Located in the dry moat, the Tower of London ice rink offers a grand historical setting for seasonal skating sessions, along with views of London's ancient fortress and the river Thames.", address: "Tower Hill, St Katharine's & Wapping, London EC3N 4AB", avg_cost: "20£", dress: "It is going to be a little cold out there, so, time to wear your fancy coat and get ready for impress your date with your skating skills", best_times: "The ice rink is open from November to January, 9am to 10pm. The evening is especially romantic with the Christmas lights.", advice:"", latitude: "51.529242", longitude: "-0.077504")
+
+# 3.Columbia Road Flower Market.
+Spot.create(title: "Columbia Road Flower Market",description: "Everyone loves flowers. Even those macho types who claim otherwise will secretly have a spring in their step when surrounded by some of nature’s most beautiful creations. 
+  Even if it’s a bit cliché, buying flowers for your partner is still a romantic gesture. There is no better way to discover your love one’s botanical preferences than a trip to London’s Columbia Road Flower Market. 
+  ", location: "London", url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/3.columbia%20flower%20market/2.columbia_road.jpg", summary: "Columbia Road is a road of Victorian shops off Hackney Road in the London Borough of Tower Hamlets.", address: "Columbia Rd, London E2 7RG, Reino Unido", avg_cost: "30£ for starters, sky is the limit though", dress: "Casual", best_times: "Sundays from 8am to 3pm. If you're after quality, arrive early. If you're after a bargain, turn up towards the end at around 2-3pm. It gets very busy at around midday.", advice:"", latitude: "51.529242", longitude: "-0.069798")
+
+# 4.The hill Garden and Pergola
+Spot.create(title: "The Hill Garden and Pergolad",description: "The Pergola is one of the hidden delights of Hampstead Heath. It overlooks West Heath, and was the dream of William H Lever, later Lord Leverhulme, a wealthy idealist, patron of the arts, architecture and landscape gardening; and Thomas Mawson, the celebrated landscape architect. In 1904, Lord Leverhulme purchased The Hill, a substantial house facing North End Way. He subsequently acquired adjoining land, and had the opportunity to create the Pergola, a magnificent Edwardian extravagance which would be the setting for garden parties and summer evening strolls and be a striking addition to the garden of The Hill. Masterminding the work was Thomas Mawson, a world-famous authority on civic design, town planning and landscape architecture. He brought architectural treatment and formality to garden design, and The Hill’s Pergola and gardens were destined to become the best surviving examples of his work.", location: "London", url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/4.Hill%20Garden%20and%20Pergola/1.hillgarden.jpg", summary: "A Georgian arbour and terrace in the Hill Garden with expansive views across Hampstead Heath.", address: "The Pergola, Inverforth Cl, London NW3 7EX", avg_cost: "10£", dress: "Casual", best_times: "8:30am to 3:30pm", advice:"", latitude: "51.565375", longitude: "-0.18372")
+
+# 5.Shakespeare's Globe
+Spot.create(title: "Shakespeare's Globe",description: "Shakespeare's Globe is a reconstruction of the Globe Theatre, an Elizabethan playhouse for which William Shakespeare wrote his plays, in the London Borough of Southwark, on the south bank of the River Thames.", location: "London", url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/7.globe%20theatre/2.globe%20theater.jpg", summary: "Oak-and-thatch replica of original Elizabethan theatre, showing Shakespeare plays in the open air.", address: "Shakespeare’s Globe 21 New Globe Walk Bankside", avg_cost: "50£", dress: "Smart Casual", best_times: "Booking in advance is advised", advice:"", latitude: "51.508183", longitude: "-0.097205")
+
+# 6. Hyde Park Stables.
+Spot.create(title: "Hyde Park Stables",description: "Put the concrete jungle of Canary Wharf or The City to one side — London is one of the greenest capitals in the world, which is good news if you’re in need of an equine fix and fancy horse riding in London. From gentle hacking to fast-paced polo, London has it all, and a city job doesn’t have to mean waving goodbye to your countYou can’t miss the all-weather paths snaking their way through this 350-acre park slap bang in the middle of the capital. And some of the hoof prints and horse dung can be traced back to Hyde Park Stables, which offers hacks through the park and lessons in the outdoor arena, as well as hosting hen parties and children’s camps.", location: "little venice, london", url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/10.hyde-park-horse/1.hyde-park-horse.jpg", summary: "Hyde Park Stables is a wonderful location for those who adore animals. This destination is just one of the hidden treasures that London, the country's capital, is home to.", address: "Different venues along the park", avg_cost: "120£", dress: "Sport Casual", best_times: "Booking in advance is advised", advice:"", latitude: "51.513267", longitude: "-0.17477")
+
+# 7. Boat Trip Little Venice
+Spot.create(title: "Boat trip Little venice",description: "Little Venice, with its beautiful canals and waterways, can be found just to the north of Paddington. Positioned where the Grand Union and Regent’s canals meet, this picturesque neighbourhood is home to quirky waterside cafes, cosy pubs and charming restaurants. From canal boat rides to puppet shows, there are plenty of things to do in this charming London area. If you’d rather take to the water, embark on an exciting canal trip by narrowboat with Jason's Trip, Jenny Wren Canal Cruises and the London Waterbus, which take you from Little Venice to Camden Lock Market in around 45 minutes.", location: "London", url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/12.boat-trip-little-venice/2.little-venice.jpg", summary: "Cruise along the canal connecting London's picturesque Little Venice to the colourful hub of Camden Lock.", address: "Different venues along the canal", avg_cost: "25£", dress: "Casual", best_times: "Booking in advance is advised( 5:30 pm to 10:45 pm)", advice:"", latitude: "51.521179", longitude: "-0.183746")
+
+# 8. Andrew Edmunds
+Spot.create(title: "Andrew Edmunds",description: "Located on Lexington Street, this 18th century townhouse restaurant was birthed from the antique prints business next door, and its sheer black façade frames the romantic candlelight scene happening within. The menu, which is handwritten each day on paper and blackboard, will make it seem as if you stumbled across this intimate restaurant one day and thought, “I must bring [insert name] here, he/she will simply adore it,” when, in fact, you read about it on The Nudge.", location: "London", url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/1.ANDREW%20EDMUNDS/picture_3.jpg", summary: "Established in 1985, Andrew Edmunds is considered one of the last bastions of 'old Soho'. ", address: "Lexington St, London", avg_cost: "50£", dress: "Smart Casual, fancy place", best_times: "Booking in advance is advised", advice:"", latitude: "51.513311", longitude: "-0.136147")
+
+# 9. Closs Maggiore
+Spot.create(title: "Closs Maggiore",description: "In the stunning setting of a Georgian townhouse in the heart of Covent Garden, Clos Maggoire offers an intimate and stylish experience with staunchly French cuisine and discreet service. Inside it's a charming affair, the courtyard allows for alfresco dining by day with its retracting glass roof and dining under the stars by night. The quality of the cuisine, wine list and service makes this hidden gem a much loved find in a crowded city.Clos Maggiore are very happy to have been awarded: 3 AA Rosettes; Most Romantic Restaurant in the World 2016 by Architectural Digest; London's Most Romantic Restaurant 2016 by Harden's; Wine Spectator Grand Award and The AA Notable Wine List Award.", location: "London", url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/2.Closs_maggiore/1.closs_maggiore.jpg", summary: "Enjoy outstanding French-influenced cuisine and one of the world's finest wine lists - winner of London's most romantic restaurant.", address: "33 King Street, Covent Garden, WC2E 8JD"
+, avg_cost: "75£", dress: "Dress to impress here.", best_times: "Booking in advance is advised", advice:"", latitude: "51.511807", longitude: "-0.124682")
+
+# # 10. Hutong Restaurant.
+# Spot.create(title: "Hutong Restaurant",description: "Bringing ground-breaking northern Chinese cuisine to one of London's most famous buildings, Hutong is housed on the 33rd floor of The Shard. From the sultry dining room at this restaurant in The Shard, floor-to-ceiling windows frame jaw-dropping views of the city.", location: "London", url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/8.HUTONG/1.hutong.jpg", summary: "Inspired by its famous namesake restaurant in Hong Kong, the Hutong menu features favourite northern Chinese recipes served with contemporary flair.", address: "33, The Shard, 31 St Thomas St, London SE1 9RY", avg_cost: "60£", dress: "Better get a suit for coming here, is a fancy place.", best_times: "Booking in advance is advised", advice:"", latitude: "51.504627", longitude: "-0.086642")
+
+
+
+#----------------------------------
+
+Spot.create(title: 'Hutong Restaurant',
+  description: "Bringing ground-breaking northern Chinese cuisine to one of London's most famous buildings, Hutong is housed on the 33rd floor of The Shard. From the sultry dining room at this restaurant in The Shard, floor-to-ceiling windows frame jaw-dropping views of the city.",
+  location: 'London',
+  url: 'https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/8.HUTONG/1.hutong.jpg',
+  summary: 'Inspired by its famous namesake restaurant in Hong Kong, the Hutong menu features favourite northern Chinese recipes served with contemporary flair.',
+  address: '33, The Shard, 31 St Thomas St, London SE1 9RY',
+  avg_cost: '&&',
+  dress: 'Better get a suit for coming here, is a fancy place.',
+  best_times: 'Booking in advance is advised',
+  advice: '',
+  latitude: '51.504627', longitude: '-0.086642')
+Spot.create(title: 'Musical',
+  description: "No trip to London's West End is complete without seeing a theatre show. London has some of the best plays and musicals in the world, but there's so much more to this cultural district than neon lights and famous faces. So before you take your seat at a London theatre, here are some essential facts and tips you should know about London's West End. There's so much to see in London's West End. From world-class plays, to musicals, to comedies, dance shows and operas, there's something for everyone, at every budget.",
+  location: 'London',
+  url: 'https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/9.musical/1.musical.jpg',
+  summary: 'Find your new favourite West End musical, from heartwarming adaptations and award-winning scores, to hilarious musical theatre and must-see London shows.',
+  address: 'Walk around the magnificent West End and you will find plenty of venues!',
+  avg_cost: '&&',
+  dress: 'It depends of you taste, a suit to have nice date with the love of your life never harms..',
+  best_times: 'Strongly advised to check for different offers. If you can plan it with time better. For last minutes offers, leicester square tickets sale venues are definetely the place to know about.',
+  advice: '',
+  latitude: '51.513029', longitude: '-0.135477')
+Spot.create(title: 'La bodega negra',
+  description: 'A quirky and fun space with uniquely decorated rooms, La Bodega Negra offers an exciting array of Mexican street food and drinks in a vibrant ambience that adds mystery and exclusivity. Enjoy a variety of traditional Mexican dishes with a twist, like tacos with delectable fillings, ceviche or grilled specialities including slow-roasted lamb barbacoa. Set in a secluded cellar, this hidden gem also offers itself as a party destination with DJs, live music and tequila to set the mood.',
+  location: 'London',
+  url: 'https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/11.La%20bodega%20negra/1.bodega_negra.jpg',
+  summary: 'You come here to see and be seen, and for a thrilling atmosphere and exceptionally friendly service.',
+  address: '9 Old Compton St, Soho',
+  avg_cost: '&&',
+  dress: 'Get your best mexican Hat on, and get ready for the party',
+  best_times: 'Booking in advance is advised',
+  advice: '',
+  latitude: '51.513819', longitude: '-0.129875')
+Spot.create(title: 'Shochu Lounge',
+  description: "Indulge in a Sunday brunch under the beautiful canopy of delicate pink blossoms! There'll be free-flowing cocktails and wine. Both menus start with a generous selection of ROKA favourites, brought to the table; larger dishes to order include the much-loved cedar roast baby chicken with chilli and lemon or the sea bream fillet, ryotei miso and red onions. To finish, there will be the picture-perfect ROKA dessert platter for the table. The accompanying cocktails include a Japanese-style Bloody Mary and the legendary Shochu on the beach.",
+  location: 'London',
+  url: 'https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/13.shochu%20lounge/1.sochu_lounge.jpg',
+  summary: "Shochu Lounge is a destination in its own right – a snazzy and 'sexy' subterranean space dedicated to the eponymous Japanese spirit (similar to vodka, but usually weaker).",
+  address: '37 Charlotte St, Fitzrovia',
+  avg_cost: '&&',
+  dress: 'Casual but poshy, the place deserve it.',
+  best_times: 'Booking in advance is advised',
+  advice: '',
+  latitude: '51.519133', longitude: '-0.135558')
+Spot.create(title: 'La poule au pot',
+  description: 'La Poule au Pot has been a Belgravia institution for as long as anyone cares to remember. The alluring interior, with its intimate nooks and festoons of dried flowers and bric-à-brac has changed little since the 60s and offers an authentic re-creation of "paysan" France. It is no surprise that La Poule has been voted "best for romance" in the whole of London in Hardens guide for the nth year in succession. Alongside the wonderfully atmospheric ambience, the menu is classic French too: excellent ingredients, generous portions and fine cooking, presented with exuberant panache. The wine list is honest, thoughtful and interesting. In warmer months, the extensive outdoor seating area makes the restaurant one of the most desirable alfresco destinations in the capital.',
+  location: 'London',
+  url: 'https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/14.La%20poule%20au%20pot/1.paule_pot.jpg',
+  summary: "La Poule au Pot has built up a charming patina over the years – half of London's ladies and gents must have been here for dates, liaisons and family get-togethers.",
+  address: '231 Ebury St, Belgravia',
+  avg_cost: '&&',
+  dress: 'Belgravia is not exactly known for people on shorts, a smart casual dress code should make the trick here. .',
+  best_times: 'Booking in advance is advised',
+  advice: '',
+  latitude: '51.491131', longitude: '-0.152578')
+Spot.create(title: 'London - Zoo',
+  description: "London Zoo is the world's oldest scientific zoo. It was opened in London on 27 April 1828, and was originally intended to be used as a collection for scientific study. In 1831 or 1832, the animals of the Tower of London menagerie were transferred to the zoo's collection. It was opened to the public in 1847",
+  location: 'London',
+  url: 'https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/15.london-zoo/download-3.jpg',
+  summary: 'Looking to take your date for a walk on the wild side this summer? Then look no further than ZSL London Zoo.',
+  address: 'Outer Cir, London NW1 4RY',
+  avg_cost: '&&',
+  dress: 'We love people who dress to impress, but if you are going to be near monkeys, better choose casual clothes. You never Know what those little friends can throw you.',
+  best_times: 'Check opening hours. Shows are scheduled along the day.',
+  advice: '',
+  latitude: '51.535488', longitude: '-0.15343')
+Spot.create(title: 'Gong - Shard',
+  description: 'GŎNG Bar, located on level 52, is the highest hotel bar in Western Europe and offers incredible views across the city. The space is divided into intimate chambers, with a cocktail bar, champagne bar and a swimming pool.',
+  location: 'London',
+  url: 'https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/16.Gong-shard/gong-main-image.jpg__954x493_q85_crop_subsampling-2_upscale.jpg',
+  summary: 'With a dramatic backdrop of unparalleled views, GONG is the destination bar at Shangri-La Hotel, At The Shard, London.',
+  address: '31 St Thomas St, London SE1 9QU',
+  avg_cost: '&&',
+  dress: 'Shard equals style and bussines, do you best and dress to impress here.',
+  best_times: 'Check opening hours. Shows are scheduled along the day.',
+  advice: '',
+  latitude: '51.50418', longitude: '-0.08601')
+Spot.create(title: 'London - Hotel Spa',
+  description: "Whether you want a targeted treatment or a whole wellness experience, relax and revitalise with Bazaar's pick of the ultimate London spas. From boutique day spas to luxury hotel sanctuaries, these hidden havens are the capital's hotspots for pampering, both holistic and aesthetic.",
+  location: 'London',
+  url: 'https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/17.london-hotel-spa/download-1.jpg',
+  summary: "A London spa day allows for the combination of retail therapy, theatre and beautiful restaurants as well as the decadent indulgence that the city's spa hotels and day spas excel in",
+  address: 'Hundreds of spas in the lovely London! B5289, Keswick',
+  avg_cost: '&&',
+  dress: 'It is an spa, we think that getting in a swimming clothes would be strongly recommended.',
+  best_times: 'Any time of the day will do the trick. Booking is advised for singular treatments in the mayority of cases.',
+  advice: '',
+  latitude: '54.560514', longitude: '-3.139129')
+Spot.create(title: 'Greenwich',
+  description: 'Located in the southeast portion of London on the south bank of the River Thames, Greenwich is named for a Saxon word meaning "green village". The birthplace of many royal members of the House of Tudor, the district was a popular resort area in the seventeenth century, particularly known for its grand houses.',
+  location: 'London',
+  url: 'https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/18.greenwich/download-2.jpg',
+  summary: "Struggling to know where to go on a first date in London? Or perhaps you have a day off work with your girlfriend, and you're not sure where to take her? Visit Greenwich!",
+  address: 'Blackheath Ave, Greenwich',
+  avg_cost: '&&',
+  dress: "Greenwich is lovely, it is where time was invented!!!, according Philomena Cunk, so get ready to walk a lot, dress casual with confortable shoes.",
+  best_times: "Open all day!!!, Anyway we recommend you to go when venues are open, can be lonely at 4 a.m in the night.",
+  advice: '',
+  latitude: '51.477976', longitude: '-0.001448')
+Spot.create(title: "Neal's Yard",
+  description: "Hidden inside this colourful courtyard you'll find a micro-village full of independent restaurants, bars, cafés and shops.Tucked away down a tiny side street in Seven Dials is Neal's Yard, one of London's prettiest streets. It's easy to miss, but it would be unfortunate if you did. Inside this little enclave, you can get everything from pizza to pedicures… and every business is committed to sustainable and ethical commercial practices.",
+  location: 'London',
+  url: "https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/19.nell's%20yard-london/neal-s-yard-colourful.jpg",
+  summary: "Hidden inside this colourful courtyard you'll find a micro-village full of independent restaurants, bars, cafés and shops.",
+  address: "Neal's Yard, West End, London",
+  avg_cost: '&&',
+  dress: 'Casual clothes for a tourist day in London!',
+  best_times: 'Open all day. If you want to spend sometime there and enjoy one of the beautiful hostipitality venues around, it can be done on the go.',
+  advice: '',
+  latitude: '51.51465', longitude: '-0.12638')
+
+  Spot.create(title: 'British Museum',
+    description: 'The British Museum, in the Bloomsbury area of London, United Kingdom, is a public institution dedicated to human history, art and culture. Its permanent collection of some eight million works is among the largest and most comprehensive in existence, having been widely sourced during the era of the British Empire.',
+    location: 'London',
+    url: 'https://github.com/rafahg/travel-final-project/blob/media/datespotmedia/20.British-museum-london/images.jpg',
+    summary: 'Immerse yourself in two million years of human history, art and culture.',
+    address: 'Great Russell St, Bloomsbury,',
+    avg_cost: '&&',
+    dress: 'Casual clothes for a tourist day in London!',
+    best_times: '10 am to 5 pm (late opening on Fridays)',
+    advice: '',
+    latitude: '51.5196', longitude: '-0.126946')
+
