@@ -1,4 +1,5 @@
 .vscode
+.DS_Store
 # Ignore all logfiles and tempfiles.
 date_spot-rails/log/development.log
 date_spot-rails/tmp/*
