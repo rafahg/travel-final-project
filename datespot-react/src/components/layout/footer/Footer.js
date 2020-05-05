@@ -8,8 +8,8 @@ import "./Footer.css";
 export const Footer = () => {
   
   return (
-    <div className="footer">
-    <Container>
+    <div className="footer fixed-bottom">
+    <Container fluid>
       <Row>
           <Col><small>&copy; DateSpot</small></Col>
       </Row>

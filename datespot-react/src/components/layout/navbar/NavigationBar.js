@@ -11,7 +11,7 @@ export const NavigationBar = () => {
 
   return (
     <div>
-      <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#E44236" }}>
+      <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#E44236" }} className="shadow">
         <Navbar.Brand>
           <Link to="/" className="link">
             DateSpot
