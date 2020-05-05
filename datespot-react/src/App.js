@@ -25,7 +25,7 @@ function App() {
             <Router>
               <Fragment>
                 <NavigationBar />
-                <div className="container">
+                
                   <Alerts />
                   <Switch>
                     <PrivateRoute exact path="/" component={Spot} />
@@ -40,7 +40,7 @@ function App() {
                     <Route exact path="/register" component={Register} />
                     <PrivateRoute exact path="/profile" component={Profile} />
                   </Switch>
-                </div>
+              
               </Fragment>
             </Router>
           </AlertState>

@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import SpotMap from "./SpotMap.js"
-import { Jumbotron, Container, Row, Col } from "react-bootstrap";
+import { Jumbotron, Container, Row, Col, Toast, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTie } from '@fortawesome/free-solid-svg-icons';
 import { faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
@@ -14,8 +14,10 @@ import "./css/SpotDetails.css";
 
 const SpotDetails = (props) => {
 
+    const [show, setShow] = useState(false);
     console.log(1, props.location.aboutProps);
     return(
+        <div class="container">
        <Fragment class="spotJumbo">
             <Jumbotron fluid style={{
                 backgroundImage: `url(${props.location.aboutProps.url})`, 
@@ -44,7 +46,22 @@ const SpotDetails = (props) => {
                 <p><FontAwesomeIcon icon={faMoneyBillWave} /> : £{props.location.aboutProps.avg_cost}</p>
                 <p><FontAwesomeIcon icon={faClock} /> : {props.location.aboutProps.best_times}</p>
                 <p><FontAwesomeIcon icon={faInfoCircle} /> : {props.location.aboutProps.description}</p>
-                <p><FontAwesomeIcon icon={faGraduationCap} /> : {props.location.aboutProps.advice}</p>
+                <div className="spotButton">
+                    <Button onClick={() => setShow(true)}><FontAwesomeIcon icon={faGraduationCap} /></Button>
+                </div>
+                <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
+                    <Toast.Header>
+                        <img
+                        src="holder.js/20x20?text=%20"
+                        className="rounded mr-2"
+                        alt=""
+                        />
+                        <strong className="mr-auto">Expert advice</strong>
+                    </Toast.Header>
+                    <Toast.Body>{props.location.aboutProps.advice}</Toast.Body>
+                    </Toast>
+
+                
                 </Col>
                 <Col>
                     <div className="map">
@@ -62,6 +79,7 @@ const SpotDetails = (props) => {
             </Row>
         </Container>
         </Fragment>
+        </div>
     );
 };
 

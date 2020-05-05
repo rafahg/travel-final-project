@@ -16,6 +16,7 @@ const Profile = () => {
   }, []);
 
   return (
+    <div className="container">
     <Fragment>
       <Header />
       <div style={{ marginTop: "30px", display: "flex", flexDirection: "row" }}>
@@ -55,6 +56,7 @@ const Profile = () => {
         </div>
       </div>
     </Fragment>
+    </div>
   );
 };
 

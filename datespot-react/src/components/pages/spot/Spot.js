@@ -1,12 +1,13 @@
 import React, { useContext, Fragment, useEffect } from "react";
 import SpotContext from "../../../context/spot/SpotContext";
-import { CardDeck, CardColumns } from "react-bootstrap";
+import { CardDeck, CardColumns, Jumbotron, Container } from "react-bootstrap";
 import SpotItem from "../../spot/SpotItem";
 import SpotItemHeader from "../../spot/SpotItemHeader";
 import SpotFiltered from "../../spot/SpotFiltered";
 import AuthContext from "../../../context/auth/AuthContext";
 import { Spinner } from "react-bootstrap";
 import "./Spot.css";
+import table from "../../../assets/images/table.jpg";
 
 const Spot = () => {
   const authContext = useContext(AuthContext);
@@ -89,13 +90,23 @@ const Spot = () => {
   };
 
   return (
-    <Fragment>
-      <div
-        style={{ display: "flex", justifyContent: "center", padding: "10px" }}
-      >
-        <SpotItemHeader />
-      </div>
-      <div
+   
+
+<div>
+    <Jumbotron fluid style={{
+                backgroundImage: `url(${table})`, 
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat', 
+                height: '300px'
+                
+                }}>
+      <Container>
+        <div className="spotHeader">
+          <SpotItemHeader />
+        </div>
+        <div
         style={{
           display: "flex",
           justifyContent: "center",
@@ -103,9 +114,12 @@ const Spot = () => {
           alignItems: "center",
         }}
       >
-        <SpotFiltered />
-      </div>
-
+        <SpotFiltered className="text-center"/>
+         </div>
+      </Container>
+    </Jumbotron>
+   
+<Container>
       <div>
         {spots !== null ? (
           <CardColumns style={{ marginTop: "20px" }}>
@@ -117,7 +131,9 @@ const Spot = () => {
           </div>
         )}
       </div>
-    </Fragment>
+    
+    </Container>
+    </div>
   );
 };
 

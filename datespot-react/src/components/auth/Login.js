@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/AuthContext";
 import AlertContext from "../../context/alert/AlertContext";
-import { Spinner, Form, Button, Container, Row } from "react-bootstrap";
+import { Spinner, Form, Button, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import fireworks from "../../assets/images/fireworks.jpg";
 
 const Login = (props) => {
   const alertContext = useContext(AlertContext);
@@ -43,53 +44,55 @@ const Login = (props) => {
   };
 
   return (
-    <div style={{ padding: "30px" }}>
-      <div style={{ display: "flex" }}>
-        <div
-          style={{
-            flexGrow: "2",
-            border: "1px solid black",
-            marginRight: "20px",
-          }}
-        >
-          Place an image here?
-        </div>
-        <Form onSubmit={onSubmit} style={{ flexGrow: "1" }}>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              name="email"
-              value={email}
-              onChange={onChange}
-              required
-            />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
+    <div className="container" style={{paddingTop: '30px'}}>
+      <Row>
+        <Col>
+          <img src={fireworks} style={{maxWidth: '100%'}}></img>
+        </Col>
+        <Col>
+          <Form onSubmit={onSubmit} style={{ flexGrow: "1" }}>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                name="email"
+                value={email}
+                onChange={onChange}
+                required
+              />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={password}
-              onChange={onChange}
-              required
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-          <p className="text-center">
-            Never Signed up? Let's
-            <Link to="/login"> Sign you up!</Link>
-          </p>
-        </Form>
-      </div>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={password}
+                onChange={onChange}
+                required
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+            <p className="text-center">
+              Never Signed up? Let's
+              <Link to="/login"> Sign you up!</Link>
+            </p>
+          </Form>
+        </Col>
+      </Row>
+
+
+
+
+
+ 
       <div
         style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}
       >
