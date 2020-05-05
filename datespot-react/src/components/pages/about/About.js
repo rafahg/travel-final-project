@@ -11,7 +11,7 @@ import * as DESCRIPTION from "./Description";
 
 const About = () => {
   return (
-    <div className="container">
+    <div className="container cont">
     <div data-test="about-container">
       <div
         style={{

@@ -93,7 +93,7 @@ const Spot = () => {
    
 
 <div>
-    <Jumbotron fluid style={{
+    <Jumbotron fluid className="shadow" style={{
                 backgroundImage: `url(${table})`, 
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed',
@@ -119,7 +119,7 @@ const Spot = () => {
       </Container>
     </Jumbotron>
    
-<Container>
+<Container className="cont">
       <div>
         {spots !== null ? (
           <CardColumns style={{ marginTop: "20px" }}>

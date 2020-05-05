@@ -1,9 +1,9 @@
-h1 span, h3 span, h4 span{
+h1 span, h3 span, h6 span{
     background-color: rgba( 0, 0, 0, 0.4);
     padding: 5px;
     color:#f8f9fa;;
     opacity: 1;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .map{
@@ -15,7 +15,7 @@ h1 span, h3 span, h4 span{
     display: flex;
     width: 100%;
     justify-content: left;
-   ;
+    padding-bottom: 10px;
   }
   
   .spotButton Button{
@@ -26,4 +26,8 @@ h1 span, h3 span, h4 span{
   .spotButton Button:hover, .homeButton Button:active, .homeButton Button:active:focus{
     background-color: rgb(151, 44, 36) !important;
     border-color: rgb(228, 66, 54) !important;
+  }
+
+  .address{
+    margin-top: 10px;
   }

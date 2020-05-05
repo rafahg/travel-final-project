@@ -16,7 +16,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container cont">
     <Fragment>
       <Header />
       <div style={{ marginTop: "30px", display: "flex", flexDirection: "row" }}>
@@ -39,15 +39,21 @@ const Profile = () => {
           {filteredByLiked !== null ? (
             filteredByLiked.map((spot) => (
               <SpotItemHeartless
-                key={spot.id}
-                title={spot.title}
-                location={spot.location}
-                description={spot.description}
-                ave_cost={spot.ave_cost}
-                url={spot.url}
-                latitude={spot.latitude}
-                longitude={spot.longitude}
-                avg_cost={spot.avg_cost}
+              key={spot.id}
+              title={spot.title}
+              location={spot.location}
+              description={spot.description}
+              ave_cost={spot.ave_cost}
+              url={spot.url}
+              latitude={spot.latitude}
+              longitude={spot.longitude}
+              avg_cost={spot.avg_cost}
+              id={spot.id}
+              summary={spot.summary}
+              address={spot.address}
+              dress={spot.dress}
+              best_times={spot.best_times}
+              advice={spot.advice}
               />
             ))
           ) : (

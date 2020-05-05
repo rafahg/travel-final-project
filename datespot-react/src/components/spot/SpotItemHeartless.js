@@ -12,13 +12,18 @@ const SpotItemHeartless = ({
   location,
   avg_cost,
   id,
+  summary,
+  address,
+  dress,
+  best_times,
+  advice,
 }) => {
   return (
     <Card data-test="card-container">
       <Card.Img variant="top" src={url} />
       <Card.Body>
         <Card.Title data-test="text-container">{title}</Card.Title>
-        <Card.Text data-test="description-container">{description}</Card.Text>
+        <Card.Text data-test="description-container">{summary}</Card.Text>
       </Card.Body>
       <Card.Footer class="spotFooter">
         <div className="spotButton">
@@ -34,6 +39,11 @@ const SpotItemHeartless = ({
                   longitude: longitude,
                   location: location,
                   avg_cost: avg_cost,
+                  summary: summary,
+                  address: address,
+                  dress: dress,
+                  best_times: best_times,
+                  advice: advice,
                 },
               }}
               className="link"
