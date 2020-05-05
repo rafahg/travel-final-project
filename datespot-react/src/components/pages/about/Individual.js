@@ -7,7 +7,7 @@ export const Individual = ({ img, desc, name, link }) => {
       <div>
         <Image src={img} rounded />
       </div>
-      <div>
+      <div style={{ marginLeft: "20px", marginTop: "20px" }}>
         <h3>{name}</h3>
         <h5>{desc}</h5>
         <h6>
