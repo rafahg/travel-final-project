@@ -13,6 +13,8 @@ export const GET_SPOTS = "GET_SPOTS";
 export const LIKES_ERROR = "LIKES_ERROR";
 export const SPOTS_ERROR = "SPOTS_ERROR";
 export const CLEAR_LIKED_ARRAY = "CLEAR_LIKED_ARRAY";
+export const ADD_COMMENTS = "ADD_COMMENTS";
+export const CLEAR_COMMENTS = "CLEAR_COMMENTS";
 
 //Types for Tag state
 export const ADD_TAG = "ADD_TAG";

@@ -17,6 +17,11 @@ export default (state, action) => {
         ...state,
         filterId: action.payload,
       };
+    case Types.ADD_COMMENTS:
+      return {
+        ...state,
+        comments: action.payload,
+      };
     case Types.FILTER_SPOTS:
       return {
         ...state,
@@ -55,6 +60,11 @@ export default (state, action) => {
       return {
         ...state,
         filteredByLiked: null,
+      };
+    case Types.CLEAR_COMMENTS:
+      return {
+        ...state,
+        comments: null,
       };
     case Types.CLEAR_FILTER_BY_SPOT_TAGS:
       return {

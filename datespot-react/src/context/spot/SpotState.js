@@ -12,11 +12,42 @@ const SpotState = (props) => {
     filteredByLiked: null,
     filteredByTag: null,
     filterId: null,
+    comments: null,
     tags_spots: [{ id: 1, tag_id: 1, spot_id: 1 }],
     likes: [{ id: 1, user_id: 1, spot_id: 1 }],
   };
 
   const [state, dispatch] = useReducer(SpotReducer, initialState);
+
+  //get comment associated with spot
+
+  const getCommentBasedOnSpot = async (spotId) => {
+    console.log("*****");
+    console.log(spotId);
+    console.log("*****");
+    try {
+      const res = await axios.get(
+        `http://localhost:3000/api/v1/spots/${spotId}/comments`
+      );
+      dispatch({
+        type: Types.ADD_COMMENTS,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: Types.SPOTS_ERROR,
+        payload: err,
+      });
+    }
+  };
+
+  //clear comment associated with spot
+
+  const clearComments = () => {
+    dispatch({
+      type: Types.CLEAR_COMMENTS,
+    });
+  };
 
   //filter spot based on tags
 
@@ -56,11 +87,11 @@ const SpotState = (props) => {
         }
       }
     });
-    
+
     if (filterBasedOnUserLike.length === 0) {
-      filterBasedOnUserLike = null
+      filterBasedOnUserLike = null;
     }
-    
+
     dispatch({
       type: Types.FILTER_BY_USER_LIKES,
       payload: filterBasedOnUserLike,
@@ -167,6 +198,9 @@ const SpotState = (props) => {
         filterId: state.filterId,
         filteredByLiked: state.filteredByLiked,
         likes: state.likes,
+        comments: state.comments,
+        clearComments,
+        getCommentBasedOnSpot,
         filterSpotsByTags,
         clearFilterSpotsByTags,
         filterSpots,
