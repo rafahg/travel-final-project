@@ -7,6 +7,7 @@ So you're in a relationship, or perhaps you matched in an online dating app. Tha
 ## Table of content
 
 - [Installation](#installation)
+- [Database](#database)
 - [Testing](#testing)
 - [Running the application](#running-the-application)
 - [Tech stack](#tech-stack)
@@ -19,7 +20,7 @@ So you're in a relationship, or perhaps you matched in an online dating app. Tha
 
 Follow these steps to install required dependencies:
 
-1. In the root of the project, cd into date_spot and type the following in your terminal:
+1. In the root of the project, cd into date_spot-rails and type the following in your terminal:
 
 ```
 $ bundle install
@@ -38,6 +39,38 @@ $ npm install
 ```
 
 Great! That's it for the front end!
+
+## Database
+In the root of the project, cd into date_spot-rails and type the following in your terminal:
+
+The first time you install the database, just run:
+
+```
+$ rails db:create
+```
+```
+$ rails db:migrate
+```
+```
+$ rails db:seed
+```
+
+For every other time, to achieve a clear installation, run:
+
+```
+$ rails db:drop
+```
+```
+$ rails db:create
+```
+```
+$ rails db:migrate
+```
+```
+$ rails db:seed
+```
+
+
 
 ## Testing
 
