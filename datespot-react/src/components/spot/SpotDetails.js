@@ -1,6 +1,14 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
 import SpotMap from "./SpotMap.js";
-import { Jumbotron, Container, Row, Col, Toast, Button } from "react-bootstrap";
+import {
+  Jumbotron,
+  Container,
+  Row,
+  Col,
+  Toast,
+  Button,
+  Form,
+} from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import { faMoneyBillWave } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +18,7 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import "./css/SpotDetails.css";
 import SpotContext from "../../context/spot/SpotContext";
+import Comment from "./Comment";
 
 const SpotDetails = (props) => {
   const [show, setShow] = useState(false);
@@ -133,6 +142,7 @@ const SpotDetails = (props) => {
                 style={{ borderTop: "1px solid black", marginTop: "30px" }}
               ></div>
               <div>{getComments()}</div>
+              <Comment />
             </Col>
           </Row>
         </Container>
