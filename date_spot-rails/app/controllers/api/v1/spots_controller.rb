@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::SpotsController < ApplicationController
-  #before_action :authenticate_user
+  # before_action :authenticate_user
   before_action :set_spot, only: %i[show update destroy]
 
   # GET /spots
@@ -51,6 +51,17 @@ class Api::V1::SpotsController < ApplicationController
   # DELETE /spots/1.json
   def destroy
     @spot.destroy
+  end
+
+  def tagged_spot
+    tagId = params[:tagid]
+    tagged_spots = TagAssociation.where(tag_id: tagId)
+    spot_ids = []
+    tagged_spots.each do |tagged_spot|
+      spot_ids.push(tagged_spot.spot_id)
+    end
+    spots = Spot.where(id: spot_ids)
+    render json: spots
   end
 
   private
