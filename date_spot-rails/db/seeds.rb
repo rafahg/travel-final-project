@@ -381,6 +381,33 @@ Picture.create(spot_id: 13, url: "https://raw.githubusercontent.com/rafahg/trave
 Picture.create(spot_id: 14, url: "https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/LA-POULE-AU-POT/POULE-1.jpg")
 Picture.create(spot_id: 14, url: "https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/LA-POULE-AU-POT/POULE-2.jpg")
 Picture.create(spot_id: 14, url: "https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/LA-POULE-AU-POT/POULE-3.jpg")
+Picture.create(spot_id: 1, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/ESCAPE-ROOM/ESCAPE-ROOM-1.jpg")
+Picture.create(spot_id: 1, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/ESCAPE-ROOM/ESCAPE-ROOM-2.jpg")
+Picture.create(spot_id: 1, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/ESCAPE-ROOM/ESCAPE-ROOM-3.jpg")
+
+Picture.create(spot_id: 2, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/ICE-SKATING/ICE-SKATING-1.jpg")
+Picture.create(spot_id: 2, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/ICE-SKATING/ICE-SKATING-2.jpg")
+Picture.create(spot_id: 2, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/ICE-SKATING/ICE-SKATING-3.jpg")
+
+Picture.create(spot_id: 3, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/COLUMBIA-FLOWER-MARKET/COLUMBIA-FLOWER-MARKET-1.jpg")
+Picture.create(spot_id: 3, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/COLUMBIA-FLOWER-MARKET/COLUMBIA-FLOWER-MARKET-2.jpg")
+Picture.create(spot_id: 3, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/COLUMBIA-FLOWER-MARKET/COLUMBIA-FLOWER-MARKET-3.jpg")
+
+Picture.create(spot_id: 4, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/HILL-GARDEN-PERGOLA/HILL-GARDEN-1.jpg")
+Picture.create(spot_id: 4, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/HILL-GARDEN-PERGOLA/HILL-GARDEN-2.jpg")
+Picture.create(spot_id: 4, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/HILL-GARDEN-PERGOLA/HILL-GARDEN-3.jpg")
+
+Picture.create(spot_id: 5, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/GLOBE-THEATRE/GLOBE-1.jpg")
+Picture.create(spot_id: 5, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/GLOBE-THEATRE/GLOBE-2.jpg")
+Picture.create(spot_id: 5, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/GLOBE-THEATRE/GLOBE-3.jpg")
+
+Picture.create(spot_id: 6, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/HYDE-PARK-HORSE/HORSE-1.jpg")
+Picture.create(spot_id: 6, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/HYDE-PARK-HORSE/HORSE-2.jpg")
+Picture.create(spot_id: 6, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/HYDE-PARK-HORSE/HORSE-3.jpg")
+
+Picture.create(spot_id: 7, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/BOAT-TRIP-LITTLEVENICE/LITTLE-VENICE.1.jpg")
+Picture.create(spot_id: 7, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/BOAT-TRIP-LITTLEVENICE/LITTLE-VENICE.2.jpg")
+Picture.create(spot_id: 7, url:"https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/BOAT-TRIP-LITTLEVENICE/LITTLE-VENICE.3.jpg")
 Picture.create(spot_id: 15, url: 'https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/LONDON-ZOO/LONDON-ZOO-1.jpg')
 Picture.create(spot_id: 15, url: 'https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/LONDON-ZOO/LONDON-ZOO-2.jpg')
 Picture.create(spot_id: 15, url: 'https://raw.githubusercontent.com/rafahg/travel-final-project/media/media/LONDON-ZOO/LONDON-ZOO-3.jpg')
