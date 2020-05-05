@@ -1,8 +1,23 @@
 .headline{
   margin-top: 10px;
   height: 200px;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+
+#userText{
+  color: white;
+    position: relative;
+    left: 15%;
+    top: 30%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 40px;
+}
+
+#im{
+  width: -webkit-fill-available;
+    position: absolute;
+    z-index: -1;
 }

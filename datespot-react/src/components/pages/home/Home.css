@@ -1,0 +1,53 @@
+body, html{
+    height: 100% !important;
+    margin: 0 !important;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0px !important;
+    max-width: 100% !important;
+}
+
+.bg{
+    background: url('../../../assets/images/coffee.jpg') no-repeat center center fixed;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #cccaca;
+    background-blend-mode: darken;
+
+}
+
+
+.welcome{
+   text-align: center;
+   height: 100vh !important;
+}
+.welcome h1 span{
+    background-color: rgba( 0, 0, 0, 0.4);
+    padding: 5px;
+    color:#f8f9fa;;
+    opacity: 1;
+    line-height: 1.5;
+}
+
+.homeButton {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+   ;
+  }
+  
+  .homeButton Button{
+    background-color: rgb(228, 66, 54);
+    border-color: rgb(151, 44, 36);
+  }
+  
+  .homeButton Button:hover, .homeButton Button:active, .homeButton Button:active:focus{
+    background-color: rgb(151, 44, 36) !important;
+    border-color: rgb(228, 66, 54) !important;
+  }

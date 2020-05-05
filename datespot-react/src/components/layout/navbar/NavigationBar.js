@@ -21,13 +21,9 @@ export const NavigationBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link>
-              {user ? (
-                <Link to="/about" className="link">
-                  About
-                </Link>
-              ) : (
-                ""
-              )}
+              <Link to="/about" className="link">
+                About
+              </Link>
             </Nav.Link>
           </Nav>
           <Nav className="mr-auto" style={{ color: "white" }}>

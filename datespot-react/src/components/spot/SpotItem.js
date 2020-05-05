@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Card, Button } from "react-bootstrap";
 import "./css/SpotItem.css";
-import littlevenice from "../../assets/images/littlevenice.jpeg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +20,7 @@ const SpotItem = ({
   address,
   dress,
   best_times,
-  advice
+  advice,
 }) => {
   const spotContext = useContext(SpotContext);
   const authContext = useContext(AuthContext);
@@ -88,7 +87,7 @@ const SpotItem = ({
                   address: address,
                   dress: dress,
                   best_times: best_times,
-                  advice: advice
+                  advice: advice,
                 },
               }}
               className="link"
