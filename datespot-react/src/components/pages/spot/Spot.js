@@ -12,11 +12,10 @@ import table from "../../../assets/images/table.jpg";
 const Spot = () => {
   const authContext = useContext(AuthContext);
   const spotContext = useContext(SpotContext);
-  const { spots, filtered, getSpots, filteredByTag, clearComments } = spotContext;
+  const { spots, filtered, getSpots, filteredByTag } = spotContext;
   const { user } = authContext;
   useEffect(() => {
     getSpots();
-    clearComments()
   }, []);
 
   const spotItemToDisplay = () => {

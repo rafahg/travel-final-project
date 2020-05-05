@@ -18,16 +18,22 @@ const SpotDetails = (props) => {
   const { getCommentBasedOnSpot, comments, clearComments } = spotContext;
 
   useEffect(() => {
-    clearComments()
+    clearComments();
     getCommentBasedOnSpot(props.location.aboutProps.id);
     getComments();
   }, []);
 
   const getComments = () => {
     if (comments) {
-      console.log("i am in getComments");
-      console.log(comments);
-      return comments.map((comment) => <div>{comment.body}</div>);
+      if (comments.length === 0) {
+        return (
+          <div>
+            <h5>No comments to display for this spot...yet</h5>
+          </div>
+        );
+      } else {
+        return comments.map((comment) => <div>{comment.body}</div>);
+      }
     } else {
       return (
         <div>
