@@ -29,7 +29,7 @@ const SpotState = (props) => {
         },
       };
       const res = await axios.post(
-        `http://localhost:3000/api/v1/spots/${toSend.spot_id}/comments`,
+        `/api/v1/spots/${toSend.spot_id}/comments`,
         toSend,
         config
       );
@@ -49,9 +49,7 @@ const SpotState = (props) => {
 
   const getCommentBasedOnSpot = async (spotId) => {
     try {
-      const res = await axios.get(
-        `http://localhost:3000/api/v1/spots/${spotId}/comments`
-      );
+      const res = await axios.get(`/api/v1/spots/${spotId}/comments`);
       dispatch({
         type: Types.GET_COMMENTS,
         payload: res.data,
@@ -76,9 +74,7 @@ const SpotState = (props) => {
 
   const filterSpotsByTags = async (tagId) => {
     try {
-      const res = await axios.get(
-        `http://localhost:3000/api/v1/tagged_spot?tagid=${tagId}`
-      );
+      const res = await axios.get(`/api/v1/tagged_spot?tagid=${tagId}`);
       dispatch({
         type: Types.FILTER_BY_SPOT_TAGS,
         payload: res.data,
@@ -133,7 +129,7 @@ const SpotState = (props) => {
 
   const getSpots = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/spots");
+      const res = await axios.get("/api/v1/spots");
       getLikes();
       dispatch({
         type: Types.GET_SPOTS,
@@ -150,7 +146,7 @@ const SpotState = (props) => {
   //get likes
   const getLikes = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/likes");
+      const res = await axios.get("/api/v1/likes");
       dispatch({
         type: Types.GET_LIKES,
         payload: res.data,
@@ -170,11 +166,7 @@ const SpotState = (props) => {
       },
     };
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/v1/likes",
-        toAdd,
-        config
-      );
+      const res = await axios.post("/api/v1/likes", toAdd, config);
       dispatch({
         type: Types.ADD_TO_LIKE_TABLE,
         payload: res.data,
@@ -194,7 +186,7 @@ const SpotState = (props) => {
     );
     let idToDelete = toDelete[0].id;
     try {
-      await axios.delete(`http://localhost:3000/api/v1/likes/${idToDelete}`);
+      await axios.delete(`/api/v1/likes/${idToDelete}`);
       dispatch({
         type: Types.REMOVE_FROM_LIKE_TABLE,
         payload: toRemove,

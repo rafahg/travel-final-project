@@ -15,7 +15,7 @@ const TagState = (props) => {
 
   const getTags = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/tags");
+      const res = await axios.get("/api/v1/tags");
       dispatch({
         type: Types.GET_TAGS,
         payload: res.data,

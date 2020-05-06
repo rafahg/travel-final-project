@@ -21,7 +21,7 @@ const AuthState = (props) => {
   const loadUser = async () => {
     setAuthToken(localStorage.token);
     try {
-      const res = await axios.get("http://localhost:3000/api/user");
+      const res = await axios.get("/api/user");
 
       dispatch({
         type: Types.USER_LOADED,
@@ -42,11 +42,7 @@ const AuthState = (props) => {
     };
 
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/users",
-        formData,
-        config
-      );
+      const res = await axios.post("/api/users", formData, config);
 
       dispatch({
         type: Types.REGISTER_SUCCESS,
@@ -86,11 +82,7 @@ const AuthState = (props) => {
     };
 
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/users/login",
-        formData,
-        config
-      );
+      const res = await axios.post("/api/users/login", formData, config);
 
       console.log(res.data);
 
