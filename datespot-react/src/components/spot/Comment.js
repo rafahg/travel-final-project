@@ -42,9 +42,11 @@ const Comment = ({ spot_id }) => {
             onChange={onChange}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <div className="spotButton">
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </div>
       </Form>
       {postError ? (
         <div style={{ marginTop: "10px" }}>
