@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import table from "../../assets/images/table.jpg";
+import sitting from "../../assets/images/sitting.jpg";
 import {Jumbotron, Container,} from "react-bootstrap";
 
 const Header = () => {
@@ -12,7 +12,7 @@ const Header = () => {
         fluid
         className="shadow"
         style={{
-          backgroundImage: `url(${table})`,
+          backgroundImage: `url(${sitting})`,
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
           backgroundSize: "cover",

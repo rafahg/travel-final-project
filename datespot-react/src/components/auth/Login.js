@@ -48,7 +48,7 @@ const Login = (props) => {
     <div className="container cont" style={{paddingTop: '30px'}}>
       <Row>
         <Col>
-          <img src={fireworks} style={{ maxWidth: "100%" }}></img>
+            <img src={fireworks} style={{ maxWidth: "100%" }} className="shadow"></img>
         </Col>
         <Col>
           <Form onSubmit={onSubmit} style={{ flexGrow: "1" }}>
@@ -78,9 +78,11 @@ const Login = (props) => {
                 required
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <div className="spotButton">
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </div>
             <p className="text-center">
               Never Signed up? Let's
               <Link to="/register"> Sign you up!</Link>
