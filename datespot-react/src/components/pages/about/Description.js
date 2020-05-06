@@ -11,3 +11,25 @@ export const NIMA =
   " determined to purse. Through his dedication to learn and commitment" +
   " to produce quality code throughout he has paved his own road and is" +
   " shaping his destiny as a software developer";
+
+export const NEHA =
+  "Neha Singh feels you don't need to turn your life " +
+  "on its head,often little changes makes a big impact. She has come a " +
+  "long way to become a software developer.";
+
+export const ARTEMIS =
+  "Artemis considers herself a “forever student”. Her" +
+  " hunger for knowledge and determination to turn information" +
+  " into action has led her to embark on a trip to the Unknown and" +
+  " learn how to code. Little did she know that she would fall in love" +
+  " by writing the first line of code. An avid dreamer, who loves cooking," +
+  " travelling and knitting, she is determined to turn her new passion about " +
+  "coding into a successful and fulfilling career.";
+
+export const GARETH =
+  "Gareth's professional background is in managing websites" +
+  " and is currently on a mission to level-up his skills so he " +
+  "can transition into a more development-based role. Outside of" +
+  " his professional life, he has toured the world as the bassist " +
+  "in a couple of different bands and recently return to the UK after" +
+  " living in Japan and Vietnam.";

@@ -39,17 +39,25 @@ const SpotItem = ({
   const [color, setColor] = useState("");
 
   const likeCount = () => {
-    return likes.filter((like) => like.spot_id === id).length;
+    if (likes !== null) {
+      return likes.filter((like) => like.spot_id === id).length;
+    } else {
+      return 0;
+    }
   };
 
   const setColorOfHeart = () => {
-    let count = likes.filter(
-      (like) => like.spot_id === id && like.user_id === 1
-    ).length;
-    if (count === 0) {
+    if (likes == null) {
       setColor("black");
     } else {
-      setColor("red");
+      let count = likes.filter(
+        (like) => like.spot_id === id && like.user_id === 1
+      ).length;
+      if (count === 0) {
+        setColor("black");
+      } else {
+        setColor("red");
+      }
     }
   };
 

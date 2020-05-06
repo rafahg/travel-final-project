@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import "./css/SpotDetails.css";
 import SpotContext from "../../context/spot/SpotContext";
+import AuthContext from "../../context/auth/AuthContext";
 import Comment from "./Comment";
 import SpotDetailsAbout from "./SpotDetailsAbout";
 import CommentsHeader from "./CommentsHeader";
@@ -12,7 +13,9 @@ import CommentsHeader from "./CommentsHeader";
 const SpotDetails = (props) => {
   console.log(1, props.location.aboutProps);
   const spotContext = useContext(SpotContext);
+  const authContext = useContext(AuthContext);
   const { getCommentBasedOnSpot, comments, clearComments } = spotContext;
+  const { user } = authContext;
   const properties = props.location.aboutProps;
   useEffect(() => {
     clearComments();
@@ -106,7 +109,7 @@ const SpotDetails = (props) => {
               </div>
               <CommentsHeader />
               <div>{getComments()}</div>
-              <Comment spot_id={properties.id} />
+              {user && <Comment spot_id={properties.id} />}
             </Col>
           </Row>
         </Container>

@@ -39,7 +39,7 @@ const About = () => {
           <Individual
             name="Artemis Papanikolaou"
             img={Artemis}
-            desc={DESCRIPTION.RAFA}
+            desc={DESCRIPTION.ARTEMIS}
             link="https://github.com/artemis-p"
           />
         </Tab>
@@ -47,7 +47,7 @@ const About = () => {
           <Individual
             name="Neha Singh"
             img={Neha}
-            desc={DESCRIPTION.RAFA}
+            desc={DESCRIPTION.NEHA}
             link="https://github.com/sgneha"
           />
         </Tab>
@@ -55,7 +55,7 @@ const About = () => {
           <Individual
             name="Gareth Harris"
             img={GarethImage}
-            desc={DESCRIPTION.RAFA}
+            desc={DESCRIPTION.GARETH}
             link="https://github.com/gdharris1000"
           />
         </Tab>

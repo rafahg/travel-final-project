@@ -25,6 +25,7 @@ const Comment = ({ spot_id }) => {
       };
       postComment(toSend);
       setPostError(false);
+      setText("");
     } else {
       setPostError(true);
     }
