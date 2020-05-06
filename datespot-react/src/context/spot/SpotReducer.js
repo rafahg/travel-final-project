@@ -17,10 +17,15 @@ export default (state, action) => {
         ...state,
         filterId: action.payload,
       };
-    case Types.ADD_COMMENTS:
+    case Types.GET_COMMENTS:
       return {
         ...state,
         comments: action.payload,
+      };
+    case Types.ADD_COMMENT:
+      return {
+        ...state,
+        comments: [...state.comments, action.payload],
       };
     case Types.FILTER_SPOTS:
       return {

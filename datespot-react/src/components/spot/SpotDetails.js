@@ -41,7 +41,19 @@ const SpotDetails = (props) => {
           </div>
         );
       } else {
-        return comments.map((comment) => <div>{comment.body}</div>);
+        return comments.map((comment) => (
+          <div
+            style={{
+              border: "1px solid black",
+              marginTop: "10px",
+              marginBottom: "10px",
+              borderRadius: "8px",
+              padding: "10px",
+            }}
+          >
+            {comment.body}
+          </div>
+        ));
       }
     } else {
       return (
@@ -141,8 +153,14 @@ const SpotDetails = (props) => {
               <div
                 style={{ borderTop: "1px solid black", marginTop: "30px" }}
               ></div>
+              <div
+                style={{ marginTop: "5px", marginBottom: "5px" }}
+                className="text-center"
+              >
+                <h3>Feedback on this spot</h3>
+              </div>
               <div>{getComments()}</div>
-              <Comment />
+              <Comment spot_id={props.location.aboutProps.id} />
             </Col>
           </Row>
         </Container>
