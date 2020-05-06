@@ -44,6 +44,7 @@ const SpotItemHeartless = ({
                   dress: dress,
                   best_times: best_times,
                   advice: advice,
+                  id: id,
                 },
               }}
               className="link"
