@@ -2,7 +2,7 @@
 
 So you're in a relationship, or perhaps you matched in an online dating app. That's fantastic but what do you do now? Where do you go for your date? Isn't it stressful to setup and plan the date? Well, stress no more as we have you covered with curated dates based on the location of your choosing!:) :)
 
-![heart](https://raw.githubusercontent.com/rafahg/travel-final-project/master/images/eda0d484-1a4c-469f-a078-be18330f633b_200x200.png)
+![heart](https://raw.githubusercontent.com/rafahg/travel-final-project/master/images/logo.jpg)
 
 ## Table of content
 
