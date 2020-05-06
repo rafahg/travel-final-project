@@ -19,18 +19,41 @@ const SpotState = (props) => {
 
   const [state, dispatch] = useReducer(SpotReducer, initialState);
 
+  //post comment
+
+  const postComment = async (toSend) => {
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const res = await axios.post(
+        `http://localhost:3000/api/v1/spots/${toSend.spot_id}/comments`,
+        toSend,
+        config
+      );
+      dispatch({
+        type: Types.ADD_COMMENT,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: Types.SPOTS_ERROR,
+        payload: err,
+      });
+    }
+  };
+
   //get comment associated with spot
 
   const getCommentBasedOnSpot = async (spotId) => {
-    console.log("*****");
-    console.log(spotId);
-    console.log("*****");
     try {
       const res = await axios.get(
         `http://localhost:3000/api/v1/spots/${spotId}/comments`
       );
       dispatch({
-        type: Types.ADD_COMMENTS,
+        type: Types.GET_COMMENTS,
         payload: res.data,
       });
     } catch (err) {
@@ -199,6 +222,7 @@ const SpotState = (props) => {
         filteredByLiked: state.filteredByLiked,
         likes: state.likes,
         comments: state.comments,
+        postComment,
         clearComments,
         getCommentBasedOnSpot,
         filterSpotsByTags,

@@ -1,31 +1,19 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
 import SpotMap from "./SpotMap.js";
-import {
-  Jumbotron,
-  Container,
-  Row,
-  Col,
-  Toast,
-  Button,
-  Form,
-} from "react-bootstrap";
+import { Jumbotron, Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserTie } from "@fortawesome/free-solid-svg-icons";
-import { faMoneyBillWave } from "@fortawesome/free-solid-svg-icons";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import "./css/SpotDetails.css";
 import SpotContext from "../../context/spot/SpotContext";
 import Comment from "./Comment";
+import SpotDetailsAbout from "./SpotDetailsAbout";
+import CommentsHeader from "./CommentsHeader";
 
 const SpotDetails = (props) => {
-  const [show, setShow] = useState(false);
   console.log(1, props.location.aboutProps);
   const spotContext = useContext(SpotContext);
   const { getCommentBasedOnSpot, comments, clearComments } = spotContext;
-
+  const properties = props.location.aboutProps;
   useEffect(() => {
     clearComments();
     getCommentBasedOnSpot(props.location.aboutProps.id);
@@ -41,7 +29,19 @@ const SpotDetails = (props) => {
           </div>
         );
       } else {
-        return comments.map((comment) => <div>{comment.body}</div>);
+        return comments.map((comment) => (
+          <div
+            style={{
+              border: "1px solid black",
+              marginTop: "10px",
+              marginBottom: "10px",
+              borderRadius: "8px",
+              padding: "10px",
+            }}
+          >
+            {comment.body}
+          </div>
+        ));
       }
     } else {
       return (
@@ -58,7 +58,7 @@ const SpotDetails = (props) => {
         fluid
         className="shadow"
         style={{
-          backgroundImage: `url(${props.location.aboutProps.url})`,
+          backgroundImage: `url(${properties.url})`,
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
@@ -68,65 +68,31 @@ const SpotDetails = (props) => {
       >
         <Container>
           <h1>
-            <span>{props.location.aboutProps.title}</span>
+            <span>{properties.title}</span>
           </h1>
           <h3>
-            <span>{props.location.aboutProps.summary}</span>
+            <span>{properties.summary}</span>
           </h3>
           <h6>
-            <span>{props.location.aboutProps.location}</span>
+            <span>{properties.location}</span>
           </h6>
         </Container>
       </Jumbotron>
       <div class="container">
         <Container className="cont">
           <Row>
-            <Col>
-              <p>
-                <FontAwesomeIcon icon={faMoneyBillWave} /> : £
-                {props.location.aboutProps.avg_cost}
-              </p>
-              <p>
-                <FontAwesomeIcon icon={faClock} /> :{" "}
-                {props.location.aboutProps.best_times}
-              </p>
-              <p>
-                <FontAwesomeIcon icon={faUserTie} /> :{" "}
-                {props.location.aboutProps.dress}
-              </p>
-              <p>
-                <FontAwesomeIcon icon={faInfoCircle} /> :{" "}
-                {props.location.aboutProps.description}
-              </p>
-              <div className="spotButton">
-                <Button onClick={() => setShow(true)}>
-                  Let me give you some advice...
-                </Button>
-              </div>
-              <Toast
-                onClose={() => setShow(false)}
-                show={show}
-                delay={20000}
-                autohide
-              >
-                <Toast.Header>
-                  <img
-                    src="holder.js/20x20?text=%20"
-                    className="rounded mr-2"
-                    alt=""
-                  />
-                  <strong className="mr-auto">
-                    Advice from DateSpot's in-house experts
-                  </strong>
-                </Toast.Header>
-                <Toast.Body>{props.location.aboutProps.advice}</Toast.Body>
-              </Toast>
-            </Col>
+            <SpotDetailsAbout
+              avg_cost={properties.avg_cost}
+              best_times={properties.best_times}
+              dress={properties.dress}
+              description={properties.description}
+              advice={properties.advice}
+            />
             <Col>
               <div className="map shadow">
                 <SpotMap
-                  longitude={props.location.aboutProps.longitude}
-                  latitude={props.location.aboutProps.latitude}
+                  longitude={properties.longitude}
+                  latitude={properties.latitude}
                 ></SpotMap>
               </div>
             </Col>
@@ -136,13 +102,11 @@ const SpotDetails = (props) => {
             <Col>
               <div className="address">
                 <FontAwesomeIcon icon={faLocationArrow} /> :{" "}
-                {props.location.aboutProps.address}{" "}
+                {properties.address}{" "}
               </div>
-              <div
-                style={{ borderTop: "1px solid black", marginTop: "30px" }}
-              ></div>
+              <CommentsHeader />
               <div>{getComments()}</div>
-              <Comment />
+              <Comment spot_id={properties.id} />
             </Col>
           </Row>
         </Container>
