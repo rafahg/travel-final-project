@@ -59,7 +59,7 @@ const Register = (props) => {
 
 <Row>
   <Col>
-    <img src={champagne} style={{maxWidth: '100%'}}></img>
+    <img src={champagne} className="shadow" style={{maxWidth: '100%'}}></img>
   </Col>
   <Col>
       <Form onSubmit={onSubmit} style={{ flexGrow: "1" }}>
@@ -113,7 +113,7 @@ const Register = (props) => {
               required
             />
           </Form.Group>
-          <div>
+          <div class="spotButton">
             <Button variant="primary" type="submit">
               Submit
             </Button>
