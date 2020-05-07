@@ -2,10 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 import { Card, Button } from "react-bootstrap";
 import "./css/SpotItem.css";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import SpotContext from "../../context/spot/SpotContext";
 import AuthContext from "../../context/auth/AuthContext";
+import Like from "./Like";
 
 const SpotItem = ({
   title,
@@ -80,19 +79,12 @@ const SpotItem = ({
         <Card.Text data-test="description-container" className="spotText">
           <span>{summary}</span>
         </Card.Text>
-        {user ? (
-          <div className="spotText">
-            <span>
-              <FontAwesomeIcon
-                icon={faHeart}
-                style={{ color: `${color}`, cursor: "pointer" }}
-                onClick={setLikeState}
-              />{" "}
-              {likeCount()}
-            </span>
-          </div>
-        ) : (
-          <div className="spotText"></div>
+        {user && (
+          <Like
+            setLikeState={setLikeState}
+            likeCount={likeCount}
+            color={color}
+          />
         )}
       </Card.Body>
       <Card.Footer class="spotFooter">

@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { findTestByAttr, checkProps } from "../../test/TestUtils";
+import { findTestByAttr, checkProps } from "../../../test/TestUtils";
 
 import SpotDetails from "./SpotDetails";
 

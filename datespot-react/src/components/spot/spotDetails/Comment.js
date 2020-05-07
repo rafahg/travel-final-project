@@ -1,7 +1,7 @@
 import React, { useState, useContext, Fragment } from "react";
 import { Form, Button } from "react-bootstrap";
-import SpotContext from "../../context/spot/SpotContext";
-import AuthContext from "../../context/auth/AuthContext";
+import SpotContext from "../../../context/spot/SpotContext";
+import AuthContext from "../../../context/auth/AuthContext";
 
 const Comment = ({ spot_id }) => {
   const [text, setText] = useState("");

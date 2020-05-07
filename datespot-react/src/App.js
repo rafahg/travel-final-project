@@ -5,7 +5,7 @@ import AlertState from "./context/alert/AlertState";
 import TagState from "./context/tag/TagState";
 import "./App.css";
 import Spot from "./components/pages/spot/Spot";
-import SpotDetails from "./components/spot/SpotDetails";
+import SpotDetails from "./components/spot/spotDetails/SpotDetails";
 import Home from "./components/pages/home/Home";
 import About from "./components/pages/about/About";
 import Profile from "./components/pages/profile/Profile";
@@ -26,20 +26,20 @@ function App() {
             <Router>
               <Fragment>
                 <NavigationBar />
-                  <Alerts />
-                  <Switch>
-                    <PrivateRoute exact path="/" component={Spot} />
-                    <Route exact path="/about" component={About} />
-                    <Route exact path="/home" component={Home} />
-                    <PrivateRoute
-                      exact
-                      path="/spotdetails"
-                      component={SpotDetails}
-                    />
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/register" component={Register} />
-                    <PrivateRoute exact path="/profile" component={Profile} />
-                  </Switch>
+                <Alerts />
+                <Switch>
+                  <PrivateRoute exact path="/" component={Spot} />
+                  <Route exact path="/about" component={About} />
+                  <Route exact path="/home" component={Home} />
+                  <PrivateRoute
+                    exact
+                    path="/spotdetails"
+                    component={SpotDetails}
+                  />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/register" component={Register} />
+                  <PrivateRoute exact path="/profile" component={Profile} />
+                </Switch>
                 <Footer />
               </Fragment>
             </Router>

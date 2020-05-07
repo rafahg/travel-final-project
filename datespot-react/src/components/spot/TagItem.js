@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Badge } from "react-bootstrap";
 import SpotContext from "../../context/spot/SpotContext";
 
-import "./TagItem.css";
+import "./css/TagItem.css";
 
 const TagItem = ({ tag, tagId }) => {
   const spotContext = useContext(SpotContext);

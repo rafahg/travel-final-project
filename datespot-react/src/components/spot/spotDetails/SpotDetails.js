@@ -1,11 +1,11 @@
-import React, { Fragment, useState, useEffect, useContext } from "react";
-import SpotMap from "./SpotMap.js";
+import React, { Fragment, useEffect, useContext } from "react";
 import { Jumbotron, Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
-import "./css/SpotDetails.css";
-import SpotContext from "../../context/spot/SpotContext";
-import AuthContext from "../../context/auth/AuthContext";
+import "../css/SpotDetails.css";
+import SpotMap from "./SpotMap.js";
+import SpotContext from "../../../context/spot/SpotContext";
+import AuthContext from "../../../context/auth/AuthContext";
 import Comment from "./Comment";
 import SpotDetailsAbout from "./SpotDetailsAbout";
 import CommentsHeader from "./CommentsHeader";
