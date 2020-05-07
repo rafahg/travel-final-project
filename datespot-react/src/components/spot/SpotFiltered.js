@@ -38,7 +38,6 @@ const SpotFiltered = () => {
           style={{ width: "400px" }}
         />
       </form>
-      <SpotTags />
     </Fragment>
   );
 };

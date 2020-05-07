@@ -9,16 +9,12 @@ const SpotTags = () => {
 
   const { getTags, tags } = tagContext;
 
-  const spotContext = useContext(SpotContext);
-
-  const { filteredTagsToSearch } = spotContext;
-
   useEffect(() => {
     getTags();
   }, []);
 
   return (
-    <div style={{ fontSize: "17px", textAlign: "center"  }}>
+    <div style={{ fontSize: "17px", textAlign: "center" }}>
       {tags !== null ? (
         tags.map((tag) => <TagItem key={tag.id} tag={tag.tag} tagId={tag.id} />)
       ) : (
