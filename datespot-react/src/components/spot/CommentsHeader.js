@@ -7,6 +7,7 @@ export const CommentsHeader = () => {
       <div
         style={{ marginTop: "5px", marginBottom: "5px" }}
         className="text-center"
+        data-test="comments-container"
       >
         <h3>Feedback on this spot</h3>
       </div>

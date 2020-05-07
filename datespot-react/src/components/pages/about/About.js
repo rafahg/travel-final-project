@@ -3,13 +3,36 @@ import { Tabs, Tab, Image } from "react-bootstrap";
 import RafaImage from "../../../assets/images/rafa.png";
 import GarethImage from "../../../assets/images/gareth.png";
 import NimaImage from "../../../assets/images/nima.png";
-import Neha from "../../../assets/images/neha.png";
-import Artemis from "../../../assets/images/artemis.png";
+import NehaImage from "../../../assets/images/neha.png";
+import ArtemisImage from "../../../assets/images/artemis.png";
 import Individual from "./Individual";
 
 import * as DESCRIPTION from "./Description";
 
 const About = () => {
+
+  const individualPerson = () => {
+    const individual = [
+      {eventKey: "rafa", titleAndName: "Rafa Hernandez", img: RafaImage, desc: DESCRIPTION.RAFA, link: "https://github.com/rafahg"}, 
+      {eventKey: "artemis", titleAndName: "Artemis Papanikolaou", img: ArtemisImage, desc: DESCRIPTION.ARTEMIS, link: "https://github.com/artemis-p"}, 
+      {eventKey: "neha", titleAndName: "Neha Singh", img: NehaImage, desc: DESCRIPTION.NEHA, link: "https://github.com/sgneha"}, 
+      {eventKey: "gareth", titleAndName: "Gareth Harris", img: GarethImage, desc: DESCRIPTION.GARETH, link: "https://github.com/gdharris1000"}, 
+      {eventKey: "nima", titleAndName: "Nima Soufiani", img: NimaImage, desc: DESCRIPTION.NIMA, link: "https://github.com/Nimzyow"}
+    ]
+
+    return individual.map((ind) => (
+      <Tab eventKey={ind.eventKey} title={ind.titleAndName}>
+          <Individual
+            name={ind.titleAndName}
+            img={ind.img}
+            desc={ind.desc}
+            link={ind.link}
+          />
+        </Tab>
+    ))
+
+  }
+
   return (
     <div className="container cont">
     <div data-test="about-container">
@@ -27,46 +50,7 @@ const About = () => {
         </h3>
       </div>
       <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-        <Tab eventKey="rafa" title="Rafa Hernandez">
-          <Individual
-            name="Rafa Hernandez"
-            img={RafaImage}
-            desc={DESCRIPTION.RAFA}
-            link="https://github.com/rafahg"
-          />
-        </Tab>
-        <Tab eventKey="artemis" title="Artemis Papanikolaou">
-          <Individual
-            name="Artemis Papanikolaou"
-            img={Artemis}
-            desc={DESCRIPTION.ARTEMIS}
-            link="https://github.com/artemis-p"
-          />
-        </Tab>
-        <Tab eventKey="neha" title="Neha Singh">
-          <Individual
-            name="Neha Singh"
-            img={Neha}
-            desc={DESCRIPTION.NEHA}
-            link="https://github.com/sgneha"
-          />
-        </Tab>
-        <Tab eventKey="gareth" title="Gareth Harris">
-          <Individual
-            name="Gareth Harris"
-            img={GarethImage}
-            desc={DESCRIPTION.GARETH}
-            link="https://github.com/gdharris1000"
-          />
-        </Tab>
-        <Tab eventKey="nima" title="Nima Soufiani">
-          <Individual
-            name="Nima Soufiani"
-            img={NimaImage}
-            desc={DESCRIPTION.NIMA}
-            link="https://github.com/Nimzyow"
-          />
-        </Tab>
+        {individualPerson()}
       </Tabs>
     </div>
     </div>
