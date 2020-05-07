@@ -6,21 +6,7 @@ import SpotContext from "../../context/spot/SpotContext";
 import AuthContext from "../../context/auth/AuthContext";
 import Like from "./Like";
 
-const SpotItem = ({
-  title,
-  description,
-  url,
-  longitude,
-  latitude,
-  location,
-  avg_cost,
-  id,
-  summary,
-  address,
-  dress,
-  best_times,
-  advice,
-}) => {
+const SpotItem = (props) => {
   const spotContext = useContext(SpotContext);
   const authContext = useContext(AuthContext);
   const {
@@ -39,7 +25,7 @@ const SpotItem = ({
 
   const likeCount = () => {
     if (likes !== null) {
-      return likes.filter((like) => like.spot_id === id).length;
+      return likes.filter((like) => like.spot_id === props.id).length;
     } else {
       return 0;
     }
@@ -50,7 +36,7 @@ const SpotItem = ({
       setColor("black");
     } else {
       let count = likes.filter(
-        (like) => like.spot_id === id && like.user_id === 1
+        (like) => like.spot_id === props.id && like.user_id === 1
       ).length;
       if (count === 0) {
         setColor("black");
@@ -62,22 +48,22 @@ const SpotItem = ({
 
   const setLikeState = () => {
     if (color === "black") {
-      addToLikeCount({ spot_id: id, user_id: user.id });
+      addToLikeCount({ spot_id: props.id, user_id: user.id });
     } else {
-      removeFromLikeCount({ spot_id: id, user_id: user.id });
+      removeFromLikeCount({ spot_id: props.id, user_id: user.id });
     }
   };
 
   return (
     <Card data-test="card-container" className="shadow">
-      <Card.Img variant="top" src={url} />
+      <Card.Img variant="top" src={props.url} />
 
       <Card.Body>
         <Card.Title data-test="text-container" className="spotText">
-          <span>{title}</span>
+          <span>{props.title}</span>
         </Card.Title>
         <Card.Text data-test="description-container" className="spotText">
-          <span>{summary}</span>
+          <span>{props.summary}</span>
         </Card.Text>
         {user && (
           <Like
@@ -94,19 +80,19 @@ const SpotItem = ({
               to={{
                 pathname: "/spotdetails",
                 aboutProps: {
-                  title: title,
-                  description: description,
-                  url: url,
-                  latitude: latitude,
-                  longitude: longitude,
-                  location: location,
-                  avg_cost: avg_cost,
-                  summary: summary,
-                  address: address,
-                  dress: dress,
-                  best_times: best_times,
-                  advice: advice,
-                  id: id,
+                  title: props.title,
+                  description: props.description,
+                  url: props.url,
+                  latitude: props.latitude,
+                  longitude: props.longitude,
+                  location: props.location,
+                  avg_cost: props.avg_cost,
+                  summary: props.summary,
+                  address: props.address,
+                  dress: props.dress,
+                  best_times: props.best_times,
+                  advice: props.advice,
+                  id: props.id,
                 },
               }}
               onClick={clearFilter}
