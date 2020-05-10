@@ -12,7 +12,6 @@ const SpotItem = (props) => {
   return (
     <Card data-test="card-container" className="shadow">
       <Card.Img variant="top" src={props.url} />
-
       <CardBody title={props.title} summary={props.summary} id={props.id} />
       <Card.Footer class="spotFooter">
         <div className="spotButton">

@@ -49,12 +49,10 @@ const Comment = ({ spot_id }) => {
           </Button>
         </div>
       </Form>
-      {postError ? (
+      {postError && (
         <div style={{ marginTop: "10px" }}>
           <h5>Please enter a comment before posting</h5>
         </div>
-      ) : (
-        <div></div>
       )}
     </Fragment>
   );
