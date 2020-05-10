@@ -3,76 +3,17 @@ import { Card, Button } from "react-bootstrap";
 import "./css/SpotItem.css";
 import { Link } from "react-router-dom";
 import SpotContext from "../../context/spot/SpotContext";
-import AuthContext from "../../context/auth/AuthContext";
-import Like from "./Like";
+import CardBody from "./CardBody";
 
 const SpotItem = (props) => {
   const spotContext = useContext(SpotContext);
-  const authContext = useContext(AuthContext);
-  const {
-    likes,
-    addToLikeCount,
-    removeFromLikeCount,
-    clearFilter,
-  } = spotContext;
-  const { user } = authContext;
-
-  useEffect(() => {
-    setColorOfHeart();
-  }, [likes]);
-
-  const [color, setColor] = useState("");
-
-  const likeCount = () => {
-    if (likes !== null) {
-      return likes.filter((like) => like.spot_id === props.id).length;
-    } else {
-      return 0;
-    }
-  };
-
-  const setColorOfHeart = () => {
-    if (likes == null) {
-      setColor("black");
-    } else {
-      let count = likes.filter(
-        (like) => like.spot_id === props.id && like.user_id === 1
-      ).length;
-      if (count === 0) {
-        setColor("black");
-      } else {
-        setColor("red");
-      }
-    }
-  };
-
-  const setLikeState = () => {
-    if (color === "black") {
-      addToLikeCount({ spot_id: props.id, user_id: user.id });
-    } else {
-      removeFromLikeCount({ spot_id: props.id, user_id: user.id });
-    }
-  };
+  const { clearFilter } = spotContext;
 
   return (
     <Card data-test="card-container" className="shadow">
       <Card.Img variant="top" src={props.url} />
 
-      <Card.Body>
-        <Card.Title data-test="text-container" className="spotText">
-          <span>{props.title}</span>
-        </Card.Title>
-        <Card.Text data-test="description-container" className="spotText">
-          <span>{props.summary}</span>
-        </Card.Text>
-        {user && (
-          <Like
-            setLikeState={setLikeState}
-            likeCount={likeCount}
-            color={color}
-          />
-        )}
-      </Card.Body>
+      <CardBody title={props.title} summary={props.summary} />
       <Card.Footer class="spotFooter">
         <div className="spotButton">
           <Button variant="primary">
